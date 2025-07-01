@@ -48,6 +48,10 @@ from parse_repo_into_neo4j import DirectNeo4jExtractor
 from ai_script_analyzer import AIScriptAnalyzer
 from hallucination_reporter import HallucinationReporter
 
+# Import unified modules for multi-language support
+from repo_parser import UniversalRepositoryParser
+from unified_hallucination_detector import UnifiedHallucinationDetector
+
 # Load environment variables from the project root .env file
 project_root = Path(__file__).resolve().parent.parent
 dotenv_path = project_root / '.env'
@@ -121,6 +125,8 @@ class Crawl4AIContext:
     reranking_model: Optional[CrossEncoder] = None
     knowledge_validator: Optional[Any] = None  # KnowledgeGraphValidator when available
     repo_extractor: Optional[Any] = None       # DirectNeo4jExtractor when available
+    universal_parser: Optional[Any] = None     # UniversalRepositoryParser for multi-language support
+    unified_detector: Optional[Any] = None     # UnifiedHallucinationDetector for multi-language support
 
 @asynccontextmanager
 async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
@@ -158,6 +164,8 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
     # Initialize Neo4j components if configured and enabled
     knowledge_validator = None
     repo_extractor = None
+    universal_parser = None
+    unified_detector = None
     
     # Check if knowledge graph functionality is enabled
     knowledge_graph_enabled = os.getenv("USE_KNOWLEDGE_GRAPH", "false") == "true"
@@ -171,20 +179,31 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
             try:
                 print("Initializing knowledge graph components...")
                 
-                # Initialize knowledge graph validator
+                # Initialize knowledge graph validator (Python-specific)
                 knowledge_validator = KnowledgeGraphValidator(neo4j_uri, neo4j_user, neo4j_password)
                 await knowledge_validator.initialize()
                 print("✓ Knowledge graph validator initialized")
                 
-                # Initialize repository extractor
+                # Initialize repository extractor (Python-specific)
                 repo_extractor = DirectNeo4jExtractor(neo4j_uri, neo4j_user, neo4j_password)
                 await repo_extractor.initialize()
                 print("✓ Repository extractor initialized")
+                
+                # Initialize universal parser (multi-language support)
+                universal_parser = UniversalRepositoryParser(neo4j_uri, neo4j_user, neo4j_password)
+                await universal_parser.initialize()
+                print("✓ Universal repository parser initialized")
+                
+                # Initialize unified detector (multi-language support)
+                unified_detector = UnifiedHallucinationDetector(neo4j_uri, neo4j_user, neo4j_password)
+                print("✓ Unified hallucination detector initialized")
                 
             except Exception as e:
                 print(f"Failed to initialize Neo4j components: {format_neo4j_error(e)}")
                 knowledge_validator = None
                 repo_extractor = None
+                universal_parser = None
+                unified_detector = None
         else:
             print("Neo4j credentials not configured - knowledge graph tools will be unavailable")
     else:
@@ -196,7 +215,9 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
             supabase_client=supabase_client,
             reranking_model=reranking_model,
             knowledge_validator=knowledge_validator,
-            repo_extractor=repo_extractor
+            repo_extractor=repo_extractor,
+            universal_parser=universal_parser,
+            unified_detector=unified_detector
         )
     finally:
         # Clean up all components
@@ -213,6 +234,12 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
                 print("✓ Repository extractor closed")
             except Exception as e:
                 print(f"Error closing repository extractor: {e}")
+        if universal_parser:
+            try:
+                await universal_parser.close()
+                print("✓ Universal parser closed")
+            except Exception as e:
+                print(f"Error closing universal parser: {e}")
 
 # Initialize FastMCP server
 mcp = FastMCP(
@@ -1071,22 +1098,31 @@ async def search_code_examples(ctx: Context, query: str, source_id: str = None, 
 @mcp.tool()
 async def check_ai_script_hallucinations(ctx: Context, script_path: str) -> str:
     """
-    Check an AI-generated Python script for hallucinations using the knowledge graph.
+    Check an AI-generated script for hallucinations using the knowledge graph.
     
-    This tool analyzes a Python script for potential AI hallucinations by validating
-    imports, method calls, class instantiations, and function calls against a Neo4j
+    This tool automatically detects the script language (Python, TypeScript, JavaScript)
+    and analyzes it for potential AI hallucinations by validating against a Neo4j
     knowledge graph containing real repository data.
     
-    The tool performs comprehensive analysis including:
+    The tool performs comprehensive language-specific analysis:
+    
+    Python:
     - Import validation against known repositories
-    - Method call validation on classes from the knowledge graph
+    - Method call validation on classes
     - Class instantiation parameter validation
     - Function call parameter validation
     - Attribute access validation
     
+    TypeScript/JavaScript:
+    - Import validation (ES6 and CommonJS)
+    - Component usage and prop validation
+    - React hook validation
+    - Type/interface usage validation
+    - Function and class validation
+    
     Args:
         ctx: The MCP server provided context
-        script_path: Absolute path to the Python script to analyze
+        script_path: Absolute path to the script to analyze
     
     Returns:
         JSON string with hallucination detection results, confidence scores, and recommendations
@@ -1100,13 +1136,13 @@ async def check_ai_script_hallucinations(ctx: Context, script_path: str) -> str:
                 "error": "Knowledge graph functionality is disabled. Set USE_KNOWLEDGE_GRAPH=true in environment."
             }, indent=2)
         
-        # Get the knowledge validator from context
-        knowledge_validator = ctx.request_context.lifespan_context.knowledge_validator
+        # Get the unified detector from context (supports multiple languages)
+        unified_detector = ctx.request_context.lifespan_context.unified_detector
         
-        if not knowledge_validator:
+        if not unified_detector:
             return json.dumps({
                 "success": False,
-                "error": "Knowledge graph validator not available. Check Neo4j configuration in environment variables."
+                "error": "Unified hallucination detector not available. Check Neo4j configuration in environment variables."
             }, indent=2)
         
         # Validate script path
@@ -1118,43 +1154,38 @@ async def check_ai_script_hallucinations(ctx: Context, script_path: str) -> str:
                 "error": validation["error"]
             }, indent=2)
         
-        # Step 1: Analyze script structure using AST
-        analyzer = AIScriptAnalyzer()
-        analysis_result = analyzer.analyze_script(script_path)
+        # Use unified detector to analyze script (handles Python, TypeScript, JavaScript)
+        detection_result = await unified_detector.detect_hallucinations(script_path, output_format='json')
         
-        if analysis_result.errors:
-            print(f"Analysis warnings for {script_path}: {analysis_result.errors}")
+        # Check if detection was successful
+        if 'error' in detection_result:
+            return json.dumps({
+                "success": False,
+                "script_path": script_path,
+                "error": detection_result['error']
+            }, indent=2)
         
-        # Step 2: Validate against knowledge graph
-        validation_result = await knowledge_validator.validate_script(analysis_result)
-        
-        # Step 3: Generate comprehensive report
-        reporter = HallucinationReporter()
-        report = reporter.generate_comprehensive_report(validation_result)
+        # Parse the JSON report that was saved
+        import json as json_lib
+        with open(detection_result['report_path'], 'r') as f:
+            detailed_report = json_lib.load(f)
         
         # Format response with comprehensive information
         return json.dumps({
             "success": True,
             "script_path": script_path,
-            "overall_confidence": validation_result.overall_confidence,
-            "validation_summary": {
-                "total_validations": report["validation_summary"]["total_validations"],
-                "valid_count": report["validation_summary"]["valid_count"],
-                "invalid_count": report["validation_summary"]["invalid_count"],
-                "uncertain_count": report["validation_summary"]["uncertain_count"],
-                "not_found_count": report["validation_summary"]["not_found_count"],
-                "hallucination_rate": report["validation_summary"]["hallucination_rate"]
-            },
-            "hallucinations_detected": report["hallucinations_detected"],
-            "recommendations": report["recommendations"],
-            "analysis_metadata": {
-                "total_imports": report["analysis_metadata"]["total_imports"],
-                "total_classes": report["analysis_metadata"]["total_classes"],
-                "total_methods": report["analysis_metadata"]["total_methods"],
-                "total_attributes": report["analysis_metadata"]["total_attributes"],
-                "total_functions": report["analysis_metadata"]["total_functions"]
-            },
-            "libraries_analyzed": report.get("libraries_analyzed", [])
+            "detected_language": detection_result['language'],
+            "overall_confidence": detailed_report.get('overall_confidence', 0.0),
+            "hallucinations_found": detection_result['hallucinations_found'],
+            "summary": detection_result['summary'],
+            "hallucinations_detected": detailed_report.get('hallucinations_detected', []),
+            "recommendations": detailed_report.get('recommendations', []),
+            "report_path": detection_result['report_path'],
+            "next_steps": [
+                f"Review the detailed report at: {detection_result['report_path']}",
+                "Fix any hallucinations identified in the script",
+                "Re-run validation after making corrections"
+            ]
         }, indent=2)
         
     except Exception as e:
@@ -1624,22 +1655,25 @@ async def parse_github_repository(ctx: Context, repo_url: str) -> str:
     """
     Parse a GitHub repository into the Neo4j knowledge graph.
     
-    This tool clones a GitHub repository, analyzes its Python files, and stores
-    the code structure (classes, methods, functions, imports) in Neo4j for use
-    in hallucination detection. The tool:
+    This tool clones a GitHub repository, automatically detects its primary language
+    (Python, TypeScript, JavaScript, or mixed), and stores the code structure in Neo4j
+    for use in hallucination detection. The tool:
     
     - Clones the repository to a temporary location
-    - Analyzes Python files to extract code structure
-    - Stores classes, methods, functions, and imports in Neo4j
+    - Detects the primary programming language
+    - Analyzes code files to extract structure based on language:
+      - Python: classes, methods, functions, imports
+      - TypeScript/JavaScript: components, interfaces, types, functions, hooks
+    - Stores the analysis in Neo4j with language-specific nodes
     - Provides detailed statistics about the parsing results
-    - Automatically handles module name detection for imports
+    - Handles mixed-language repositories
     
     Args:
         ctx: The MCP server provided context
         repo_url: GitHub repository URL (e.g., 'https://github.com/user/repo.git')
     
     Returns:
-        JSON string with parsing results, statistics, and repository information
+        JSON string with parsing results, statistics, language info, and repository information
     """
     try:
         # Check if knowledge graph functionality is enabled
@@ -1650,13 +1684,13 @@ async def parse_github_repository(ctx: Context, repo_url: str) -> str:
                 "error": "Knowledge graph functionality is disabled. Set USE_KNOWLEDGE_GRAPH=true in environment."
             }, indent=2)
         
-        # Get the repository extractor from context
-        repo_extractor = ctx.request_context.lifespan_context.repo_extractor
+        # Get the universal parser from context (supports multiple languages)
+        universal_parser = ctx.request_context.lifespan_context.universal_parser
         
-        if not repo_extractor:
+        if not universal_parser:
             return json.dumps({
                 "success": False,
-                "error": "Repository extractor not available. Check Neo4j configuration in environment variables."
+                "error": "Universal repository parser not available. Check Neo4j configuration in environment variables."
             }, indent=2)
         
         # Validate repository URL
@@ -1670,40 +1704,71 @@ async def parse_github_repository(ctx: Context, repo_url: str) -> str:
         
         repo_name = validation["repo_name"]
         
-        # Parse the repository (this includes cloning, analysis, and Neo4j storage)
+        # Parse the repository (this includes cloning, language detection, analysis, and Neo4j storage)
         print(f"Starting repository analysis for: {repo_name}")
-        await repo_extractor.analyze_repository(repo_url)
+        parse_result = await universal_parser.parse_repository(repo_url, repo_name)
         print(f"Repository analysis completed for: {repo_name}")
         
+        # Extract language information
+        detected_language = parse_result.get('language', 'unknown')
+        file_counts = parse_result.get('file_counts', {})
+        
         # Query Neo4j for statistics about the parsed repository
-        async with repo_extractor.driver.session() as session:
-            # Get comprehensive repository statistics
+        # Get driver from one of the extractors in universal parser
+        driver = universal_parser.python_extractor.driver if universal_parser.python_extractor else universal_parser.typescript_extractor.driver
+        async with driver.session() as session:
+            # Get comprehensive repository statistics (handles both Python and TypeScript)
             stats_query = """
             MATCH (r:Repository {name: $repo_name})
             OPTIONAL MATCH (r)-[:CONTAINS]->(f:File)
+            
+            // Python nodes
             OPTIONAL MATCH (f)-[:DEFINES]->(c:Class)
             OPTIONAL MATCH (c)-[:HAS_METHOD]->(m:Method)
             OPTIONAL MATCH (f)-[:DEFINES]->(func:Function)
             OPTIONAL MATCH (c)-[:HAS_ATTRIBUTE]->(a:Attribute)
+            
+            // TypeScript/JavaScript nodes
+            OPTIONAL MATCH (f)-[:DEFINES]->(comp:Component)
+            OPTIONAL MATCH (f)-[:DEFINES]->(i:Interface)
+            OPTIONAL MATCH (f)-[:DEFINES]->(t:Type)
+            OPTIONAL MATCH (f)-[:DEFINES]->(jsfunc:JSFunction)
+            OPTIONAL MATCH (f)-[:DEFINES]->(jsclass:JSClass)
+            OPTIONAL MATCH (comp)-[:USES_HOOK]->(h:Hook)
+            
             WITH r, 
                  count(DISTINCT f) as files_count,
-                 count(DISTINCT c) as classes_count,
+                 count(DISTINCT c) as py_classes_count,
                  count(DISTINCT m) as methods_count,
-                 count(DISTINCT func) as functions_count,
-                 count(DISTINCT a) as attributes_count
+                 count(DISTINCT func) as py_functions_count,
+                 count(DISTINCT a) as attributes_count,
+                 count(DISTINCT comp) as components_count,
+                 count(DISTINCT i) as interfaces_count,
+                 count(DISTINCT t) as types_count,
+                 count(DISTINCT jsfunc) as js_functions_count,
+                 count(DISTINCT jsclass) as js_classes_count,
+                 count(DISTINCT h) as hooks_count,
+                 r.language as language
             
             // Get some sample module names
             OPTIONAL MATCH (r)-[:CONTAINS]->(sample_f:File)
-            WITH r, files_count, classes_count, methods_count, functions_count, attributes_count,
-                 collect(DISTINCT sample_f.module_name)[0..5] as sample_modules
+            WITH r, files_count, py_classes_count, methods_count, py_functions_count, 
+                 attributes_count, components_count, interfaces_count, types_count,
+                 js_functions_count, js_classes_count, hooks_count, language,
+                 collect(DISTINCT sample_f.module)[0..5] as sample_modules
             
             RETURN 
                 r.name as repo_name,
+                language,
                 files_count,
-                classes_count, 
+                py_classes_count + js_classes_count as total_classes,
+                py_functions_count + js_functions_count as total_functions,
                 methods_count,
-                functions_count,
                 attributes_count,
+                components_count,
+                interfaces_count,
+                types_count,
+                hooks_count,
                 sample_modules
             """
             
@@ -1713,13 +1778,30 @@ async def parse_github_repository(ctx: Context, repo_url: str) -> str:
             if record:
                 stats = {
                     "repository": record['repo_name'],
+                    "detected_language": detected_language,
                     "files_processed": record['files_count'],
-                    "classes_created": record['classes_count'],
-                    "methods_created": record['methods_count'], 
-                    "functions_created": record['functions_count'],
-                    "attributes_created": record['attributes_count'],
-                    "sample_modules": record['sample_modules'] or []
+                    "total_classes": record['total_classes'],
+                    "total_functions": record['total_functions'],
+                    "language_specific": {}
                 }
+                
+                # Add language-specific statistics
+                if detected_language in ['python', 'mixed']:
+                    stats["language_specific"]["python"] = {
+                        "methods": record['methods_count'],
+                        "attributes": record['attributes_count']
+                    }
+                
+                if detected_language in ['typescript', 'javascript', 'mixed']:
+                    stats["language_specific"]["typescript"] = {
+                        "components": record['components_count'],
+                        "interfaces": record['interfaces_count'],
+                        "types": record['types_count'],
+                        "hooks": record['hooks_count']
+                    }
+                
+                stats["sample_modules"] = record['sample_modules'] or []
+                stats["file_counts"] = file_counts
             else:
                 return json.dumps({
                     "success": False,
@@ -1731,13 +1813,13 @@ async def parse_github_repository(ctx: Context, repo_url: str) -> str:
             "success": True,
             "repo_url": repo_url,
             "repo_name": repo_name,
-            "message": f"Successfully parsed repository '{repo_name}' into knowledge graph",
+            "message": f"Successfully parsed {detected_language} repository '{repo_name}' into knowledge graph",
             "statistics": stats,
             "ready_for_validation": True,
             "next_steps": [
-                "Repository is now available for hallucination detection",
-                f"Use check_ai_script_hallucinations to validate scripts against {repo_name}",
-                "The knowledge graph contains classes, methods, and functions from this repository"
+                f"Repository is now available for {detected_language} hallucination detection",
+                f"Use check_ai_script_hallucinations to validate {detected_language} scripts against {repo_name}",
+                f"The knowledge graph contains {'components, interfaces, and types' if detected_language in ['typescript', 'javascript'] else 'classes, methods, and functions'} from this repository"
             ]
         }, indent=2)
         
