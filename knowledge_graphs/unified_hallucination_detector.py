@@ -16,7 +16,7 @@ from enum import Enum
 from dotenv import load_dotenv
 
 # Python analyzers
-from ai_script_analyzer import analyze_script as analyze_python_script
+from ai_script_analyzer import analyze_ai_script as analyze_python_script
 from knowledge_graph_validator import validate_script as validate_python_script
 
 # TypeScript analyzers

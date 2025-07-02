@@ -752,7 +752,7 @@ class TypeScriptNeo4jExtractor:
                     MATCH (f:File {path: $file_path})
                     MERGE (func:JSFunction {full_name: $full_name})
                     SET func.name = $name,
-                        func.async = $async,
+                        func.async = $async_func,
                         func.generator = $generator,
                         func.params = $params,
                         func.exported = $exported
@@ -761,7 +761,7 @@ class TypeScriptNeo4jExtractor:
                     file_path=analysis['path'],
                     full_name=f"{analysis['module_name']}.{function['name']}",
                     name=function['name'],
-                    async=function['async'],
+                    async_func=function['async'],
                     generator=function['generator'],
                     params=[p['name'] for p in function['params']],
                     exported=any(function['name'] in exp.get('names', []) or 

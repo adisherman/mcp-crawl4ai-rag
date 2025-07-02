@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Set
 from enum import Enum
 
-from parse_repo_into_neo4j import Neo4jCodeExtractor
+from parse_repo_into_neo4j import DirectNeo4jExtractor
 from ts_repo_parser import TypeScriptNeo4jExtractor
 
 logger = logging.getLogger(__name__)
@@ -114,7 +114,7 @@ class UniversalRepositoryParser:
     async def initialize(self):
         """Initialize extractors"""
         # Initialize both extractors
-        self.python_extractor = Neo4jCodeExtractor(
+        self.python_extractor = DirectNeo4jExtractor(
             self.neo4j_uri, self.neo4j_user, self.neo4j_password
         )
         self.typescript_extractor = TypeScriptNeo4jExtractor(

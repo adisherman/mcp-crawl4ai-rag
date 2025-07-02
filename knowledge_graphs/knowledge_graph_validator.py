@@ -1242,3 +1242,19 @@ class KnowledgeGraphValidator:
                 })
         
         return hallucinations
+
+
+async def validate_script(script_path: str, neo4j_uri: str, neo4j_user: str, neo4j_password: str) -> ScriptValidationResult:
+    """Convenience function to validate a Python script against the knowledge graph"""
+    from ai_script_analyzer import analyze_ai_script
+    
+    # Analyze the script
+    analysis_result = analyze_ai_script(script_path)
+    
+    # Create validator and validate
+    validator = KnowledgeGraphValidator(neo4j_uri, neo4j_user, neo4j_password)
+    try:
+        await validator.initialize()
+        return await validator.validate_script(analysis_result)
+    finally:
+        await validator.close()
