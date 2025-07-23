@@ -1,0 +1,254 @@
+[
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T01:36:27.875689Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T01:50:38.429416Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Fetch",
+    "message": "Claude needs your permission to use Fetch",
+    "details": {},
+    "timestamp": "2025-07-23T01:52:12.900998Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T02:03:12.157030Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T02:09:27.372244Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T02:14:26.033538Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T02:19:08.221415Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T02:19:41.451198Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T02:35:06.424485Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T02:36:56.368576Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T02:37:39.898603Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude Code login successful",
+    "details": {},
+    "timestamp": "2025-07-23T03:00:21.717013Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T03:01:45.831664Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T03:08:06.885043Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T04:06:11.371092Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T05:30:00.564998Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T05:37:07.714678Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T06:29:22.368410Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T06:37:04.824374Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T07:06:27.686714Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T07:12:51.714355Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "notification",
+    "agent": "unknown_agent",
+    "type": "info",
+    "message": "Claude is waiting for your input",
+    "details": {},
+    "timestamp": "2025-07-23T07:18:53.187525Z",
+    "from": "notification_hook"
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T07:27:03.291572Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "planner",
+    "message": "Claude needs your permission to use planner-mcp - generate_plan (MCP)",
+    "details": {},
+    "timestamp": "2025-07-23T07:28:50.732284Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T07:35:14.449289Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "unknown",
+    "message": "Claude needs your permission to use ",
+    "details": {},
+    "timestamp": "2025-07-23T08:46:38.491001Z",
+    "from": "notification_hook",
+    "requires_response": true
+  }
+]

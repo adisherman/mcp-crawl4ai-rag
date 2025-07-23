@@ -1,0 +1,14 @@
+INFO:     Started server process [25050]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8051 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55267 - "POST /sse HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:55267 - "GET /.well-known/oauth-protected-resource HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55288 - "GET /.well-known/oauth-authorization-server/sse HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55267 - "GET /.well-known/oauth-authorization-server HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55288 - "POST /register HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51115 - "POST /sse HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:51151 - "GET /.well-known/oauth-protected-resource HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51154 - "GET /.well-known/oauth-authorization-server/sse HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51151 - "GET /.well-known/oauth-authorization-server HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51154 - "POST /register HTTP/1.1" 404 Not Found

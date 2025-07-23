@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  }
+]

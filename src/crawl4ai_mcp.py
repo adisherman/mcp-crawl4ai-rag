@@ -30,7 +30,9 @@ from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 knowledge_graphs_path = Path(__file__).resolve().parent.parent / 'knowledge_graphs'
 sys.path.append(str(knowledge_graphs_path))
 
-from utils import (
+try:
+    # When run as a module
+    from .utils import (
     get_supabase_client, 
     add_documents_to_supabase, 
     search_documents,
@@ -40,7 +42,20 @@ from utils import (
     update_source_info,
     extract_source_summary,
     search_code_examples
-)
+    )
+except ImportError:
+    # When run directly
+    from utils import (
+        get_supabase_client, 
+        add_documents_to_supabase, 
+        search_documents,
+        extract_code_blocks,
+        generate_code_example_summary,
+        add_code_examples_to_supabase,
+        update_source_info,
+        extract_source_summary,
+        search_code_examples
+    )
 
 # Import knowledge graph modules
 from knowledge_graph_validator import KnowledgeGraphValidator

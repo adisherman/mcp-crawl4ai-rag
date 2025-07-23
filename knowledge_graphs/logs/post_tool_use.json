@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-07-23T07:31:04.449505Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T07:31:12.334753Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T07:31:25.456525Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/parse_lavi_repo.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/parse_lavi_repo.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  }
+]
