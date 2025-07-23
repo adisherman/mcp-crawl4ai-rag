@@ -188,5 +188,25 @@
     "timestamp": "2025-07-23T11:32:05.564437Z",
     "suggested_next": null,
     "from": "stop_hook"
+  },
+  {
+    "event": "task_completed",
+    "agent": "unknown_agent",
+    "task_type": "general",
+    "summary": "Task completed",
+    "session_id": "0e444414-91f2-44c0-9e58-302902efea56",
+    "timestamp": "2025-07-23T14:28:07.841543Z",
+    "suggested_next": null,
+    "from": "stop_hook"
+  },
+  {
+    "event": "task_completed",
+    "agent": "unknown_agent",
+    "task_type": "general",
+    "summary": "Task completed",
+    "session_id": "0e444414-91f2-44c0-9e58-302902efea56",
+    "timestamp": "2025-07-23T14:33:18.945314Z",
+    "suggested_next": null,
+    "from": "stop_hook"
   }
 ]

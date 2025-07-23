@@ -3,13 +3,14 @@ TypeScript/JavaScript/React Repository Parser for Neo4j
 
 Creates nodes and relationships for TypeScript/JavaScript/React code:
 - File nodes
-- Component nodes
+- Component nodes  
 - Interface nodes
 - Type nodes
 - Function nodes
+- Class nodes
 - Module relationships
 
-Uses esprima for JavaScript parsing with TypeScript handled as best as possible.
+Uses the TypeScript Compiler API via REST service for accurate parsing.
 """
 
 import asyncio
@@ -19,18 +20,14 @@ import subprocess
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Optional, Dict, Any, Set
+from typing import List, Optional, Dict, Any, Set, Tuple
 import json
-import re
-
-try:
-    import esprima
-except ImportError:
-    logger.warning("esprima not installed. Install with: pip install esprima")
-    esprima = None
 
 from dotenv import load_dotenv
 from neo4j import AsyncGraphDatabase
+
+# Import our TypeScript parser client
+from ts_parser_client import TypeScriptParserService, TypeScriptParserClient
 
 # Configure logging
 logging.basicConfig(
@@ -41,811 +38,626 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-class TypeScriptCodeAnalyzer:
-    """Analyzes TypeScript/JavaScript code for Neo4j insertion"""
-    
-    def __init__(self):
-        # External modules to ignore
-        self.external_modules = {
-            # Node.js built-ins
-            'fs', 'path', 'http', 'https', 'crypto', 'os', 'util', 'stream', 'events',
-            'child_process', 'cluster', 'net', 'dns', 'domain', 'tls', 'dgram', 'url',
-            'querystring', 'string_decoder', 'timers', 'vm', 'zlib', 'assert', 'buffer',
-            'console', 'constants', 'process', 'punycode', 'readline', 'repl', 'tty',
-            
-            # Common npm packages
-            'react', 'react-dom', 'react-router', 'react-router-dom', 'redux', 'react-redux',
-            'axios', 'fetch', 'lodash', 'underscore', 'moment', 'date-fns', 'dayjs',
-            'express', 'koa', 'fastify', 'next', 'gatsby', 'nuxt', 'vue', 'angular',
-            '@angular/core', '@angular/common', '@angular/router', '@angular/forms',
-            'typescript', 'webpack', 'babel', 'eslint', 'prettier', 'jest', 'mocha',
-            'chai', 'enzyme', '@testing-library/react', 'cypress', 'puppeteer',
-            'material-ui', '@mui/material', 'antd', 'bootstrap', 'tailwindcss',
-            'styled-components', 'emotion', '@emotion/react', '@emotion/styled',
-            'graphql', 'apollo-client', '@apollo/client', 'prisma', '@prisma/client',
-            'mongoose', 'sequelize', 'typeorm', 'knex', 'pg', 'mysql', 'sqlite3',
-            'jsonwebtoken', 'bcrypt', 'passport', 'cors', 'helmet', 'compression',
-            'body-parser', 'cookie-parser', 'multer', 'dotenv', 'config', 'yup',
-            'joi', 'zod', 'class-validator', 'class-transformer', 'reflect-metadata'
-        }
-        
-        # React hooks
-        self.react_hooks = {
-            'useState', 'useEffect', 'useContext', 'useReducer', 'useCallback',
-            'useMemo', 'useRef', 'useImperativeHandle', 'useLayoutEffect',
-            'useDebugValue', 'useDeferredValue', 'useTransition', 'useId'
-        }
-    
-    def analyze_javascript_file(self, file_path: Path, repo_root: Path, project_modules: Set[str]) -> Dict[str, Any]:
-        """Extract structure from JavaScript/TypeScript file"""
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Remove TypeScript-specific syntax for esprima parsing
-            cleaned_content = self._clean_typescript_syntax(content)
-            
-            # Extract TypeScript interfaces and types using regex before parsing
-            interfaces = self._extract_interfaces(content)
-            types = self._extract_type_aliases(content)
-            
-            # Parse with esprima
-            try:
-                tree = esprima.parseScript(cleaned_content, {
-                    'jsx': True,
-                    'tolerant': True,
-                    'loc': True,
-                    'range': True
-                })
-            except Exception as e:
-                logger.warning(f"Failed to parse {file_path}: {e}")
-                # Return basic structure even if parsing fails
-                return {
-                    'path': str(file_path.relative_to(repo_root)),
-                    'module_name': self._get_module_name(file_path, repo_root),
-                    'components': [],
-                    'functions': [],
-                    'classes': [],
-                    'interfaces': interfaces,
-                    'types': types,
-                    'imports': [],
-                    'exports': []
-                }
-            
-            relative_path = str(file_path.relative_to(repo_root))
-            module_name = self._get_module_name(file_path, repo_root)
-            
-            # Extract structure
-            components = []
-            functions = []
-            classes = []
-            imports = []
-            exports = []
-            hooks_used = set()
-            
-            # Walk the AST
-            for node in self._walk_ast(tree):
-                node_type = node.get('type')
-                
-                if node_type == 'ImportDeclaration':
-                    import_info = self._extract_import(node)
-                    if import_info:
-                        imports.append(import_info)
-                
-                elif node_type == 'ExportNamedDeclaration' or node_type == 'ExportDefaultDeclaration':
-                    export_info = self._extract_export(node)
-                    if export_info:
-                        exports.append(export_info)
-                
-                elif node_type == 'FunctionDeclaration' or node_type == 'FunctionExpression':
-                    func_info = self._extract_function(node, content)
-                    if func_info:
-                        # Check if it's a React component
-                        if self._is_react_component(func_info['name'], node, content):
-                            components.append({
-                                'name': func_info['name'],
-                                'type': 'functional',
-                                'props': self._extract_component_props(node),
-                                'hooks': list(self._extract_hooks_from_function(node))
-                            })
-                        else:
-                            functions.append(func_info)
-                
-                elif node_type == 'ClassDeclaration':
-                    class_info = self._extract_class(node)
-                    if class_info:
-                        # Check if it's a React component
-                        if self._is_react_class_component(node):
-                            components.append({
-                                'name': class_info['name'],
-                                'type': 'class',
-                                'props': self._extract_class_component_props(node),
-                                'hooks': []  # Class components don't use hooks
-                            })
-                        else:
-                            classes.append(class_info)
-                
-                elif node_type == 'VariableDeclaration':
-                    # Check for const MyComponent = () => { ... }
-                    for decl in node.get('declarations', []):
-                        if decl.get('init', {}).get('type') in ['ArrowFunctionExpression', 'FunctionExpression']:
-                            name = decl.get('id', {}).get('name', '')
-                            if name and self._is_react_component(name, decl['init'], content):
-                                components.append({
-                                    'name': name,
-                                    'type': 'functional',
-                                    'props': self._extract_component_props(decl['init']),
-                                    'hooks': list(self._extract_hooks_from_function(decl['init']))
-                                })
-            
-            return {
-                'path': relative_path,
-                'module_name': module_name,
-                'components': components,
-                'functions': functions,
-                'classes': classes,
-                'interfaces': interfaces,
-                'types': types,
-                'imports': imports,
-                'exports': exports
-            }
-            
-        except Exception as e:
-            logger.error(f"Error analyzing {file_path}: {e}")
-            return {
-                'path': str(file_path.relative_to(repo_root)),
-                'module_name': self._get_module_name(file_path, repo_root),
-                'components': [],
-                'functions': [],
-                'classes': [],
-                'interfaces': [],
-                'types': [],
-                'imports': [],
-                'exports': []
-            }
-    
-    def _clean_typescript_syntax(self, content: str) -> str:
-        """Remove TypeScript-specific syntax for esprima parsing"""
-        # Remove type annotations from variables and parameters
-        content = re.sub(r':\s*[A-Za-z<>\[\]{}|&\s,\(\)]+(?=[,\)]|\s*=|\s*{)', '', content)
-        
-        # Remove interface declarations (we extract them separately)
-        content = re.sub(r'interface\s+\w+\s*(?:<[^>]+>)?\s*{[^}]*}', '', content, flags=re.DOTALL)
-        
-        # Remove type aliases
-        content = re.sub(r'type\s+\w+\s*(?:<[^>]+>)?\s*=\s*[^;]+;', '', content)
-        
-        # Remove generic type parameters
-        content = re.sub(r'<[A-Za-z\s,=]+>', '', content)
-        
-        # Remove 'as' type assertions
-        content = re.sub(r'\s+as\s+[A-Za-z<>\[\]{}|&\s,\(\)]+', '', content)
-        
-        # Remove type imports
-        content = re.sub(r'import\s+type\s*{[^}]*}\s*from\s*[\'"][^\'"]+[\'"];?', '', content)
-        
-        # Remove readonly, public, private, protected modifiers
-        content = re.sub(r'\b(readonly|public|private|protected)\s+', '', content)
-        
-        # Remove decorators
-        content = re.sub(r'@\w+(\([^)]*\))?\s*', '', content)
-        
-        return content
-    
-    def _extract_interfaces(self, content: str) -> List[Dict[str, Any]]:
-        """Extract TypeScript interfaces using regex"""
-        interfaces = []
-        # Match interface declarations
-        pattern = r'interface\s+(\w+)\s*(?:<([^>]+)>)?\s*(?:extends\s+([^{]+))?\s*{([^}]*)}'
-        
-        for match in re.finditer(pattern, content, re.DOTALL):
-            name = match.group(1)
-            generics = match.group(2)
-            extends = match.group(3)
-            body = match.group(4)
-            
-            properties = []
-            # Extract properties from interface body
-            prop_pattern = r'(\w+)(\?)?\s*:\s*([^;,\n]+)'
-            for prop_match in re.finditer(prop_pattern, body):
-                properties.append({
-                    'name': prop_match.group(1),
-                    'optional': bool(prop_match.group(2)),
-                    'type': prop_match.group(3).strip()
-                })
-            
-            interfaces.append({
-                'name': name,
-                'generics': generics.split(',') if generics else [],
-                'extends': [e.strip() for e in extends.split(',')] if extends else [],
-                'properties': properties
-            })
-        
-        return interfaces
-    
-    def _extract_type_aliases(self, content: str) -> List[Dict[str, Any]]:
-        """Extract TypeScript type aliases using regex"""
-        types = []
-        # Match type declarations
-        pattern = r'type\s+(\w+)\s*(?:<([^>]+)>)?\s*=\s*([^;]+);'
-        
-        for match in re.finditer(pattern, content):
-            name = match.group(1)
-            generics = match.group(2)
-            definition = match.group(3).strip()
-            
-            types.append({
-                'name': name,
-                'generics': generics.split(',') if generics else [],
-                'definition': definition
-            })
-        
-        return types
-    
-    def _walk_ast(self, node):
-        """Walk the ESTree AST"""
-        if isinstance(node, dict):
-            yield node
-            for key, value in node.items():
-                if isinstance(value, (dict, list)):
-                    yield from self._walk_ast(value)
-        elif isinstance(node, list):
-            for item in node:
-                yield from self._walk_ast(item)
-    
-    def _extract_import(self, node: Dict) -> Optional[Dict[str, Any]]:
-        """Extract import information"""
-        source = node.get('source', {}).get('value', '')
-        if not source:
-            return None
-        
-        imported_items = []
-        default_import = None
-        
-        for spec in node.get('specifiers', []):
-            spec_type = spec.get('type')
-            if spec_type == 'ImportDefaultSpecifier':
-                default_import = spec.get('local', {}).get('name', '')
-            elif spec_type == 'ImportSpecifier':
-                imported = spec.get('imported', {}).get('name', '')
-                local = spec.get('local', {}).get('name', '')
-                imported_items.append({
-                    'imported': imported,
-                    'local': local
-                })
-            elif spec_type == 'ImportNamespaceSpecifier':
-                imported_items.append({
-                    'imported': '*',
-                    'local': spec.get('local', {}).get('name', '')
-                })
-        
-        return {
-            'source': source,
-            'default': default_import,
-            'items': imported_items,
-            'is_internal': self._is_internal_import(source)
-        }
-    
-    def _extract_export(self, node: Dict) -> Optional[Dict[str, Any]]:
-        """Extract export information"""
-        export_type = node.get('type')
-        
-        if export_type == 'ExportDefaultDeclaration':
-            declaration = node.get('declaration', {})
-            if declaration.get('type') == 'Identifier':
-                return {
-                    'type': 'default',
-                    'name': declaration.get('name', '')
-                }
-            elif declaration.get('type') in ['FunctionDeclaration', 'ClassDeclaration']:
-                return {
-                    'type': 'default',
-                    'name': declaration.get('id', {}).get('name', 'anonymous')
-                }
-        
-        elif export_type == 'ExportNamedDeclaration':
-            if node.get('declaration'):
-                # export const/let/var/function/class
-                declaration = node['declaration']
-                if declaration.get('type') == 'VariableDeclaration':
-                    names = []
-                    for decl in declaration.get('declarations', []):
-                        if decl.get('id', {}).get('name'):
-                            names.append(decl['id']['name'])
-                    return {
-                        'type': 'named',
-                        'names': names
-                    }
-                elif declaration.get('type') in ['FunctionDeclaration', 'ClassDeclaration']:
-                    return {
-                        'type': 'named',
-                        'names': [declaration.get('id', {}).get('name', '')]
-                    }
-            else:
-                # export { ... }
-                names = []
-                for spec in node.get('specifiers', []):
-                    names.append(spec.get('exported', {}).get('name', ''))
-                return {
-                    'type': 'named',
-                    'names': names
-                }
-        
-        return None
-    
-    def _extract_function(self, node: Dict, content: str) -> Optional[Dict[str, Any]]:
-        """Extract function information"""
-        name = node.get('id', {}).get('name', 'anonymous')
-        params = []
-        
-        for param in node.get('params', []):
-            if param.get('type') == 'Identifier':
-                params.append({
-                    'name': param.get('name', ''),
-                    'type': 'any'  # Can't get type from JavaScript
-                })
-            elif param.get('type') == 'ObjectPattern':
-                # Destructured parameters
-                params.append({
-                    'name': '{...}',
-                    'type': 'object'
-                })
-            elif param.get('type') == 'ArrayPattern':
-                params.append({
-                    'name': '[...]',
-                    'type': 'array'
-                })
-        
-        return {
-            'name': name,
-            'async': node.get('async', False),
-            'generator': node.get('generator', False),
-            'params': params
-        }
-    
-    def _extract_class(self, node: Dict) -> Optional[Dict[str, Any]]:
-        """Extract class information"""
-        name = node.get('id', {}).get('name', '')
-        if not name:
-            return None
-        
-        extends = None
-        if node.get('superClass'):
-            extends = node['superClass'].get('name', '')
-        
-        methods = []
-        properties = []
-        
-        for item in node.get('body', {}).get('body', []):
-            if item.get('type') == 'MethodDefinition':
-                method_name = item.get('key', {}).get('name', '')
-                if method_name and not method_name.startswith('_'):
-                    methods.append({
-                        'name': method_name,
-                        'static': item.get('static', False),
-                        'async': item.get('value', {}).get('async', False)
-                    })
-            elif item.get('type') == 'PropertyDefinition':
-                prop_name = item.get('key', {}).get('name', '')
-                if prop_name:
-                    properties.append({
-                        'name': prop_name,
-                        'static': item.get('static', False)
-                    })
-        
-        return {
-            'name': name,
-            'extends': extends,
-            'methods': methods,
-            'properties': properties
-        }
-    
-    def _is_react_component(self, name: str, node: Dict, content: str) -> bool:
-        """Check if a function is a React component"""
-        # React components start with uppercase
-        if not name or not name[0].isupper():
-            return False
-        
-        # Check if it returns JSX
-        body = node.get('body')
-        if body:
-            # Look for return statements with JSX
-            return self._contains_jsx_return(body)
-        
-        return False
-    
-    def _is_react_class_component(self, node: Dict) -> bool:
-        """Check if a class is a React component"""
-        superClass = node.get('superClass')
-        if not superClass:
-            return False
-        
-        # Check for React.Component or Component
-        if superClass.get('type') == 'Identifier':
-            return superClass.get('name') in ['Component', 'PureComponent']
-        elif superClass.get('type') == 'MemberExpression':
-            obj = superClass.get('object', {}).get('name', '')
-            prop = superClass.get('property', {}).get('name', '')
-            return obj == 'React' and prop in ['Component', 'PureComponent']
-        
-        return False
-    
-    def _contains_jsx_return(self, node: Dict) -> bool:
-        """Check if a function body contains JSX return"""
-        for item in self._walk_ast(node):
-            if item.get('type') == 'ReturnStatement':
-                argument = item.get('argument')
-                if argument and argument.get('type') == 'JSXElement':
-                    return True
-        return False
-    
-    def _extract_component_props(self, node: Dict) -> Dict[str, Any]:
-        """Extract props from functional component"""
-        params = node.get('params', [])
-        if not params:
-            return {}
-        
-        first_param = params[0]
-        if first_param.get('type') == 'Identifier':
-            return {'type': 'props', 'name': first_param.get('name', 'props')}
-        elif first_param.get('type') == 'ObjectPattern':
-            # Destructured props
-            props = []
-            for prop in first_param.get('properties', []):
-                if prop.get('type') == 'Property':
-                    props.append(prop.get('key', {}).get('name', ''))
-            return {'type': 'destructured', 'properties': props}
-        
-        return {}
-    
-    def _extract_class_component_props(self, node: Dict) -> Dict[str, Any]:
-        """Extract props type from class component"""
-        # In JavaScript, we can't easily determine prop types
-        # Would need TypeScript parsing for this
-        return {'type': 'unknown'}
-    
-    def _extract_hooks_from_function(self, node: Dict) -> Set[str]:
-        """Extract React hooks used in a function"""
-        hooks = set()
-        
-        for item in self._walk_ast(node):
-            if item.get('type') == 'CallExpression':
-                callee = item.get('callee', {})
-                if callee.get('type') == 'Identifier':
-                    name = callee.get('name', '')
-                    if name.startswith('use') and (name in self.react_hooks or len(name) > 3):
-                        hooks.add(name)
-        
-        return hooks
-    
-    def _is_internal_import(self, source: str) -> bool:
-        """Check if an import is internal to the project"""
-        # Relative imports are internal
-        if source.startswith('.'):
-            return True
-        
-        # Check against known external modules
-        base_module = source.split('/')[0].replace('@', '')
-        if base_module in self.external_modules:
-            return False
-        
-        # Check for scoped packages
-        if source.startswith('@'):
-            scope_and_package = source.split('/')[0:2]
-            if len(scope_and_package) == 2:
-                package_name = '/'.join(scope_and_package)
-                if package_name in self.external_modules:
-                    return False
-        
-        # If not obviously external, consider it internal
-        return True
-    
-    def _get_module_name(self, file_path: Path, repo_root: Path) -> str:
-        """Get the module name for a JavaScript/TypeScript file"""
-        relative_path = file_path.relative_to(repo_root)
-        
-        # Remove file extension
-        module_path = str(relative_path).replace('.tsx', '').replace('.ts', '').replace('.jsx', '').replace('.js', '')
-        
-        # Handle index files
-        if module_path.endswith('/index'):
-            module_path = module_path[:-6]  # Remove '/index'
-        
-        # Convert to module path
-        return module_path.replace('/', '.').replace('\\', '.')
-
-
 class TypeScriptNeo4jExtractor:
-    """Extracts TypeScript/JavaScript code into Neo4j"""
+    """Extract TypeScript/JavaScript code structure into Neo4j"""
     
     def __init__(self, neo4j_uri: str, neo4j_user: str, neo4j_password: str):
         self.neo4j_uri = neo4j_uri
         self.neo4j_user = neo4j_user
         self.neo4j_password = neo4j_password
         self.driver = None
-        self.analyzer = TypeScriptCodeAnalyzer()
-    
-    async def initialize(self):
-        """Initialize Neo4j connection"""
+        self.parser_service = TypeScriptParserService()
+        self.parser_client = None
+        
+        # Track processed items to avoid duplicates
+        self.processed_files = set()
+        self.processed_components = set()
+        self.processed_interfaces = set()
+        self.processed_types = set()
+        self.processed_functions = set()
+        self.processed_classes = set()
+        
+    async def __aenter__(self):
+        """Async context manager entry"""
+        await self.connect()
+        # Start the parser service
+        self.parser_client = await self.parser_service.__aenter__()
+        return self
+        
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        """Async context manager exit"""
+        await self.parser_service.__aexit__(exc_type, exc_val, exc_tb)
+        await self.close()
+        
+    async def connect(self):
+        """Connect to Neo4j"""
         logger.info("Initializing Neo4j connection for TypeScript parser...")
         self.driver = AsyncGraphDatabase.driver(
-            self.neo4j_uri, 
+            self.neo4j_uri,
             auth=(self.neo4j_user, self.neo4j_password)
         )
         
-        # Create TypeScript-specific constraints and indexes
-        logger.info("Creating TypeScript constraints and indexes...")
+        # Create constraints and indexes
         async with self.driver.session() as session:
-            # Create constraints for new node types
-            await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (i:Interface) REQUIRE i.full_name IS UNIQUE")
-            await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (t:Type) REQUIRE t.full_name IS UNIQUE")
-            await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (c:Component) REQUIRE c.full_name IS UNIQUE")
-            await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (h:Hook) REQUIRE h.name IS UNIQUE")
-            await session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (m:Module) REQUIRE m.path IS UNIQUE")
+            logger.info("Creating TypeScript constraints and indexes...")
             
-            # Create indexes
-            await session.run("CREATE INDEX IF NOT EXISTS FOR (i:Interface) ON (i.name)")
-            await session.run("CREATE INDEX IF NOT EXISTS FOR (t:Type) ON (t.name)")
-            await session.run("CREATE INDEX IF NOT EXISTS FOR (c:Component) ON (c.name)")
-            await session.run("CREATE INDEX IF NOT EXISTS FOR (h:Hook) ON (h.name)")
-            await session.run("CREATE INDEX IF NOT EXISTS FOR (f:JSFunction) ON (f.name)")
-            await session.run("CREATE INDEX IF NOT EXISTS FOR (c:JSClass) ON (c.name)")
-        
+            # Unique constraints
+            constraints = [
+                "CREATE CONSTRAINT IF NOT EXISTS FOR (f:File) REQUIRE f.path IS UNIQUE",
+                "CREATE CONSTRAINT IF NOT EXISTS FOR (c:Component) REQUIRE c.full_name IS UNIQUE",
+                "CREATE CONSTRAINT IF NOT EXISTS FOR (i:Interface) REQUIRE i.full_name IS UNIQUE",
+                "CREATE CONSTRAINT IF NOT EXISTS FOR (t:Type) REQUIRE t.full_name IS UNIQUE",
+                "CREATE CONSTRAINT IF NOT EXISTS FOR (c:JSClass) REQUIRE c.full_name IS UNIQUE",
+                "CREATE CONSTRAINT IF NOT EXISTS FOR (f:JSFunction) REQUIRE f.full_name IS UNIQUE",
+            ]
+            
+            for constraint in constraints:
+                await session.run(constraint)
+            
+            # Indexes for better query performance
+            indexes = [
+                "CREATE INDEX IF NOT EXISTS FOR (f:File) ON (f.name)",
+                "CREATE INDEX IF NOT EXISTS FOR (c:Component) ON (c.name)",
+                "CREATE INDEX IF NOT EXISTS FOR (i:Interface) ON (i.name)",
+                "CREATE INDEX IF NOT EXISTS FOR (h:Hook) ON (h.name)",
+                "CREATE INDEX IF NOT EXISTS FOR (f:JSFunction) ON (f.name)",
+                "CREATE INDEX IF NOT EXISTS FOR (c:JSClass) ON (c.name)",
+                "CREATE INDEX IF NOT EXISTS FOR (m:Module) ON (m.name)",
+            ]
+            
+            for index in indexes:
+                await session.run(index)
+                
         logger.info("TypeScript Neo4j initialized successfully")
-    
+        
     async def close(self):
         """Close Neo4j connection"""
         if self.driver:
             await self.driver.close()
-    
-    async def process_repository(self, repo_path: str, repo_name: str):
-        """Process a TypeScript/JavaScript repository"""
-        logger.info(f"Processing TypeScript repository: {repo_name}")
+            
+    async def parse_directory(self, repo_path: str, repo_name: str) -> Dict[str, Any]:
+        """
+        Parse a directory and store in Neo4j
+        
+        Args:
+            repo_path: Path to the repository
+            repo_name: Name of the repository
+            
+        Returns:
+            Dictionary with parsing statistics
+        """
         repo_root = Path(repo_path)
         
-        # Create repository node
-        async with self.driver.session() as session:
-            await session.run("""
-                MERGE (r:Repository {name: $name})
-                SET r.analyzed_at = datetime(),
-                    r.language = 'TypeScript'
-            """, name=repo_name)
+        # Create Repository node
+        repo_id = await self._create_repository_node(repo_name)
         
-        # Collect all TypeScript/JavaScript files
+        # Find all TypeScript/JavaScript files
         ts_files = []
         js_files = []
-        for ext in ['*.ts', '*.tsx', '*.js', '*.jsx']:
-            ts_files.extend(repo_root.rglob(ext))
         
-        # Filter out node_modules and other irrelevant directories
-        ts_files = [f for f in ts_files if 'node_modules' not in str(f) and '.git' not in str(f)]
+        for ext in ['*.ts', '*.tsx', '*.js', '*.jsx', '*.mjs', '*.cjs']:
+            for file_path in repo_root.rglob(ext):
+                # Skip node_modules and other common directories
+                if any(part in file_path.parts for part in ['node_modules', '.git', 'dist', 'build', 'coverage']):
+                    continue
+                    
+                if file_path.suffix in ['.ts', '.tsx']:
+                    ts_files.append(file_path)
+                else:
+                    js_files.append(file_path)
+                    
+        total_files = len(ts_files) + len(js_files)
+        logger.info(f"Found {len(ts_files)} TypeScript files and {len(js_files)} JavaScript files")
         
-        logger.info(f"Found {len(ts_files)} TypeScript/JavaScript files")
+        # Parse files in batches
+        batch_size = 10
+        all_files = ts_files + js_files
         
-        # Extract project modules for import resolution
-        project_modules = self._extract_project_modules(repo_root, ts_files)
+        for i in range(0, len(all_files), batch_size):
+            batch = all_files[i:i + batch_size]
+            
+            # Read file contents
+            file_contents = []
+            for file_path in batch:
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    file_contents.append((content, str(file_path)))
+                except Exception as e:
+                    logger.error(f"Error reading {file_path}: {e}")
+                    
+            # Parse batch
+            if file_contents:
+                parse_results = await self.parser_client.parse_batch(file_contents)
+                
+                # Process results
+                for result, file_path in zip(parse_results, batch):
+                    if isinstance(result, dict) and result.get('filename'):
+                        await self._process_parsed_file(
+                            result, 
+                            file_path, 
+                            repo_root, 
+                            repo_id
+                        )
+                        
+            # Log progress
+            processed = min(i + batch_size, total_files)
+            logger.info(f"Processed {processed}/{total_files} files")
+            
+        # Create module relationships
+        await self._create_module_relationships(repo_id)
         
-        # Process files
-        for file_path in ts_files:
-            await self._process_file(file_path, repo_root, repo_name, project_modules)
+        return {
+            'repository': repo_name,
+            'total_files': total_files,
+            'typescript_files': len(ts_files),
+            'javascript_files': len(js_files),
+            'components': len(self.processed_components),
+            'interfaces': len(self.processed_interfaces),
+            'types': len(self.processed_types),
+            'functions': len(self.processed_functions),
+            'classes': len(self.processed_classes)
+        }
         
-        logger.info(f"Completed processing repository: {repo_name}")
-    
-    def _extract_project_modules(self, repo_root: Path, files: List[Path]) -> Set[str]:
-        """Extract project module names for import resolution"""
-        modules = set()
+    async def _process_parsed_file(self, parsed_data: Dict[str, Any], 
+                                 file_path: Path, repo_root: Path, 
+                                 repo_id: str):
+        """Process parsed file data and store in Neo4j"""
+        if parsed_data.get('error'):
+            logger.error(f"Parse error for {file_path}: {parsed_data['error']}")
+            return
+            
+        relative_path = str(file_path.relative_to(repo_root))
+        module_name = self._get_module_name(file_path, repo_root)
         
-        # Check package.json for module name
-        package_json = repo_root / 'package.json'
-        if package_json.exists():
-            try:
-                with open(package_json, 'r') as f:
-                    data = json.load(f)
-                    if 'name' in data:
-                        modules.add(data['name'])
-            except:
-                pass
+        # Create File node
+        file_id = await self._create_file_node(
+            path=relative_path,
+            name=file_path.name,
+            module_name=module_name,
+            language=parsed_data.get('language', 'javascript'),
+            line_count=parsed_data.get('lineCount', 0),
+            repo_id=repo_id
+        )
         
-        # Extract top-level directories as potential modules
-        for file_path in files:
-            relative_path = file_path.relative_to(repo_root)
-            if len(relative_path.parts) > 1:
-                modules.add(relative_path.parts[0])
+        # Process components
+        for component in parsed_data.get('components', []):
+            await self._create_component_node(component, file_id, module_name)
+            
+        # Process interfaces
+        for interface in parsed_data.get('interfaces', []):
+            await self._create_interface_node(interface, file_id, module_name)
+            
+        # Process types
+        for type_alias in parsed_data.get('types', []):
+            await self._create_type_node(type_alias, file_id, module_name)
+            
+        # Process functions
+        for function in parsed_data.get('functions', []):
+            await self._create_function_node(function, file_id, module_name)
+            
+        # Process classes
+        for class_info in parsed_data.get('classes', []):
+            await self._create_class_node(class_info, file_id, module_name)
+            
+        # Process imports and exports
+        await self._process_imports(parsed_data.get('imports', []), file_id)
+        await self._process_exports(parsed_data.get('exports', []), file_id)
         
-        return modules
-    
-    async def _process_file(self, file_path: Path, repo_root: Path, repo_name: str, project_modules: Set[str]):
-        """Process a single TypeScript/JavaScript file"""
-        logger.debug(f"Processing file: {file_path}")
+    def _get_module_name(self, file_path: Path, repo_root: Path) -> str:
+        """Get module name from file path"""
+        relative_path = file_path.relative_to(repo_root)
+        # Remove file extension and convert to module path
+        module_path = str(relative_path.with_suffix(''))
+        # Handle index files
+        if module_path.endswith('/index'):
+            module_path = module_path[:-6]  # Remove '/index'
+        return module_path.replace('/', '.')
         
-        # Analyze file
-        analysis = self.analyzer.analyze_javascript_file(file_path, repo_root, project_modules)
-        
-        # Create file node
+    async def _create_repository_node(self, repo_name: str) -> str:
+        """Create or update Repository node"""
         async with self.driver.session() as session:
-            await session.run("""
-                MATCH (r:Repository {name: $repo_name})
+            result = await session.run(
+                """
+                MERGE (r:Repository {name: $name})
+                SET r.updated_at = datetime(),
+                    r.language = 'TypeScript/JavaScript'
+                RETURN id(r) as repo_id
+                """,
+                name=repo_name
+            )
+            record = await result.single()
+            return record['repo_id']
+            
+    async def _create_file_node(self, path: str, name: str, module_name: str,
+                              language: str, line_count: int, repo_id: str) -> str:
+        """Create File node"""
+        if path in self.processed_files:
+            return path
+            
+        async with self.driver.session() as session:
+            result = await session.run(
+                """
+                MATCH (r:Repository) WHERE id(r) = $repo_id
                 MERGE (f:File {path: $path})
                 SET f.name = $name,
-                    f.module = $module,
-                    f.language = $language
+                    f.module_name = $module_name,
+                    f.language = $language,
+                    f.line_count = $line_count,
+                    f.updated_at = datetime()
                 MERGE (r)-[:CONTAINS]->(f)
-            """, 
-                repo_name=repo_name,
-                path=analysis['path'],
-                name=file_path.name,
-                module=analysis['module_name'],
-                language=self._detect_language(file_path)
+                RETURN id(f) as file_id
+                """,
+                repo_id=repo_id,
+                path=path,
+                name=name,
+                module_name=module_name,
+                language=language,
+                line_count=line_count
             )
             
-            # Create components
-            for component in analysis['components']:
-                await session.run("""
-                    MATCH (f:File {path: $file_path})
-                    MERGE (c:Component {full_name: $full_name})
-                    SET c.name = $name,
-                        c.type = $type,
-                        c.exported = $exported
-                    MERGE (f)-[:DEFINES]->(c)
+        self.processed_files.add(path)
+        return path
+        
+    async def _create_component_node(self, component: Dict[str, Any], 
+                                   file_id: str, module_name: str):
+        """Create Component node"""
+        full_name = f"{module_name}.{component['name']}"
+        
+        if full_name in self.processed_components:
+            return
+            
+        async with self.driver.session() as session:
+            # Create Component node
+            await session.run(
+                """
+                MATCH (f:File {path: $file_id})
+                MERGE (c:Component {full_name: $full_name})
+                SET c.name = $name,
+                    c.type = $type,
+                    c.line = $line,
+                    c.isExported = $isExported,
+                    c.isDefault = $isDefault,
+                    c.props = $props,
+                    c.updated_at = datetime()
+                MERGE (f)-[:DEFINES]->(c)
                 """,
-                    file_path=analysis['path'],
-                    full_name=f"{analysis['module_name']}.{component['name']}",
-                    name=component['name'],
-                    type=component['type'],
-                    exported=any(component['name'] in exp.get('names', []) or 
-                                exp.get('name') == component['name'] 
-                                for exp in analysis['exports'])
+                file_id=file_id,
+                full_name=full_name,
+                name=component['name'],
+                type=component.get('type', 'functional'),
+                line=component.get('line', 0),
+                isExported=component.get('isExported', False),
+                isDefault=component.get('isDefault', False),
+                props=component.get('props')
+            )
+            
+            # Create Hook relationships
+            for hook in component.get('hooks', []):
+                await session.run(
+                    """
+                    MATCH (c:Component {full_name: $full_name})
+                    MERGE (h:Hook {name: $hook_name})
+                    SET h.isCustom = $isCustom
+                    MERGE (c)-[:USES_HOOK]->(h)
+                    """,
+                    full_name=full_name,
+                    hook_name=hook['name'],
+                    isCustom=not hook['name'].startswith('use')
                 )
                 
-                # Create hook relationships
-                for hook in component['hooks']:
-                    await session.run("""
-                        MATCH (c:Component {full_name: $component_name})
-                        MERGE (h:Hook {name: $hook_name})
-                        SET h.custom = $custom
-                        MERGE (c)-[:USES_HOOK]->(h)
+        self.processed_components.add(full_name)
+        
+    async def _create_interface_node(self, interface: Dict[str, Any], 
+                                   file_id: str, module_name: str):
+        """Create Interface node"""
+        full_name = f"{module_name}.{interface['name']}"
+        
+        if full_name in self.processed_interfaces:
+            return
+            
+        async with self.driver.session() as session:
+            # Create Interface node
+            await session.run(
+                """
+                MATCH (f:File {path: $file_id})
+                MERGE (i:Interface {full_name: $full_name})
+                SET i.name = $name,
+                    i.line = $line,
+                    i.isExported = $isExported,
+                    i.properties = $properties,
+                    i.methods = $methods,
+                    i.updated_at = datetime()
+                MERGE (f)-[:DEFINES]->(i)
+                """,
+                file_id=file_id,
+                full_name=full_name,
+                name=interface['name'],
+                line=interface.get('line', 0),
+                isExported=interface.get('isExported', False),
+                properties=json.dumps(interface.get('properties', [])),
+                methods=json.dumps(interface.get('methods', []))
+            )
+            
+            # Create extends relationships
+            for extended in interface.get('extends', []):
+                await session.run(
+                    """
+                    MATCH (i:Interface {full_name: $full_name})
+                    MERGE (e:Interface {name: $extended_name})
+                    MERGE (i)-[:EXTENDS]->(e)
                     """,
-                        component_name=f"{analysis['module_name']}.{component['name']}",
-                        hook_name=hook,
-                        custom=hook not in self.analyzer.react_hooks
-                    )
-            
-            # Create interfaces
-            for interface in analysis['interfaces']:
-                await session.run("""
-                    MATCH (f:File {path: $file_path})
-                    MERGE (i:Interface {full_name: $full_name})
-                    SET i.name = $name,
-                        i.generics = $generics,
-                        i.extends = $extends,
-                        i.properties = $properties
-                    MERGE (f)-[:DEFINES]->(i)
-                """,
-                    file_path=analysis['path'],
-                    full_name=f"{analysis['module_name']}.{interface['name']}",
-                    name=interface['name'],
-                    generics=interface['generics'],
-                    extends=interface['extends'],
-                    properties=[p['name'] for p in interface['properties']]
+                    full_name=full_name,
+                    extended_name=extended
                 )
+                
+        self.processed_interfaces.add(full_name)
+        
+    async def _create_type_node(self, type_alias: Dict[str, Any], 
+                              file_id: str, module_name: str):
+        """Create Type node"""
+        full_name = f"{module_name}.{type_alias['name']}"
+        
+        if full_name in self.processed_types:
+            return
             
-            # Create type aliases
-            for type_alias in analysis['types']:
-                await session.run("""
-                    MATCH (f:File {path: $file_path})
-                    MERGE (t:Type {full_name: $full_name})
-                    SET t.name = $name,
-                        t.generics = $generics,
-                        t.definition = $definition
-                    MERGE (f)-[:DEFINES]->(t)
+        async with self.driver.session() as session:
+            await session.run(
+                """
+                MATCH (f:File {path: $file_id})
+                MERGE (t:Type {full_name: $full_name})
+                SET t.name = $name,
+                    t.line = $line,
+                    t.isExported = $isExported,
+                    t.definition = $definition,
+                    t.updated_at = datetime()
+                MERGE (f)-[:DEFINES]->(t)
                 """,
-                    file_path=analysis['path'],
-                    full_name=f"{analysis['module_name']}.{type_alias['name']}",
-                    name=type_alias['name'],
-                    generics=type_alias['generics'],
-                    definition=type_alias['definition']
-                )
+                file_id=file_id,
+                full_name=full_name,
+                name=type_alias['name'],
+                line=type_alias.get('line', 0),
+                isExported=type_alias.get('isExported', False),
+                definition=type_alias.get('type', '')
+            )
             
-            # Create functions
-            for function in analysis['functions']:
-                await session.run("""
-                    MATCH (f:File {path: $file_path})
-                    MERGE (func:JSFunction {full_name: $full_name})
-                    SET func.name = $name,
-                        func.async = $async_func,
-                        func.generator = $generator,
-                        func.params = $params,
-                        func.exported = $exported
-                    MERGE (f)-[:DEFINES]->(func)
+        self.processed_types.add(full_name)
+        
+    async def _create_function_node(self, function: Dict[str, Any], 
+                                  file_id: str, module_name: str):
+        """Create JSFunction node"""
+        full_name = f"{module_name}.{function['name']}"
+        
+        if full_name in self.processed_functions:
+            return
+            
+        async with self.driver.session() as session:
+            await session.run(
+                """
+                MATCH (f:File {path: $file_id})
+                MERGE (fn:JSFunction {full_name: $full_name})
+                SET fn.name = $name,
+                    fn.line = $line,
+                    fn.isExported = $isExported,
+                    fn.isDefault = $isDefault,
+                    fn.isAsync = $isAsync,
+                    fn.parameters = $params,
+                    fn.returnType = $returnType,
+                    fn.updated_at = datetime()
+                MERGE (f)-[:DEFINES]->(fn)
                 """,
-                    file_path=analysis['path'],
-                    full_name=f"{analysis['module_name']}.{function['name']}",
-                    name=function['name'],
-                    async_func=function['async'],
-                    generator=function['generator'],
-                    params=[p['name'] for p in function['params']],
-                    exported=any(function['name'] in exp.get('names', []) or 
-                               exp.get('name') == function['name'] 
-                               for exp in analysis['exports'])
-                )
+                file_id=file_id,
+                full_name=full_name,
+                name=function['name'],
+                line=function.get('line', 0),
+                isExported=function.get('isExported', False),
+                isDefault=function.get('isDefault', False),
+                isAsync=function.get('isAsync', False),
+                params=json.dumps(function.get('parameters', [])),
+                returnType=function.get('returnType')
+            )
             
-            # Create classes
-            for cls in analysis['classes']:
-                await session.run("""
-                    MATCH (f:File {path: $file_path})
-                    MERGE (c:JSClass {full_name: $full_name})
-                    SET c.name = $name,
-                        c.extends = $extends,
-                        c.methods = $methods,
-                        c.properties = $properties,
-                        c.exported = $exported
-                    MERGE (f)-[:DEFINES]->(c)
+        self.processed_functions.add(full_name)
+        
+    async def _create_class_node(self, class_info: Dict[str, Any], 
+                               file_id: str, module_name: str):
+        """Create JSClass node"""
+        full_name = f"{module_name}.{class_info['name']}"
+        
+        if full_name in self.processed_classes:
+            return
+            
+        async with self.driver.session() as session:
+            # Create JSClass node
+            await session.run(
+                """
+                MATCH (f:File {path: $file_id})
+                MERGE (c:JSClass {full_name: $full_name})
+                SET c.name = $name,
+                    c.line = $line,
+                    c.isExported = $isExported,
+                    c.isDefault = $isDefault,
+                    c.isAbstract = $isAbstract,
+                    c.extends = $extends,
+                    c.updated_at = datetime()
+                MERGE (f)-[:DEFINES]->(c)
                 """,
-                    file_path=analysis['path'],
-                    full_name=f"{analysis['module_name']}.{cls['name']}",
-                    name=cls['name'],
-                    extends=cls['extends'],
-                    methods=[m['name'] for m in cls['methods']],
-                    properties=[p['name'] for p in cls['properties']],
-                    exported=any(cls['name'] in exp.get('names', []) or 
-                               exp.get('name') == cls['name'] 
-                               for exp in analysis['exports'])
-                )
+                file_id=file_id,
+                full_name=full_name,
+                name=class_info['name'],
+                line=class_info.get('line', 0),
+                isExported=class_info.get('isExported', False),
+                isDefault=class_info.get('isDefault', False),
+                isAbstract=class_info.get('isAbstract', False),
+                extends=class_info.get('extends')
+            )
             
-            # Create import relationships
-            for imp in analysis['imports']:
-                if imp['is_internal']:
-                    # Try to resolve the import to a file
-                    target_module = imp['source'].replace('./', '').replace('../', '')
-                    await session.run("""
-                        MATCH (f1:File {path: $from_path})
-                        MATCH (f2:File {module: $to_module})
-                        MERGE (f1)-[:IMPORTS_FROM {items: $items}]->(f2)
+            # Create Method nodes
+            for member in class_info.get('members', []):
+                if not member:  # Skip empty members
+                    continue
+                    
+                # Debug logging
+                logger.debug(f"Processing member in class {full_name}: {member}")
+                    
+                # For methods: member has keys like name, visibility, isStatic, isAsync, parameters, returnType
+                # and a 'type' field set to 'method'
+                # For properties: member has keys like name, visibility, isStatic, isReadonly, type (the TS type)
+                # and a 'type' field set to 'property'
+                
+                member_kind = member.get('type')  # This will be 'method' or 'property'
+                
+                if member_kind == 'method':
+                    try:
+                        member_name = member.get('name', 'unknown')
+                        await session.run(
+                            """
+                            MATCH (c:JSClass {full_name: $class_name})
+                            MERGE (m:Method {full_name: $method_name})
+                            SET m.name = $name,
+                                m.visibility = $visibility,
+                                m.isStatic = $isStatic,
+                                m.isAsync = $isAsync,
+                                m.parameters = $params,
+                                m.returnType = $returnType
+                            MERGE (c)-[:HAS_METHOD]->(m)
+                            """,
+                            class_name=full_name,
+                            method_name=f"{full_name}.{member_name}",
+                            name=member_name,
+                            visibility=member.get('visibility', 'public'),
+                            isStatic=member.get('isStatic', False),
+                            isAsync=member.get('isAsync', False),
+                            params=json.dumps(member.get('parameters', [])),
+                            returnType=member.get('returnType')
+                        )
+                    except Exception as e:
+                        logger.error(f"Error creating method node for {full_name}.{member.get('name', 'unknown')}: {e}")
+                        logger.error(f"Member data: {member}")
+                        raise
+                elif member_kind == 'property':
+                    try:
+                        member_name = member.get('name', 'unknown')
+                        # The parser now uses 'propertyType' for the TypeScript type
+                        await session.run(
+                            """
+                            MATCH (c:JSClass {full_name: $class_name})
+                            MERGE (p:Property {full_name: $property_name})
+                            SET p.name = $name,
+                                p.visibility = $visibility,
+                                p.isStatic = $isStatic,
+                                p.isReadonly = $isReadonly,
+                                p.type = $propType
+                            MERGE (c)-[:HAS_PROPERTY]->(p)
+                            """,
+                            class_name=full_name,
+                            property_name=f"{full_name}.{member_name}",
+                            name=member_name,
+                            visibility=member.get('visibility', 'public'),
+                            isStatic=member.get('isStatic', False),
+                            isReadonly=member.get('isReadonly', False),
+                            propType=member.get('propertyType')  # Use propertyType field
+                        )
+                    except Exception as e:
+                        logger.error(f"Error creating property node for {full_name}.{member.get('name', 'unknown')}: {e}")
+                        logger.error(f"Member data: {member}")
+                        raise
+                else:
+                    # Log unexpected member types
+                    logger.warning(f"Unexpected member type in class {full_name}: {member_kind}")
+                    
+            # Create implements relationships
+            for implemented in class_info.get('implements', []):
+                await session.run(
+                    """
+                    MATCH (c:JSClass {full_name: $full_name})
+                    MERGE (i:Interface {name: $interface_name})
+                    MERGE (c)-[:IMPLEMENTS]->(i)
                     """,
-                        from_path=analysis['path'],
-                        to_module=target_module,
-                        items=[item['imported'] for item in imp['items']]
+                    full_name=full_name,
+                    interface_name=implemented
+                )
+                
+        self.processed_classes.add(full_name)
+        
+    async def _process_imports(self, imports: List[Dict[str, Any]], file_id: str):
+        """Process import statements"""
+        async with self.driver.session() as session:
+            for import_info in imports:
+                module = import_info.get('module', '')
+                
+                # Skip external modules
+                if module.startswith('.'):
+                    # Create Module node for relative imports
+                    await session.run(
+                        """
+                        MATCH (f:File {path: $file_id})
+                        MERGE (m:Module {name: $module})
+                        MERGE (f)-[:IMPORTS]->(m)
+                        """,
+                        file_id=file_id,
+                        module=module
                     )
-    
-    def _detect_language(self, file_path: Path) -> str:
-        """Detect the language from file extension"""
-        ext = file_path.suffix.lower()
-        if ext in ['.ts', '.tsx']:
-            return 'TypeScript'
-        elif ext in ['.js', '.jsx']:
-            return 'JavaScript'
-        return 'Unknown'
-
-
-async def main():
-    """Example usage"""
-    load_dotenv()
-    
-    # Get Neo4j credentials
-    neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
-    neo4j_user = os.getenv("NEO4J_USER", "neo4j")
-    neo4j_password = os.getenv("NEO4J_PASSWORD", "")
-    
-    if not neo4j_password:
-        logger.error("NEO4J_PASSWORD not set in environment")
-        return
-    
-    # Example: Parse a TypeScript repository
-    extractor = TypeScriptNeo4jExtractor(neo4j_uri, neo4j_user, neo4j_password)
-    
-    try:
-        await extractor.initialize()
+                    
+    async def _process_exports(self, exports: List[Dict[str, Any]], file_id: str):
+        """Process export statements"""
+        # Exports are already handled when creating nodes with isExported flag
+        pass
         
-        # Clone and process a repository
-        repo_url = "https://github.com/example/typescript-project.git"
-        repo_name = "typescript-project"
+    async def _create_module_relationships(self, repo_id: str):
+        """Create relationships between modules based on imports"""
+        async with self.driver.session() as session:
+            # Link relative imports to actual files
+            await session.run(
+                """
+                MATCH (r:Repository)-[:CONTAINS]->(f1:File)-[:IMPORTS]->(m:Module)
+                MATCH (r)-[:CONTAINS]->(f2:File)
+                WHERE m.name = f2.module_name OR 
+                      m.name = '.' + f2.module_name OR
+                      m.name = './' + f2.module_name
+                MERGE (f1)-[:IMPORTS_FILE]->(f2)
+                """
+            )
+            
+    def clone_repository(self, repo_url: str, target_dir: str, branch: Optional[str] = None) -> str:
+        """Clone a repository"""
+        logger.info(f"Cloning repository: {repo_url}")
         
-        # Process the repository
-        # await extractor.process_repository("/path/to/repo", repo_name)
+        if os.path.exists(target_dir):
+            logger.info(f"Removing existing directory: {target_dir}")
+            shutil.rmtree(target_dir, ignore_errors=True)
+            
+        # Clone with shallow clone for efficiency
+        clone_cmd = ["git", "clone", "--depth", "1"]
+        if branch:
+            clone_cmd.extend(["-b", branch])
+        clone_cmd.extend([repo_url, target_dir])
         
-    finally:
-        await extractor.close()
+        try:
+            subprocess.run(clone_cmd, check=True, capture_output=True, text=True)
+            logger.info(f"Successfully cloned to: {target_dir}")
+            return target_dir
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Failed to clone repository: {e.stderr}")
+            raise
 
 
+# Example usage
 if __name__ == "__main__":
+    async def main():
+        load_dotenv()
+        
+        neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+        neo4j_user = os.getenv("NEO4J_USER", "neo4j")
+        neo4j_password = os.getenv("NEO4J_PASSWORD", "password")
+        
+        async with TypeScriptNeo4jExtractor(neo4j_uri, neo4j_user, neo4j_password) as extractor:
+            # Example: Parse a local directory
+            result = await extractor.parse_directory(
+                "/path/to/typescript/project",
+                "my-typescript-project"
+            )
+            
+            print(json.dumps(result, indent=2))
+            
     asyncio.run(main())

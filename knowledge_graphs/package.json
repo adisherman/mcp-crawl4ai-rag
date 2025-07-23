@@ -1,0 +1,19 @@
+{
+  "name": "typescript-parser-service",
+  "version": "1.0.0",
+  "description": "TypeScript/JavaScript parser service for Neo4j knowledge graph",
+  "main": "typescript_parser_service.js",
+  "scripts": {
+    "start": "node typescript_parser_service.js",
+    "test": "node test_parser.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

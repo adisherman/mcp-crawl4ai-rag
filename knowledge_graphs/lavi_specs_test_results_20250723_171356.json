@@ -1,0 +1,172 @@
+{
+  "total_files": 40,
+  "parsed_successfully": 0,
+  "parse_errors": 40,
+  "components": [],
+  "interfaces": [],
+  "types": [],
+  "functions": [],
+  "classes": [],
+  "error_details": [
+    {
+      "file": "vite.config.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/vite-env.d.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/types/validation.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/types/index.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/utils/formHelpers.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/utils/businessDataTranslator.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/i18n/i18n.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/data/sampleBusinesses.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/data/aiVoiceFormStructure.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/services/emailService.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/index.ts",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "playwright.config.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "playwright-coverage.config.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "generate-test-report.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "eslint.config.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/edge-cases-form-test.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/form-explorer.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/submit-functionality-test.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/user-details-form-test.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/submit-button-test.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "tests/new-conditional-logic-test.spec.js",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/App.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/main.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/pages/SpecificationPage.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/pages/BusinessLandingPage.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/pages/NotFoundPage.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/pages/HomePage.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/ui/DemoModal.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/ui/ParticleBackground.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/ui/LaviLogo.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormDateRange.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormTextarea.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormCheckbox.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormCheckboxGroup.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormSelect.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormRadioGroup.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/DynamicForm.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormInput.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    },
+    {
+      "file": "src/components/form/FormFileUpload.tsx",
+      "error": "program.getConfigFileParsingDiagnostics is not a function"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "total_files": 40,
+  "parsed_successfully": 40,
+  "parse_errors": 0,
+  "components": [
+    {
+      "file": "src/App.tsx",
+      "name": "App",
+      "type": "functional"
+    },
+    {
+      "file": "src/pages/SpecificationPage.tsx",
+      "name": "SpecificationPage",
+      "type": "functional"
+    },
+    {
+      "file": "src/pages/BusinessLandingPage.tsx",
+      "name": "BusinessLandingPage",
+      "type": "functional"
+    },
+    {
+      "file": "src/pages/NotFoundPage.tsx",
+      "name": "NotFoundPage",
+      "type": "functional"
+    },
+    {
+      "file": "src/pages/HomePage.tsx",
+      "name": "HomePage",
+      "type": "functional"
+    },
+    {
+      "file": "src/components/ui/DemoModal.tsx",
+      "name": "DemoModal",
+      "type": "functional"
+    },
+    {
+      "file": "src/components/ui/ParticleBackground.tsx",
+      "name": "ParticleBackground",
+      "type": "functional"
+    },
+    {
+      "file": "src/components/ui/LaviLogo.tsx",
+      "name": "LaviLogo",
+      "type": "functional"
+    },
+    {
+      "file": "src/components/form/DynamicForm.tsx",
+      "name": "DynamicForm",
+      "type": "functional"
+    },
+    {
+      "file": "src/components/form/DynamicForm.tsx",
+      "name": "renderField",
+      "type": "functional"
+    }
+  ],
+  "interfaces": [
+    {
+      "file": "src/types/index.ts",
+      "name": "FormField"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "FormSection"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "BusinessData"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "FormValues"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "SubmissionData"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "ValidationError"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "FormState"
+    },
+    {
+      "file": "src/services/emailService.ts",
+      "name": "EmailConfig"
+    },
+    {
+      "file": "src/services/emailService.ts",
+      "name": "EmailData"
+    },
+    {
+      "file": "src/components/ui/DemoModal.tsx",
+      "name": "DemoModalProps"
+    },
+    {
+      "file": "src/components/ui/ParticleBackground.tsx",
+      "name": "Particle"
+    },
+    {
+      "file": "src/components/ui/ParticleBackground.tsx",
+      "name": "ParticleBackgroundProps"
+    },
+    {
+      "file": "src/components/ui/LaviLogo.tsx",
+      "name": "LaviLogoProps"
+    },
+    {
+      "file": "src/components/form/FormDateRange.tsx",
+      "name": "FormDateRangeProps"
+    },
+    {
+      "file": "src/components/form/FormTextarea.tsx",
+      "name": "FormTextareaProps"
+    },
+    {
+      "file": "src/components/form/FormCheckbox.tsx",
+      "name": "FormCheckboxProps"
+    },
+    {
+      "file": "src/components/form/FormCheckboxGroup.tsx",
+      "name": "CheckboxOption"
+    },
+    {
+      "file": "src/components/form/FormCheckboxGroup.tsx",
+      "name": "FormCheckboxGroupProps"
+    },
+    {
+      "file": "src/components/form/FormSelect.tsx",
+      "name": "SelectOption"
+    },
+    {
+      "file": "src/components/form/FormSelect.tsx",
+      "name": "FormSelectProps"
+    },
+    {
+      "file": "src/components/form/FormRadioGroup.tsx",
+      "name": "RadioOption"
+    },
+    {
+      "file": "src/components/form/FormRadioGroup.tsx",
+      "name": "FormRadioGroupProps"
+    },
+    {
+      "file": "src/components/form/DynamicForm.tsx",
+      "name": "DynamicFormProps"
+    },
+    {
+      "file": "src/components/form/FormInput.tsx",
+      "name": "FormInputProps"
+    },
+    {
+      "file": "src/components/form/FormFileUpload.tsx",
+      "name": "FormFileUploadProps"
+    }
+  ],
+  "types": [],
+  "functions": [
+    {
+      "file": "generate-test-report.js",
+      "name": "runTests"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "fillBasicFields"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "selectRadioOption"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "selectCheckboxOptions"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "verifyConditionalFields"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "fillConditionalFields"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "checkFormProgress"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "testFormCombination"
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "name": "generateTestCombinations"
+    }
+  ],
+  "classes": [
+    {
+      "file": "src/services/emailService.ts",
+      "name": "EmailService"
+    }
+  ],
+  "error_details": []
+}

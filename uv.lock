@@ -332,6 +332,7 @@ name = "crawl4ai-mcp"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "aiohttp" },
     { name = "crawl4ai" },
     { name = "dotenv" },
     { name = "esprima" },
@@ -344,6 +345,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "aiohttp", specifier = ">=3.9.0" },
     { name = "crawl4ai", specifier = "==0.6.2" },
     { name = "dotenv", specifier = "==0.9.9" },
     { name = "esprima", specifier = ">=4.0.1" },

@@ -67,6 +67,14 @@ from hallucination_reporter import HallucinationReporter
 from repo_parser import UniversalRepositoryParser
 from unified_hallucination_detector import UnifiedHallucinationDetector
 
+# Import TypeScript parser service
+try:
+    from ts_parser_manager import TypeScriptParserManager
+    typescript_parser_available = True
+except ImportError:
+    TypeScriptParserManager = None
+    typescript_parser_available = False
+
 # Load environment variables from the project root .env file
 project_root = Path(__file__).resolve().parent.parent
 dotenv_path = project_root / '.env'
@@ -142,6 +150,7 @@ class Crawl4AIContext:
     repo_extractor: Optional[Any] = None       # DirectNeo4jExtractor when available
     universal_parser: Optional[Any] = None     # UniversalRepositoryParser for multi-language support
     unified_detector: Optional[Any] = None     # UnifiedHallucinationDetector for multi-language support
+    typescript_parser_service: Optional[Any] = None  # TypeScriptParserService when available
 
 @asynccontextmanager
 async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
@@ -181,6 +190,7 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
     repo_extractor = None
     universal_parser = None
     unified_detector = None
+    typescript_parser_service = None
     
     # Check if knowledge graph functionality is enabled
     knowledge_graph_enabled = os.getenv("USE_KNOWLEDGE_GRAPH", "false") == "true"
@@ -209,6 +219,24 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
                 await universal_parser.initialize()
                 print("✓ Universal repository parser initialized")
                 
+                # Initialize TypeScript parser service if available
+                if typescript_parser_available:
+                    try:
+                        typescript_parser_service = TypeScriptParserManager(
+                            health_check_interval=60,  # Check every minute
+                            max_restart_attempts=3
+                        )
+                        if await typescript_parser_service.start():
+                            print("✓ TypeScript parser service started with health monitoring")
+                        else:
+                            print("Failed to start TypeScript parser service")
+                            typescript_parser_service = None
+                    except Exception as e:
+                        print(f"Failed to start TypeScript parser service: {e}")
+                        typescript_parser_service = None
+                else:
+                    print("TypeScript parser service not available - check Node.js dependencies")
+                
                 # Initialize unified detector (multi-language support)
                 unified_detector = UnifiedHallucinationDetector(neo4j_uri, neo4j_user, neo4j_password)
                 print("✓ Unified hallucination detector initialized")
@@ -219,6 +247,7 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
                 repo_extractor = None
                 universal_parser = None
                 unified_detector = None
+                typescript_parser_service = None
         else:
             print("Neo4j credentials not configured - knowledge graph tools will be unavailable")
     else:
@@ -232,7 +261,8 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
             knowledge_validator=knowledge_validator,
             repo_extractor=repo_extractor,
             universal_parser=universal_parser,
-            unified_detector=unified_detector
+            unified_detector=unified_detector,
+            typescript_parser_service=typescript_parser_service
         )
     finally:
         # Clean up all components
@@ -255,6 +285,12 @@ async def crawl4ai_lifespan(server: FastMCP) -> AsyncIterator[Crawl4AIContext]:
                 print("✓ Universal parser closed")
             except Exception as e:
                 print(f"Error closing universal parser: {e}")
+        if typescript_parser_service:
+            try:
+                await typescript_parser_service.stop()
+                print("✓ TypeScript parser service stopped")
+            except Exception as e:
+                print(f"Error stopping TypeScript parser service: {e}")
 
 # Initialize FastMCP server
 mcp = FastMCP(

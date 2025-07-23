@@ -13,4 +13,5 @@ dependencies = [
     "sentence-transformers>=4.1.0",
     "neo4j>=5.28.1",
     "esprima>=4.0.1",
+    "aiohttp>=3.9.0",
 ]

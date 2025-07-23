@@ -1,0 +1,193 @@
+{
+  "total_files": 40,
+  "parsed_successfully": 2,
+  "parse_errors": 38,
+  "components": [],
+  "interfaces": [
+    {
+      "file": "src/types/index.ts",
+      "name": "FormField"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "FormSection"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "BusinessData"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "FormValues"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "SubmissionData"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "ValidationError"
+    },
+    {
+      "file": "src/types/index.ts",
+      "name": "FormState"
+    }
+  ],
+  "types": [],
+  "functions": [],
+  "classes": [],
+  "error_details": [
+    {
+      "file": "vite.config.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/types/validation.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/utils/formHelpers.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/utils/businessDataTranslator.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/i18n/i18n.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/data/sampleBusinesses.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/data/aiVoiceFormStructure.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/services/emailService.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/index.ts",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "playwright.config.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "playwright-coverage.config.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "generate-test-report.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "eslint.config.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/edge-cases-form-test.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/form-explorer.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/submit-functionality-test.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/user-details-form-test.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/comprehensive-form-test.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/submit-button-test.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "tests/new-conditional-logic-test.spec.js",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/App.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/main.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/pages/SpecificationPage.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/pages/BusinessLandingPage.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/pages/NotFoundPage.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/pages/HomePage.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/ui/DemoModal.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/ui/ParticleBackground.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/ui/LaviLogo.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormDateRange.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormTextarea.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormCheckbox.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormCheckboxGroup.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormSelect.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormRadioGroup.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/DynamicForm.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormInput.tsx",
+      "error": "Debug Failure. False expression."
+    },
+    {
+      "file": "src/components/form/FormFileUpload.tsx",
+      "error": "Debug Failure. False expression."
+    }
+  ]
+}

@@ -121,13 +121,30 @@ Use `serverUrl` instead of `url` in the MCP configuration.
 
 ## TypeScript/React/Node.js Support
 
+### Setup Requirements
+```bash
+# Install Node.js dependencies (required for TypeScript parsing)
+cd knowledge_graphs
+npm install
+
+# The TypeScript parser service will start automatically when needed
+```
+
 ### Parsing Capabilities
 - React components (functional and class-based)
 - Hooks (custom and built-in)
 - TypeScript interfaces, types, enums
 - ES6+ modules and imports
-- JSX syntax
+- JSX/TSX syntax with full support
 - Async/await patterns
+- Class members (methods and properties)
+- Generic types and type parameters
+
+### TypeScript Parser Architecture
+- **Node.js Service**: REST API using TypeScript Compiler API
+- **Worker Threads**: ~7x performance improvement through parallel parsing
+- **Auto-start**: Service starts automatically when parsing TypeScript files
+- **Health Checks**: Automatic restart on failures
 
 ### Validation Rules
 - Component existence and prop types
@@ -135,21 +152,31 @@ Use `serverUrl` instead of `url` in the MCP configuration.
 - Type/interface definitions
 - Import validity
 - Function signatures
+- Class inheritance and implementation
 
 ### Example Usage
 ```bash
 # Parse a TypeScript/React repository
 python knowledge_graphs/repo_parser.py https://github.com/example/react-app.git
 
+# Parse a local TypeScript project
+python knowledge_graphs/parse_lavi_specs.py  # Example script
+
 # Validate AI-generated React component
 python knowledge_graphs/unified_hallucination_detector.py generated_component.tsx
 ```
+
+### Parser Files
+- **typescript_parser_service.js**: REST API server for TypeScript parsing
+- **parser_worker_fixed.js**: Worker thread implementation
+- **ts_parser_client.py**: Python client for the REST service
+- **ts_repo_parser.py**: Neo4j storage for TypeScript entities
 
 ## Performance Considerations
 
 - **Contextual embeddings**: Slower indexing (LLM calls per chunk)
 - **Agentic RAG**: Slower crawling (code extraction/summarization)
-- **TypeScript parsing**: Uses esprima, may be slower for large codebases
+- **TypeScript parsing**: Uses TypeScript Compiler API with worker threads for optimal performance
 - **Knowledge graph queries**: Complex validations may take 1-2 seconds
 - **Reranking**: Adds ~100-200ms to searches
 
@@ -161,7 +188,7 @@ python knowledge_graphs/unified_hallucination_detector.py generated_component.ts
 
 3. **Language routing**: `repo_parser.py` detects language and routes to appropriate parser. Unified detector follows same pattern.
 
-4. **TypeScript AST**: Uses esprima for parsing. See `parse_with_esprima()` in ts_repo_parser.py for implementation details.
+4. **TypeScript AST**: Uses TypeScript Compiler API via Node.js service. See `parser_worker_fixed.js` for AST extraction implementation.
 
 5. **Import handling**: Module imports use try/except for compatibility with both module and direct execution modes.
 
@@ -169,6 +196,6 @@ python knowledge_graphs/unified_hallucination_detector.py generated_component.ts
 
 7. **Neo4j optimization**: Batch operations used for repository parsing. See `create_batch()` methods in parsers.
 
-8. **Error handling**: TypeScript parser gracefully handles JSX and modern JS features that might fail in strict mode.
+8. **Error handling**: TypeScript parser gracefully handles JSX and modern JS features by using AST extraction without full program creation, avoiding module resolution issues.
 
 9. **Testing hallucination detection**: Use test scripts in knowledge_graphs/test_scripts/

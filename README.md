@@ -65,8 +65,8 @@ The server provides essential web crawling and search tools:
 
 ### Knowledge Graph Tools (requires `USE_KNOWLEDGE_GRAPH=true`, see below)
 
-6. **`parse_github_repository`**: Parse a GitHub repository into a Neo4j knowledge graph, extracting classes, methods, functions, and their relationships for hallucination detection
-7. **`check_ai_script_hallucinations`**: Analyze Python scripts for AI hallucinations by validating imports, method calls, and class usage against the knowledge graph
+6. **`parse_github_repository`**: Parse a GitHub repository into a Neo4j knowledge graph, extracting classes, methods, functions, and their relationships for hallucination detection (supports Python and TypeScript/JavaScript/React)
+7. **`check_ai_script_hallucinations`**: Analyze Python or TypeScript/JavaScript scripts for AI hallucinations by validating imports, method calls, and class usage against the knowledge graph
 8. **`query_knowledge_graph`**: Explore and query the Neo4j knowledge graph with commands like `repos`, `classes`, `methods`, and custom Cypher queries
 
 ## Prerequisites
@@ -243,23 +243,38 @@ Applies cross-encoder reranking to search results after initial retrieval. Uses 
 - **Benefits**: Better result relevance, especially for complex queries. Works with both regular RAG search and code example search.
 
 #### 5. **USE_KNOWLEDGE_GRAPH**
-Enables AI hallucination detection and repository analysis using Neo4j knowledge graphs. When enabled, the system can parse GitHub repositories into a graph database and validate AI-generated code against real repository structures. (NOT fully compatible with Docker yet, I'd recommend running through uv)
+Enables AI hallucination detection and repository analysis using Neo4j knowledge graphs. When enabled, the system can parse GitHub repositories into a graph database and validate AI-generated code against real repository structures. Supports both Python and TypeScript/JavaScript/React codebases. (NOT fully compatible with Docker yet, I'd recommend running through uv)
 
 - **When to use**: Enable this for AI coding assistants that need to validate generated code against real implementations, or when you want to detect when AI models hallucinate non-existent methods, classes, or incorrect usage patterns.
-- **Trade-offs**: Requires Neo4j setup and additional dependencies. Repository parsing can be slow for large codebases, and validation requires repositories to be pre-indexed.
+- **Trade-offs**: Requires Neo4j setup and additional dependencies. Repository parsing can be slow for large codebases, and validation requires repositories to be pre-indexed. TypeScript parsing requires Node.js.
 - **Cost**: No additional API costs for validation, but requires Neo4j infrastructure (can use free local installation or cloud AuraDB).
 - **Benefits**: Provides three powerful tools: `parse_github_repository` for indexing codebases, `check_ai_script_hallucinations` for validating AI-generated code, and `query_knowledge_graph` for exploring indexed repositories.
 
-You can now tell the AI coding assistant to add a Python GitHub repository to the knowledge graph like:
+**Language Support**:
+- **Python**: Classes, methods, functions, imports, decorators
+- **TypeScript/JavaScript**: Components, interfaces, types, classes, functions, hooks, JSX/TSX
 
-"Add https://github.com/pydantic/pydantic-ai.git to the knowledge graph"
+**TypeScript Setup** (required for TypeScript/JavaScript parsing):
+```bash
+cd knowledge_graphs
+npm install
+```
+
+You can now tell the AI coding assistant to add any GitHub repository to the knowledge graph:
+
+"Add https://github.com/facebook/react.git to the knowledge graph" (TypeScript/JavaScript)
+"Add https://github.com/pydantic/pydantic-ai.git to the knowledge graph" (Python)
 
 Make sure the repo URL ends with .git.
 
 You can also have the AI coding assistant check for hallucinations with scripts it just created, or you can manually run the command:
 
-```
-python knowledge_graphs/ai_hallucination_detector.py [full path to your script to analyze]
+```bash
+# For Python scripts
+python knowledge_graphs/ai_hallucination_detector.py [full path to your script]
+
+# For TypeScript/JavaScript (auto-detects language)
+python knowledge_graphs/unified_hallucination_detector.py [full path to your script]
 ```
 
 ### Recommended Configurations
@@ -414,35 +429,65 @@ The knowledge graph system stores repository code structure in Neo4j with the fo
 
 ### Core Components (`knowledge_graphs/` folder):
 
-- **`parse_repo_into_neo4j.py`**: Clones and analyzes GitHub repositories, extracting Python classes, methods, functions, and imports into Neo4j nodes and relationships
-- **`ai_script_analyzer.py`**: Parses Python scripts using AST to extract imports, class instantiations, method calls, and function usage
-- **`knowledge_graph_validator.py`**: Validates AI-generated code against the knowledge graph to detect hallucinations (non-existent methods, incorrect parameters, etc.)
-- **`hallucination_reporter.py`**: Generates comprehensive reports about detected hallucinations with confidence scores and recommendations
-- **`query_knowledge_graph.py`**: Interactive CLI tool for exploring the knowledge graph (functionality now integrated into MCP tools)
+**Language Detection & Routing:**
+- **`repo_parser.py`**: Universal parser that auto-detects repository language and routes to appropriate parser
+- **`unified_hallucination_detector.py`**: Language-agnostic hallucination detector that handles both Python and TypeScript/JavaScript
+
+**Python Support:**
+- **`parse_repo_into_neo4j.py`**: Analyzes Python repositories, extracting classes, methods, functions, and imports
+- **`ai_script_analyzer.py`**: Parses Python scripts using AST
+- **`knowledge_graph_validator.py`**: Validates Python code against the knowledge graph
+- **`ai_hallucination_detector.py`**: Python-specific hallucination detection
+
+**TypeScript/JavaScript Support:**
+- **`ts_repo_parser.py`**: Analyzes TypeScript/JavaScript repositories, extracting components, interfaces, types, and functions
+- **`typescript_parser_service.js`**: Node.js REST API using TypeScript Compiler API
+- **`parser_worker_fixed.js`**: Worker threads for parallel TypeScript parsing
+- **`ts_parser_client.py`**: Python client for TypeScript parser service
+- **`ts_script_analyzer.py`**: TypeScript/React script analyzer
+- **`ts_knowledge_graph_validator.py`**: TypeScript code validator
+
+**Shared Components:**
+- **`hallucination_reporter.py`**: Generates comprehensive reports for all languages
+- **`query_knowledge_graph.py`**: Interactive CLI tool for exploring the knowledge graph
 
 ### Knowledge Graph Schema:
 
-The Neo4j database stores code structure as:
+The Neo4j database stores code structure with language-specific nodes:
 
-**Nodes:**
-- `Repository`: GitHub repositories
-- `File`: Python files within repositories  
+**Common Nodes:**
+- `Repository`: GitHub repositories with language metadata
+- `File`: Source files within repositories
+
+**Python Nodes:**
 - `Class`: Python classes with methods and attributes
 - `Method`: Class methods with parameter information
 - `Function`: Standalone functions
 - `Attribute`: Class attributes
 
+**TypeScript/JavaScript Nodes:**
+- `Component`: React components (functional and class-based)
+- `Interface`: TypeScript interfaces
+- `Type`: TypeScript type aliases
+- `JSClass`: JavaScript/TypeScript classes
+- `JSFunction`: JavaScript/TypeScript functions
+- `Hook`: React hooks (custom and built-in)
+- `Enum`: TypeScript enums
+- `Module`: ES6+ modules
+
 **Relationships:**
 - `Repository` -[:CONTAINS]-> `File`
-- `File` -[:DEFINES]-> `Class`
-- `File` -[:DEFINES]-> `Function`
+- `File` -[:DEFINES]-> `Class/Component/Interface/Type/Function`
 - `Class` -[:HAS_METHOD]-> `Method`
 - `Class` -[:HAS_ATTRIBUTE]-> `Attribute`
+- `Component` -[:USES_HOOK]-> `Hook`
+- `Interface` -[:EXTENDS]-> `Interface`
+- `JSClass` -[:IMPLEMENTS]-> `Interface`
 
 ### Workflow:
 
 1. **Repository Parsing**: Use `parse_github_repository` tool to clone and analyze open-source repositories
-2. **Code Validation**: Use `check_ai_script_hallucinations` tool to validate AI-generated Python scripts
+2. **Code Validation**: Use `check_ai_script_hallucinations` tool to validate AI-generated Python or TypeScript/JavaScript scripts
 3. **Knowledge Exploration**: Use `query_knowledge_graph` tool to explore available repositories, classes, and methods
 
 ## Building Your Own Server

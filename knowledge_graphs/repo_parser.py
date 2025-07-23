@@ -122,7 +122,7 @@ class UniversalRepositoryParser:
         )
         
         await self.python_extractor.initialize()
-        await self.typescript_extractor.initialize()
+        await self.typescript_extractor.connect()  # TypeScript extractor uses connect()
         
         logger.info("Universal repository parser initialized")
     
@@ -184,9 +184,7 @@ class UniversalRepositoryParser:
             # Clear existing data for this repository
             if primary_language == RepositoryLanguage.PYTHON:
                 await self.python_extractor.clear_repository_data(repo_name)
-            elif primary_language in [RepositoryLanguage.TYPESCRIPT, RepositoryLanguage.JAVASCRIPT]:
-                # TypeScript extractor handles both TS and JS
-                await self.typescript_extractor.clear_repository_data(repo_name)
+            # Note: TypeScript extractor doesn't have clear_repository_data method yet
             elif primary_language == RepositoryLanguage.MIXED:
                 # For mixed repos, we need to handle both
                 await self._parse_mixed_repository(repo_path, repo_name, file_counts)
@@ -208,7 +206,7 @@ class UniversalRepositoryParser:
             if primary_language == RepositoryLanguage.PYTHON:
                 await self.python_extractor.process_repository(repo_path, repo_name)
             elif primary_language in [RepositoryLanguage.TYPESCRIPT, RepositoryLanguage.JAVASCRIPT]:
-                await self.typescript_extractor.process_repository(repo_path, repo_name)
+                await self.typescript_extractor.parse_directory(repo_path, repo_name)
             
             return {
                 'repository': repo_name,
@@ -235,8 +233,8 @@ class UniversalRepositoryParser:
         # Process TypeScript/JavaScript files
         if file_counts.get('typescript', 0) > 0 or file_counts.get('javascript', 0) > 0:
             logger.info("Processing TypeScript/JavaScript files...")
-            await self.typescript_extractor.clear_repository_data(f"{repo_name}_typescript")
-            await self.typescript_extractor.process_repository(repo_path, f"{repo_name}_typescript")
+            # Note: TypeScript extractor doesn't have clear_repository_data method yet
+            await self.typescript_extractor.parse_directory(repo_path, f"{repo_name}_typescript")
     
     async def get_repository_info(self, repo_name: str) -> Dict[str, any]:
         """Get information about a parsed repository from Neo4j"""
@@ -284,9 +282,9 @@ class UniversalRepositoryParser:
                 
                 return {
                     'repository': repo_name,
-                    'primary_language': record['language'],
-                    'analyzed_at': str(record['analyzed_at']),
-                    'file_count': record['file_count'],
+                    'primary_language': record.get('language', 'unknown'),
+                    'analyzed_at': str(record.get('analyzed_at', 'N/A')),
+                    'file_count': record.get('file_count', 0),
                     'language_stats': language_stats
                 }
                 
