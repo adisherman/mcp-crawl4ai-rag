@@ -106,5 +106,25 @@
     "timestamp": "2025-07-23T14:22:53.734674Z",
     "from": "notification_hook",
     "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T15:14:35.447334Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-23T15:16:52.969495Z",
+    "from": "notification_hook",
+    "requires_response": true
   }
 ]

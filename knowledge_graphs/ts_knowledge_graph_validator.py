@@ -144,7 +144,7 @@ class TypeScriptKnowledgeGraphValidator:
         logger.info(f"Validating TypeScript script: {script_path}")
         
         # Analyze the script
-        analysis_result = self.analyzer.analyze_script(script_path)
+        analysis_result = await self.analyzer.analyze_script(script_path)
         
         # Create result object
         result = TypeScriptValidationResult(
@@ -159,6 +159,7 @@ class TypeScriptKnowledgeGraphValidator:
         await self._validate_types(analysis_result['type_uses'], result)
         await self._validate_functions(analysis_result['function_calls'], result)
         await self._validate_classes(analysis_result['class_instantiations'], result)
+        await self._validate_method_calls(analysis_result['method_calls'], result)
         
         # Calculate overall confidence
         result.overall_confidence = self._calculate_overall_confidence(result)
@@ -187,13 +188,53 @@ class TypeScriptKnowledgeGraphValidator:
             
             # Check if module exists in knowledge graph
             async with self.driver.session() as session:
+                # Normalize module path for Neo4j (convert / to .)
+                normalized_module = module
+                
+                # Handle relative imports
+                if module.startswith('../'):
+                    # For relative imports, we need to resolve based on the script location
+                    # Get the directory of the current script
+                    from pathlib import Path
+                    script_dir = Path(self.script_path).parent
+                    
+                    # Count how many levels up we need to go
+                    levels_up = module.count('../')
+                    remaining_path = module.replace('../', '')
+                    
+                    # Go up the required levels
+                    current_dir = script_dir
+                    for _ in range(levels_up):
+                        current_dir = current_dir.parent
+                    
+                    # Resolve the full path
+                    resolved_path = current_dir / remaining_path
+                    
+                    # Convert to module notation starting from 'src'
+                    try:
+                        # Find where 'src' is in the path
+                        path_parts = resolved_path.parts
+                        src_index = path_parts.index('src')
+                        # Create module path from src onwards
+                        normalized_module = '.'.join(path_parts[src_index:])
+                    except ValueError:
+                        # If 'src' not found, use the original normalization
+                        normalized_module = module.replace('/', '.').replace('../', '')
+                else:
+                    # For non-relative imports, apply standard normalization
+                    normalized_module = module.replace('/', '.').replace('./src/', 'src.').replace('./src', 'src')
+                
+                # Remove file extensions
+                if normalized_module.endswith('.tsx') or normalized_module.endswith('.ts'):
+                    normalized_module = normalized_module[:-4] if normalized_module.endswith('.tsx') else normalized_module[:-3]
+                
                 # Try to find the module/file
                 module_result = await session.run("""
                     MATCH (f:File)
-                    WHERE f.module = $module OR f.path CONTAINS $module
+                    WHERE f.module = $module OR f.module = $normalized_module OR f.path CONTAINS $module
                     RETURN f.path as path, f.module as module
                     LIMIT 1
-                """, module=module)
+                """, module=module, normalized_module=normalized_module)
                 
                 module_record = await module_result.single()
                 
@@ -212,9 +253,8 @@ class TypeScriptKnowledgeGraphValidator:
                     exports_result = await session.run("""
                         MATCH (f:File {module: $module})-[:DEFINES]->(item)
                         WHERE item:Component OR item:JSFunction OR item:JSClass OR item:Interface OR item:Type
-                        AND (item.exported = true OR item.exported IS NULL)
                         RETURN item.name as name, labels(item)[0] as type
-                    """, module=module_record['module'])
+                    """, module=module_record['module'] or normalized_module)
                     
                     available_exports = []
                     async for record in exports_result:
@@ -225,7 +265,16 @@ class TypeScriptKnowledgeGraphValidator:
                     invalid_items = []
                     
                     for item in items:
-                        item_name = item.get('name', item.get('local', ''))
+                        # Handle both string and dict formats
+                        if isinstance(item, str):
+                            item_name = item
+                        else:
+                            item_name = item.get('name', item.get('local', ''))
+                        
+                        # Skip namespace imports
+                        if item_name.startswith('* as'):
+                            continue
+                            
                         if item_name != '*' and item_name not in available_exports:
                             all_valid = False
                             invalid_items.append(item_name)
@@ -516,6 +565,79 @@ class TypeScriptKnowledgeGraphValidator:
                     )
                 
                 result.function_validations.append(validation)
+    
+    async def _validate_method_calls(self, method_calls: List[Dict], result: TypeScriptValidationResult):
+        """Validate method calls on objects"""
+        for method_call in method_calls:
+            object_name = method_call.get('object', '')
+            method_name = method_call.get('method', '')
+            line = method_call.get('line', 0)
+            
+            # Skip common built-in objects
+            if object_name in ['console', 'process', 'global', 'window', 'document', 'Array', 'Object', 'String', 'Number']:
+                continue
+                
+            async with self.driver.session() as session:
+                # First check if the object is a known class
+                class_result = await session.run("""
+                    MATCH (c:JSClass {name: $object_name})
+                    RETURN c.name as name
+                    LIMIT 1
+                """, object_name=object_name)
+                
+                class_record = await class_result.single()
+                
+                if class_record:
+                    # Check if the method exists on the class
+                    method_result = await session.run("""
+                        MATCH (c:JSClass {name: $object_name})-[:HAS_METHOD]->(m:Method {name: $method_name})
+                        RETURN m.name as name
+                        LIMIT 1
+                    """, object_name=object_name, method_name=method_name)
+                    
+                    method_record = await method_result.single()
+                    
+                    if not method_record:
+                        # Method doesn't exist on class
+                        result.hallucinations_detected.append({
+                            'type': 'method',
+                            'element': f'{object_name}.{method_name}',
+                            'message': f"Method '{method_name}' does not exist on class '{object_name}'",
+                            'confidence': 1.0,
+                            'line': line
+                        })
+                else:
+                    # Check if it's a static method call on a class
+                    static_result = await session.run("""
+                        MATCH (c:JSClass {name: $object_name})-[:HAS_METHOD]->(m:Method {name: $method_name, isStatic: true})
+                        RETURN m.name as name
+                        LIMIT 1
+                    """, object_name=object_name, method_name=method_name)
+                    
+                    static_record = await static_result.single()
+                    
+                    if not static_record:
+                        # Also check if object might be an instance variable of unknown type
+                        # For now, we'll flag it as uncertain unless we can verify it
+                        if object_name[0].islower():  # Likely an instance variable
+                            # Try to find the class that might have this method
+                            any_class_result = await session.run("""
+                                MATCH (c:JSClass)-[:HAS_METHOD]->(m:Method {name: $method_name})
+                                RETURN c.name as className
+                                LIMIT 1
+                            """, method_name=method_name)
+                            
+                            any_class_record = await any_class_result.single()
+                            
+                            if not any_class_record:
+                                # Method doesn't exist on any class
+                                result.hallucinations_detected.append({
+                                    'type': 'method',
+                                    'element': f'{object_name}.{method_name}',
+                                    'message': f"Method '{method_name}' not found in any class",
+                                    'confidence': 0.8,
+                                    'line': line
+                                })
     
     def _is_external_library(self, module: str) -> bool:
         """Check if a module is an external library"""

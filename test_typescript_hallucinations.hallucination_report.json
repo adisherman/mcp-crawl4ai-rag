@@ -1,0 +1,86 @@
+{
+  "script_path": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_typescript_hallucinations.ts",
+  "analysis_timestamp": "2025-07-23T15:32:34.551404+00:00",
+  "overall_confidence": 0.4727272727272727,
+  "total_validations": 11,
+  "hallucinations_detected": [
+    {
+      "type": "method",
+      "element": "form.enableDarkMode",
+      "message": "Method 'enableDarkMode' not found in any class",
+      "confidence": 0.8,
+      "line": 21
+    },
+    {
+      "type": "method",
+      "element": "form.setMagicValidation",
+      "message": "Method 'setMagicValidation' not found in any class",
+      "confidence": 0.8,
+      "line": 22
+    },
+    {
+      "type": "method",
+      "element": "service.sendMagicEmail",
+      "message": "Method 'sendMagicEmail' not found in any class",
+      "confidence": 0.8,
+      "line": 50
+    },
+    {
+      "type": "method",
+      "element": "EmailService.configureMagicSettings",
+      "message": "Method 'configureMagicSettings' does not exist on class 'EmailService'",
+      "confidence": 1.0,
+      "line": 53
+    },
+    {
+      "type": "import",
+      "element": "src/types",
+      "message": "Invalid imports from 'src/types': ['FormField', 'BusinessData']",
+      "confidence": 0.7
+    },
+    {
+      "type": "import",
+      "element": "src/components/form/SuperDynamicForm",
+      "message": "Module 'src/components/form/SuperDynamicForm' not found in knowledge graph",
+      "confidence": 1.0
+    },
+    {
+      "type": "import",
+      "element": "src/utils/MagicValidator",
+      "message": "Module 'src/utils/MagicValidator' not found in knowledge graph",
+      "confidence": 1.0
+    },
+    {
+      "type": "type",
+      "element": "DynamicForm",
+      "message": "Type 'DynamicForm' not found in knowledge graph",
+      "confidence": 1.0
+    },
+    {
+      "type": "function",
+      "element": "DynamicForm",
+      "message": "Class 'DynamicForm' not found in knowledge graph",
+      "confidence": 1.0
+    },
+    {
+      "type": "function",
+      "element": "SuperDynamicForm",
+      "message": "Class 'SuperDynamicForm' not found in knowledge graph",
+      "confidence": 1.0
+    }
+  ],
+  "validation_summary": {
+    "imports": 5,
+    "functions": 3,
+    "components": 0,
+    "types": 3,
+    "hooks": 0,
+    "hallucination_count": 10
+  },
+  "recommendations": [
+    "Fix 10 detected hallucinations",
+    "Review imported modules and their available exports",
+    "Verify method calls exist on their respective objects",
+    "Check type definitions and interfaces are properly imported"
+  ]
+}

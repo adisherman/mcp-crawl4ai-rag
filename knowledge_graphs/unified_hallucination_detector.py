@@ -12,6 +12,7 @@ import logging
 from pathlib import Path
 from typing import Dict, Any, Optional
 from enum import Enum
+from datetime import datetime
 
 from dotenv import load_dotenv
 
@@ -143,15 +144,16 @@ class UnifiedHallucinationDetector:
             
             # Generate report
             logger.info("Generating report...")
-            if output_format == 'json':
-                report = self.reporter.generate_json_report(validation_result)
-            else:
-                report = self.reporter.generate_markdown_report(validation_result)
+            report = self.reporter.generate_comprehensive_report(validation_result)
             
             # Create output file
             output_path = Path(script_path).with_suffix(f'.hallucination_report.{output_format}')
             with open(output_path, 'w') as f:
-                f.write(report)
+                if isinstance(report, dict):
+                    import json
+                    f.write(json.dumps(report, indent=2))
+                else:
+                    f.write(report)
             
             logger.info(f"Report saved to: {output_path}")
             
@@ -177,7 +179,10 @@ class UnifiedHallucinationDetector:
         try:
             # Analyze script
             logger.info("Analyzing TypeScript/JavaScript script...")
-            analysis_result = analyze_typescript_script(script_path)
+            # Use the async version directly since we're already in async context
+            from ts_script_analyzer import TypeScriptScriptAnalyzer
+            analyzer = TypeScriptScriptAnalyzer()
+            analysis_result = await analyzer.analyze_script(script_path)
             
             # Validate against knowledge graph
             logger.info("Validating against knowledge graph...")
@@ -188,19 +193,45 @@ class UnifiedHallucinationDetector:
                 self.neo4j_password
             )
             
-            # Generate report using TypeScript adapter
+            # Generate report directly for TypeScript
             logger.info("Generating report...")
-            adapted_result = self._adapt_typescript_result_for_reporter(validation_result)
             
-            if output_format == 'json':
-                report = self.reporter.generate_json_report(adapted_result)
-            else:
-                report = self.reporter.generate_markdown_report(adapted_result)
+            # Create report dictionary
+            report = {
+                "script_path": script_path,
+                "analysis_timestamp": datetime.utcnow().isoformat() + "+00:00",
+                "overall_confidence": validation_result.overall_confidence,
+                "total_validations": (
+                    len(validation_result.import_validations) +
+                    len(validation_result.function_validations) +
+                    len(validation_result.component_validations) +
+                    len(validation_result.type_validations) +
+                    len(validation_result.hook_validations)
+                ),
+                "hallucinations_detected": validation_result.hallucinations_detected,
+                "validation_summary": {
+                    "imports": len(validation_result.import_validations),
+                    "functions": len(validation_result.function_validations),
+                    "components": len(validation_result.component_validations),
+                    "types": len(validation_result.type_validations),
+                    "hooks": len(validation_result.hook_validations),
+                    "hallucination_count": len(validation_result.hallucinations_detected)
+                },
+                "recommendations": [
+                    f"Fix {len(validation_result.hallucinations_detected)} detected hallucinations",
+                    "Review imported modules and their available exports",
+                    "Verify method calls exist on their respective objects",
+                    "Check type definitions and interfaces are properly imported"
+                ] if validation_result.hallucinations_detected else [
+                    "No hallucinations detected in the TypeScript/JavaScript code"
+                ]
+            }
             
             # Create output file
             output_path = Path(script_path).with_suffix(f'.hallucination_report.{output_format}')
             with open(output_path, 'w') as f:
-                f.write(report)
+                import json
+                f.write(json.dumps(report, indent=2))
             
             logger.info(f"Report saved to: {output_path}")
             
@@ -233,7 +264,30 @@ class UnifiedHallucinationDetector:
                 # Adapt validation results
                 self.import_validations = ts_result.import_validations
                 self.method_validations = []  # TypeScript doesn't have method validations in same format
-                self.function_validations = ts_result.function_validations
+                
+                # Convert TypeScript function validations to Python format
+                self.function_validations = []
+                for func_val in ts_result.function_validations:
+                    # Create a mock function call object
+                    class MockFunctionCall:
+                        def __init__(self, func_val):
+                            self.function_name = func_val.function_name
+                            self.full_name = f"{func_val.module}.{func_val.function_name}" if func_val.module else func_val.function_name
+                            self.line_number = 0  # Not tracked in TS version
+                            self.args = []
+                            self.kwargs = {}
+                    
+                    # Create adapted validation
+                    class AdaptedFunctionValidation:
+                        def __init__(self, func_val):
+                            self.function_call = MockFunctionCall(func_val)
+                            self.validation = func_val.validation
+                            self.expected_params = func_val.expected_params
+                            self.actual_params = []
+                            self.parameter_validation = None
+                    
+                    self.function_validations.append(AdaptedFunctionValidation(func_val))
+                
                 self.class_validations = []  # Adapt component validations
                 self.attribute_validations = []  # Not applicable for TypeScript
                 

@@ -710,5 +710,129 @@
     "agent": "unknown_agent",
     "tool": "Edit",
     "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T14:54:30.157103Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T14:54:47.702212Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_hallucination_direct.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_hallucination_direct.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-23T14:55:17.318474Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T14:55:29.365324Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T14:55:48.364329Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T14:56:06.173253Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T14:56:17.449645Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:14:10.544240Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:14:21.926651Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:14:36.120880Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:14:47.807905Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:15:01.772311Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:15:17.594269Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:16:10.647415Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:16:26.159707Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:16:37.781291Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:17:02.642043Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-23T15:17:14.889677Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
   }
 ]

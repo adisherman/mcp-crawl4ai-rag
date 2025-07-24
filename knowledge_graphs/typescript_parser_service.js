@@ -83,7 +83,7 @@ class WorkerPool {
 
 // Initialize worker pool - use fixed parser that avoids module resolution
 const workerPool = new WorkerPool(
-    path.join(__dirname, 'parser_worker_fixed.js'),
+    path.join(__dirname, 'parser_worker_enhanced.js'),
     NUM_WORKERS
 );
 

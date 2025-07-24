@@ -111,8 +111,10 @@ def validate_script_path(script_path: str) -> Dict[str, Any]:
     if not os.path.exists(script_path):
         return {"valid": False, "error": f"Script not found: {script_path}"}
     
-    if not script_path.endswith('.py'):
-        return {"valid": False, "error": "Only Python (.py) files are supported"}
+    # Check for supported file extensions
+    supported_extensions = ('.py', '.ts', '.tsx', '.js', '.jsx')
+    if not script_path.endswith(supported_extensions):
+        return {"valid": False, "error": f"Only Python (.py), TypeScript (.ts, .tsx), and JavaScript (.js, .jsx) files are supported"}
     
     try:
         # Check if file is readable
