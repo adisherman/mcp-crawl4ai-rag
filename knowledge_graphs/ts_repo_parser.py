@@ -244,15 +244,19 @@ class TypeScriptNeo4jExtractor:
         await self._process_imports(parsed_data.get('imports', []), file_id)
         await self._process_exports(parsed_data.get('exports', []), file_id)
         
+        # Process JSX elements (track component usage)
+        await self._process_jsx_elements(parsed_data.get('jsxElements', []), file_id)
+        
     def _get_module_name(self, file_path: Path, repo_root: Path) -> str:
         """Get module name from file path"""
         relative_path = file_path.relative_to(repo_root)
-        # Remove file extension and convert to module path
-        module_path = str(relative_path.with_suffix(''))
-        # Handle index files
-        if module_path.endswith('/index'):
-            module_path = module_path[:-6]  # Remove '/index'
-        return module_path.replace('/', '.')
+        # Get the directory path (not including the filename)
+        dir_path = relative_path.parent
+        # Convert to module path
+        if dir_path == Path('.'):
+            # Root level file
+            return ''
+        return str(dir_path).replace('/', '.')
         
     async def _create_repository_node(self, repo_name: str) -> str:
         """Create or update Repository node"""
@@ -281,7 +285,7 @@ class TypeScriptNeo4jExtractor:
                 MATCH (r:Repository) WHERE id(r) = $repo_id
                 MERGE (f:File {path: $path})
                 SET f.name = $name,
-                    f.module_name = $module_name,
+                    f.module = $module_name,
                     f.language = $language,
                     f.line_count = $line_count,
                     f.updated_at = datetime()
@@ -302,7 +306,20 @@ class TypeScriptNeo4jExtractor:
     async def _create_component_node(self, component: Dict[str, Any], 
                                    file_id: str, module_name: str):
         """Create Component node"""
-        full_name = f"{module_name}.{component['name']}"
+        # For default exports, use the filename as the component name in the full_name
+        if component.get('isDefault') and component['name'] == 'default':
+            # Extract filename without extension from file_id
+            filename = Path(file_id).stem
+            if module_name:
+                full_name = f"{module_name}.{filename}"
+            else:
+                full_name = filename
+        else:
+            # For named exports, use the actual component name
+            if module_name:
+                full_name = f"{module_name}.{component['name']}"
+            else:
+                full_name = component['name']
         
         if full_name in self.processed_components:
             return
@@ -319,6 +336,9 @@ class TypeScriptNeo4jExtractor:
                     c.isExported = $isExported,
                     c.isDefault = $isDefault,
                     c.props = $props,
+                    c.isForwardRef = $isForwardRef,
+                    c.isMemo = $isMemo,
+                    c.displayName = $displayName,
                     c.updated_at = datetime()
                 MERGE (f)-[:DEFINES]->(c)
                 """,
@@ -329,7 +349,10 @@ class TypeScriptNeo4jExtractor:
                 line=component.get('line', 0),
                 isExported=component.get('isExported', False),
                 isDefault=component.get('isDefault', False),
-                props=component.get('props')
+                props=component.get('props'),
+                isForwardRef=component.get('isForwardRef', False),
+                isMemo=component.get('isMemo', False),
+                displayName=component.get('displayName')
             )
             
             # Create Hook relationships
@@ -351,7 +374,10 @@ class TypeScriptNeo4jExtractor:
     async def _create_interface_node(self, interface: Dict[str, Any], 
                                    file_id: str, module_name: str):
         """Create Interface node"""
-        full_name = f"{module_name}.{interface['name']}"
+        if module_name:
+            full_name = f"{module_name}.{interface['name']}"
+        else:
+            full_name = interface['name']
         
         if full_name in self.processed_interfaces:
             return
@@ -396,7 +422,10 @@ class TypeScriptNeo4jExtractor:
     async def _create_type_node(self, type_alias: Dict[str, Any], 
                               file_id: str, module_name: str):
         """Create Type node"""
-        full_name = f"{module_name}.{type_alias['name']}"
+        if module_name:
+            full_name = f"{module_name}.{type_alias['name']}"
+        else:
+            full_name = type_alias['name']
         
         if full_name in self.processed_types:
             return
@@ -426,7 +455,10 @@ class TypeScriptNeo4jExtractor:
     async def _create_function_node(self, function: Dict[str, Any], 
                                   file_id: str, module_name: str):
         """Create JSFunction node"""
-        full_name = f"{module_name}.{function['name']}"
+        if module_name:
+            full_name = f"{module_name}.{function['name']}"
+        else:
+            full_name = function['name']
         
         if full_name in self.processed_functions:
             return
@@ -462,7 +494,10 @@ class TypeScriptNeo4jExtractor:
     async def _create_class_node(self, class_info: Dict[str, Any], 
                                file_id: str, module_name: str):
         """Create JSClass node"""
-        full_name = f"{module_name}.{class_info['name']}"
+        if module_name:
+            full_name = f"{module_name}.{class_info['name']}"
+        else:
+            full_name = class_info['name']
         
         if full_name in self.processed_classes:
             return
@@ -600,9 +635,357 @@ class TypeScriptNeo4jExtractor:
                     )
                     
     async def _process_exports(self, exports: List[Dict[str, Any]], file_id: str):
-        """Process export statements"""
-        # Exports are already handled when creating nodes with isExported flag
-        pass
+        """Process export statements including barrel exports"""
+        logger.info(f"=== START _process_exports for file_id: {file_id} ===")
+        
+        if not exports:
+            logger.info(f"No exports to process for file_id: {file_id}")
+            return
+            
+        logger.info(f"Processing {len(exports)} exports for file_id: {file_id}")
+        logger.info(f"Export data: {json.dumps(exports, indent=2)}")
+            
+        async with self.driver.session() as session:
+            # First get file info for debugging
+            file_info_result = await session.run("""
+                MATCH (f:File {path: $file_id})
+                RETURN f.path as path, f.module as module, f.name as name
+            """, file_id=file_id)
+            file_info = await file_info_result.single()
+            if file_info:
+                logger.info(f"Processing exports for file: {file_info['path']} (module: {file_info['module']})")
+            
+            for i, export_info in enumerate(exports):
+                logger.info(f"\nProcessing export {i+1}/{len(exports)}: {export_info}")
+                
+                # Check if it's a re-export (barrel export)
+                if export_info.get('from'):
+                    logger.info(f"Found barrel export: {export_info}")
+                    # This is a re-export like: export { X } from './Y'
+                    source_module = export_info['from']
+                    
+                    # The parser gives us the export info directly, not in a 'named' array
+                    if export_info.get('all'):
+                        # This is export * from './X'
+                        await self._process_export_all(session, file_id, source_module)
+                    else:
+                        # This is a named export - process it directly
+                        await self._process_single_barrel_export(
+                            session, file_id, export_info, source_module
+                        )
+                    continue
+                    
+                # Handle non-barrel exports (direct exports)
+                if export_info.get('default'):
+                    # This is a default export like: export default FormInput
+                    logger.info(f"Processing default export: {export_info}")
+                    expression = export_info.get('expression', '')
+                    
+                    # Mark the component as the default export
+                    await session.run("""
+                        MATCH (f:File {path: $file_id})
+                        MATCH (f)-[:DEFINES]->(item)
+                        WHERE item.name = $expression
+                        SET item.isDefault = true
+                        RETURN item.name as itemName, labels(item) as itemLabels
+                    """, file_id=file_id, expression=expression)
+                    
+                elif export_info.get('name'):
+                    # This is a named export (not from another module)
+                    logger.info(f"Processing named export: {export_info}")
+                    # Mark the item as exported
+                    await session.run("""
+                        MATCH (f:File {path: $file_id})
+                        MATCH (f)-[:DEFINES]->(item)
+                        WHERE item.name = $name
+                        SET item.isExported = true
+                    """, file_id=file_id, name=export_info['name'])
+                        
+        logger.info(f"=== END _process_exports for file_id: {file_id} ===")
+        
+    async def _process_single_barrel_export(self, session, file_id: str, 
+                                          named_export: Dict[str, Any], 
+                                          source_module: str):
+        """Process a single named barrel export"""
+        logger.info(f"Processing barrel export: {named_export} from {source_module}")
+        
+        # Handle: export { X as Y } from 'Z' or export { X } from 'Y'
+        # Parser gives us: { name: 'X', as: 'Y' } for export { X as Y } from 'Z'
+        if named_export.get('as'):
+            # export { X as Y } from './Z'
+            source_name = named_export['name']  # The original name in the source module
+            exported_name = named_export['as']  # The name it's exported as
+            logger.info(f"Export with rename: {source_name} as {exported_name}")
+        else:
+            # export { X } from './Y'
+            exported_name = named_export['name']
+            source_name = named_export['name']
+            logger.info(f"Direct export: {exported_name}")
+            
+        # Resolve the target module
+        target_module = await self._resolve_module_path(session, file_id, source_module)
+        if not target_module:
+            logger.warning(f"Could not resolve module path: {source_module}")
+            return
+            
+        logger.info(f"Creating EXPORTS relationship: {exported_name} from {target_module} (source: {source_name})")
+        
+        # Try to find the actual item
+        # First, try to find files that match the target module or contain it
+        # This handles both exact module matches and file-specific modules
+        if source_name == 'default':
+            result = await session.run("""
+                MATCH (source_file:File)-[:DEFINES]->(item)
+                WHERE (source_file.module = $target_module OR 
+                       source_file.module STARTS WITH $target_module + '.' OR
+                       source_file.module = substring($target_module, 0, size($target_module) - size(split($target_module, '.')[-1]) - 1))
+                      AND item.isDefault = true
+                WITH source_file, item
+                ORDER BY 
+                    CASE WHEN source_file.module = $target_module THEN 0
+                         WHEN source_file.name STARTS WITH 'index.' THEN 1
+                         ELSE 2 END,
+                    source_file.module
+                LIMIT 1
+                MATCH (current_file:File {path: $file_id})
+                MERGE (current_file)-[exp:EXPORTS {name: $exported_name}]->(item)
+                SET exp.sourceModule = $target_module,
+                    exp.sourceName = $source_name,
+                    exp.isBarrelExport = true
+                RETURN item.name as itemName, labels(item) as itemLabels, source_file.module as sourceModule
+            """, 
+            file_id=file_id, 
+            target_module=target_module,
+            source_name=source_name,
+            exported_name=exported_name)
+        else:
+            # For named exports, match by name
+            # Try exact module match first, then check parent modules for barrel exports
+            result = await session.run("""
+                MATCH (source_file:File)-[:DEFINES]->(item)
+                WHERE (source_file.module = $target_module OR 
+                       source_file.module STARTS WITH $target_module + '.' OR
+                       source_file.module = substring($target_module, 0, size($target_module) - size(split($target_module, '.')[-1]) - 1))
+                      AND item.name = $source_name
+                WITH source_file, item
+                ORDER BY 
+                    CASE WHEN source_file.module = $target_module THEN 0
+                         WHEN source_file.name STARTS WITH 'index.' THEN 1
+                         ELSE 2 END,
+                    source_file.module
+                LIMIT 1
+                MATCH (current_file:File {path: $file_id})
+                MERGE (current_file)-[exp:EXPORTS {name: $exported_name}]->(item)
+                SET exp.sourceModule = $target_module,
+                    exp.sourceName = $source_name,
+                    exp.isBarrelExport = true
+                RETURN item.name as itemName, labels(item) as itemLabels, source_file.module as sourceModule
+            """, 
+            file_id=file_id, 
+            target_module=target_module,
+            source_name=source_name,
+            exported_name=exported_name)
+        
+        record = await result.single()
+        if record:
+            logger.info(f"Successfully created EXPORTS relationship to {record['itemName']} ({record['itemLabels']}) from module {record.get('sourceModule', 'unknown')}")
+        else:
+            logger.warning(f"Item not found: {source_name} in module {target_module}")
+            # Create placeholder
+            await session.run("""
+                MATCH (current:File {path: $file_id})
+                MERGE (placeholder:ExportPlaceholder {
+                    name: $exported_name,
+                    sourceModule: $target_module,
+                    sourceName: $source_name
+                })
+                MERGE (current)-[:EXPORTS {
+                    name: $exported_name,
+                    isBarrelExport: true,
+                    isPlaceholder: true
+                }]->(placeholder)
+            """, 
+            file_id=file_id,
+            exported_name=exported_name,
+            target_module=target_module,
+            source_name=source_name)
+            logger.info(f"Created placeholder for missing export: {exported_name}")
+            
+    async def _process_export_all(self, session, file_id: str, source_module: str):
+        """Process export * from './X'"""
+        target_module = await self._resolve_module_path(session, file_id, source_module)
+        if not target_module:
+            logger.warning(f"Could not resolve module path: {source_module}")
+            return
+            
+        logger.info(f"Processing namespace export: export * from '{source_module}'")
+        # Find the source file that corresponds to the target module
+        # First try exact match
+        result = await session.run("""
+            MATCH (current:File {path: $file_id})
+            OPTIONAL MATCH (source:File {module: $target_module})
+            OPTIONAL MATCH (index:File) 
+            WHERE index.module = $target_module AND index.name = 'index.ts'
+            WITH current, COALESCE(source, index) as target_file
+            WHERE target_file IS NOT NULL
+            MERGE (current)-[:EXPORTS_ALL_FROM]->(target_file)
+            RETURN target_file.path as path
+        """, file_id=file_id, target_module=target_module)
+        
+        record = await result.single()
+        if record:
+            logger.info(f"Created EXPORTS_ALL_FROM relationship to file: {record['path']}")
+        else:
+            logger.warning(f"Could not find file for module: {target_module}")
+        
+    async def _process_jsx_elements(self, jsx_elements: List[Dict[str, Any]], file_id: str):
+        """Process JSX elements to track component usage"""
+        if not jsx_elements:
+            return
+            
+        logger.info(f"Processing {len(jsx_elements)} JSX elements for file {file_id}")
+        
+        async with self.driver.session() as session:
+            for jsx_element in jsx_elements:
+                tag_name = jsx_element.get('tagName', '')
+                is_custom = jsx_element.get('isCustomComponent', False)
+                
+                # Only process custom components (not HTML elements)
+                if is_custom and tag_name:
+                    # Create a USES_COMPONENT relationship
+                    result = await session.run("""
+                        MATCH (f:File {path: $file_id})
+                        MATCH (c:Component {name: $component_name})
+                        MERGE (f)-[u:USES_COMPONENT {line: $line}]->(c)
+                        RETURN c.name as name
+                    """, 
+                    file_id=file_id,
+                    component_name=tag_name,
+                    line=jsx_element.get('line', 0))
+                    
+                    record = await result.single()
+                    if record:
+                        logger.debug(f"Created USES_COMPONENT relationship for {tag_name}")
+                    else:
+                        # Component not found, but that's ok - it might be imported from external library
+                        logger.debug(f"Component {tag_name} not found in knowledge graph")
+        
+    async def _resolve_module_path(self, session, file_id: str, source_module: str) -> Optional[str]:
+        """Resolve a module path to its full module name"""
+        logger.info(f"Resolving module path: {source_module} from file_id: {file_id}")
+        
+        if not source_module.startswith('.'):
+            # Absolute import
+            resolved = source_module.replace('/', '.')
+            logger.info(f"Absolute import resolved to: {resolved}")
+            return resolved
+            
+        # Get the current file's module
+        file_result = await session.run("""
+            MATCH (f:File {path: $file_id})
+            RETURN f.module as module, f.path as path
+        """, file_id=file_id)
+        file_record = await file_result.single()
+        
+        if not file_record:
+            logger.error(f"Could not find file with path: {file_id}")
+            return None
+            
+        current_module = file_record['module']
+        logger.info(f"Current module: {current_module}, path: {file_record['path']}")
+        
+        # Resolve relative import
+        if source_module.startswith('./'):
+            # Same directory as current file
+            base_module = current_module
+            relative_part = source_module[2:]
+        elif source_module.startswith('../'):
+            # Parent directory(ies)
+            levels_up = source_module.count('../')
+            parts = current_module.split('.')
+            # Go up 'levels_up' directories from current module
+            if len(parts) > levels_up:
+                base_module = '.'.join(parts[:-levels_up])
+            else:
+                base_module = ''
+            relative_part = source_module.replace('../', '')
+        else:
+            # Just '.' - same as current module
+            base_module = current_module
+            relative_part = ''
+        
+        # Clean up the relative part
+        if relative_part.endswith('.ts') or relative_part.endswith('.tsx'):
+            relative_part = relative_part[:-3] if relative_part.endswith('.ts') else relative_part[:-4]
+        elif relative_part.endswith('.js') or relative_part.endswith('.jsx'):
+            relative_part = relative_part[:-3] if relative_part.endswith('.js') else relative_part[:-4]
+        
+        # Build the target module
+        if base_module and relative_part:
+            resolved = f"{base_module}.{relative_part.replace('/', '.')}"
+        elif relative_part:
+            resolved = relative_part.replace('/', '.')
+        else:
+            resolved = base_module
+            
+        logger.info(f"Resolved module path: {source_module} -> {resolved}")
+        
+        # Check if the resolved module is a directory (barrel export)
+        # If so, try to find an index file or the actual file
+        result = await session.run("""
+            MATCH (f:File)
+            WHERE f.module = $module OR 
+                  f.module = $module + '.index' OR
+                  f.module STARTS WITH $module + '.'
+            RETURN f.module as module, f.path as path, f.name as name
+            ORDER BY f.path
+        """, module=resolved)
+        
+        files = []
+        async for record in result:
+            files.append(record)
+            
+        logger.info(f"Found {len(files)} files matching module {resolved}")
+        for f in files:
+            logger.info(f"  - {f['path']} (module: {f['module']})")
+            
+        # If we found an exact match, use it
+        exact_match = None
+        index_match = None
+        for f in files:
+            if f['module'] == resolved:
+                # Check if it's an index file
+                if f['name'].startswith('index.'):
+                    index_match = f['module']
+                else:
+                    exact_match = f['module']
+                    
+        # For barrel exports from index files, we want the directory module
+        if index_match and not exact_match:
+            logger.info(f"Found index file for module {resolved}, keeping directory module")
+            return resolved
+        elif exact_match:
+            logger.info(f"Found exact match for module {resolved}")
+            return exact_match
+            
+        # If no exact match, it might be a file in that module
+        # For example, './FormInput' from 'src.components.form' should resolve to 'src.components.form.FormInput'
+        file_module = f"{resolved}.{relative_part.split('/')[-1]}" if relative_part else resolved
+        
+        # Check if this file exists
+        file_check = await session.run("""
+            MATCH (f:File)
+            WHERE f.module = $module
+            RETURN f.module as module
+            LIMIT 1
+        """, module=file_module)
+        
+        file_record = await file_check.single()
+        if file_record:
+            logger.info(f"Found file module: {file_module}")
+            return file_module
+            
+        return resolved
         
     async def _create_module_relationships(self, repo_id: str):
         """Create relationships between modules based on imports"""
@@ -612,9 +995,9 @@ class TypeScriptNeo4jExtractor:
                 """
                 MATCH (r:Repository)-[:CONTAINS]->(f1:File)-[:IMPORTS]->(m:Module)
                 MATCH (r)-[:CONTAINS]->(f2:File)
-                WHERE m.name = f2.module_name OR 
-                      m.name = '.' + f2.module_name OR
-                      m.name = './' + f2.module_name
+                WHERE m.name = f2.module OR 
+                      m.name = '.' + f2.module OR
+                      m.name = './' + f2.module
                 MERGE (f1)-[:IMPORTS_FILE]->(f2)
                 """
             )

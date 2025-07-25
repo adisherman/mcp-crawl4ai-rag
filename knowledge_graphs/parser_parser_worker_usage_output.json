@@ -1,0 +1,1185 @@
+{
+  "imports": [
+    {
+      "module": "react",
+      "line": 1,
+      "default": "React",
+      "namespace": null,
+      "named": [
+        {
+          "name": "useEffect",
+          "alias": null
+        },
+        {
+          "name": "useState",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "react-router-dom",
+      "line": 2,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "useNavigate",
+          "alias": null
+        },
+        {
+          "name": "useParams",
+          "alias": null
+        },
+        {
+          "name": "Link",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "react-i18next",
+      "line": 3,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "useTranslation",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "framer-motion",
+      "line": 4,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "motion",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../components/ui/LaviLogo",
+      "line": 7,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "LaviLogo",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../components/ui/ParticleBackground",
+      "line": 8,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "ParticleBackground",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../components/form/DynamicForm",
+      "line": 9,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "DynamicForm",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../components/ui/LoadingSpinner",
+      "line": 10,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "LoadingSpinner",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../components/ErrorBoundary",
+      "line": 11,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "ErrorBoundary",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../types",
+      "line": 12,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "BusinessData",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../hooks/useAuth",
+      "line": 13,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "useAuth",
+          "alias": null
+        }
+      ]
+    },
+    {
+      "module": "../hooks/useBusinessData",
+      "line": 14,
+      "default": null,
+      "namespace": null,
+      "named": [
+        {
+          "name": "useBusinessData",
+          "alias": null
+        }
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "line": 208,
+      "type": "default",
+      "exported": []
+    }
+  ],
+  "functions": [],
+  "classes": [],
+  "interfaces": [
+    {
+      "name": "PageParams",
+      "line": 16,
+      "extends": [],
+      "isExported": false,
+      "properties": [
+        {
+          "name": "businessId",
+          "type": "string",
+          "optional": true,
+          "readonly": false
+        }
+      ]
+    }
+  ],
+  "types": [],
+  "enums": [],
+  "components": [],
+  "hooks": [
+    {
+      "name": "useTranslation",
+      "line": 21
+    },
+    {
+      "name": "useNavigate",
+      "line": 22
+    },
+    {
+      "name": "useParams",
+      "line": 23
+    },
+    {
+      "name": "useAuth",
+      "line": 24
+    },
+    {
+      "name": "useState",
+      "line": 25
+    },
+    {
+      "name": "useState",
+      "line": 26
+    },
+    {
+      "name": "useState",
+      "line": 27
+    },
+    {
+      "name": "useEffect",
+      "line": 30
+    },
+    {
+      "name": "useBusinessData",
+      "line": 43
+    },
+    {
+      "name": "useEffect",
+      "line": 57
+    }
+  ],
+  "variables": [
+    {
+      "name": "CorrectPageComponent",
+      "line": 20,
+      "kind": "const",
+      "type": "React.FC",
+      "isExported": true
+    },
+    {
+      "name": "{ t, i18n }",
+      "line": 21,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "navigate",
+      "line": 22,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "{ businessId }",
+      "line": 23,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "{ user, isAuthenticated }",
+      "line": 24,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "[isLoading, setIsLoading]",
+      "line": 25,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "[businessData, setBusinessData]",
+      "line": 26,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "[error, setError]",
+      "line": 27,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "loadBusinessData",
+      "line": 31,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "data",
+      "line": 43,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "handleFormSubmit",
+      "line": 63,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "handleLanguageChange",
+      "line": 74,
+      "kind": "const",
+      "isExported": false
+    },
+    {
+      "name": "pageVariants",
+      "line": 79,
+      "kind": "const",
+      "isExported": false
+    }
+  ],
+  "namespaces": [],
+  "functionCalls": [
+    {
+      "name": "useTranslation",
+      "arguments": [],
+      "line": 21
+    },
+    {
+      "name": "useNavigate",
+      "arguments": [],
+      "line": 22
+    },
+    {
+      "name": "useParams",
+      "arguments": [],
+      "line": 23
+    },
+    {
+      "name": "useAuth",
+      "arguments": [],
+      "line": 24
+    },
+    {
+      "name": "useState",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "true"
+        }
+      ],
+      "line": 25
+    },
+    {
+      "name": "useState",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "null"
+        }
+      ],
+      "line": 26
+    },
+    {
+      "name": "useState",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "null"
+        }
+      ],
+      "line": 27
+    },
+    {
+      "name": "useEffect",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "() => {\n    const loadBusinessData = async () => {"
+        },
+        {
+          "type": "array",
+          "value": "[businessId, t]"
+        }
+      ],
+      "line": 30
+    },
+    {
+      "name": "setError",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "t('errors.businessIdRequired')"
+        }
+      ],
+      "line": 33
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'errors.businessIdRequired'"
+        }
+      ],
+      "line": 33
+    },
+    {
+      "name": "setIsLoading",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "false"
+        }
+      ],
+      "line": 34
+    },
+    {
+      "name": "setIsLoading",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "true"
+        }
+      ],
+      "line": 39
+    },
+    {
+      "name": "setError",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "null"
+        }
+      ],
+      "line": 40
+    },
+    {
+      "name": "useBusinessData",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "businessId"
+        }
+      ],
+      "line": 43
+    },
+    {
+      "name": "setBusinessData",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "data"
+        }
+      ],
+      "line": 44
+    },
+    {
+      "name": "setError",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "t('errors.loadingFailed')"
+        }
+      ],
+      "line": 47
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'errors.loadingFailed'"
+        }
+      ],
+      "line": 47
+    },
+    {
+      "name": "setIsLoading",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "false"
+        }
+      ],
+      "line": 49
+    },
+    {
+      "name": "loadBusinessData",
+      "arguments": [],
+      "line": 53
+    },
+    {
+      "name": "useEffect",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "() => {\n    if (!isAuthenticated && !isLoading) {\n"
+        },
+        {
+          "type": "array",
+          "value": "[isAuthenticated, isLoading, navigate, businessId]"
+        }
+      ],
+      "line": 57
+    },
+    {
+      "name": "navigate",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'/login'"
+        },
+        {
+          "type": "object",
+          "value": "{ state: { from: `/business/${businessId}` } }"
+        }
+      ],
+      "line": 59
+    },
+    {
+      "name": "navigate",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'/success'"
+        },
+        {
+          "type": "object",
+          "value": "{ state: { businessId, formData } }"
+        }
+      ],
+      "line": 67
+    },
+    {
+      "name": "setError",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "t('errors.submissionFailed')"
+        }
+      ],
+      "line": 70
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'errors.submissionFailed'"
+        }
+      ],
+      "line": 70
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'errors.title'"
+        }
+      ],
+      "line": 99
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'navigation.backToHome'"
+        }
+      ],
+      "line": 105
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'app.name'"
+        }
+      ],
+      "line": 122
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'navigation.dashboard'"
+        }
+      ],
+      "line": 127
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'navigation.profile'"
+        }
+      ],
+      "line": 130
+    },
+    {
+      "name": "handleLanguageChange",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "e.target.value"
+        }
+      ],
+      "line": 135
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'user.welcome'"
+        },
+        {
+          "type": "object",
+          "value": "{ name: user.name }"
+        }
+      ],
+      "line": 146
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'business.formTitle'"
+        }
+      ],
+      "line": 164
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'business.formDescription'"
+        },
+        {
+          "type": "object",
+          "value": "{ businessName: businessData?.name }"
+        }
+      ],
+      "line": 167
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'footer.copyright'"
+        },
+        {
+          "type": "object",
+          "value": "{ year: new Date().getFullYear() }"
+        }
+      ],
+      "line": 187
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'footer.privacy'"
+        }
+      ],
+      "line": 191
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'footer.terms'"
+        }
+      ],
+      "line": 194
+    },
+    {
+      "name": "t",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'footer.contact'"
+        }
+      ],
+      "line": 197
+    }
+  ],
+  "methodCalls": [
+    {
+      "object": "console",
+      "method": "error",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'Failed to load business data:'"
+        },
+        {
+          "type": "identifier",
+          "value": "err"
+        }
+      ],
+      "line": 46,
+      "object_type": "Console"
+    },
+    {
+      "object": "console",
+      "method": "log",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'Submitting form data:'"
+        },
+        {
+          "type": "identifier",
+          "value": "formData"
+        }
+      ],
+      "line": 65,
+      "object_type": "Console"
+    },
+    {
+      "object": "console",
+      "method": "error",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'Form submission error:'"
+        },
+        {
+          "type": "identifier",
+          "value": "error"
+        }
+      ],
+      "line": 69,
+      "object_type": "Console"
+    },
+    {
+      "object": "i18n",
+      "method": "changeLanguage",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "lang"
+        }
+      ],
+      "line": 75,
+      "object_type": "unknown"
+    },
+    {
+      "object": "new Date()",
+      "method": "getFullYear",
+      "arguments": [],
+      "line": 187,
+      "object_type": "Date"
+    }
+  ],
+  "propertyAccesses": [
+    {
+      "object": "e.target",
+      "property": "value",
+      "line": 135,
+      "object_type": "unknown"
+    },
+    {
+      "object": "e",
+      "property": "target",
+      "line": 135,
+      "object_type": "unknown"
+    },
+    {
+      "object": "i18n",
+      "property": "language",
+      "line": 136,
+      "object_type": "unknown"
+    },
+    {
+      "object": "user",
+      "property": "name",
+      "line": 146,
+      "object_type": "unknown"
+    },
+    {
+      "object": "motion",
+      "property": "main",
+      "line": 154,
+      "object_type": "unknown"
+    },
+    {
+      "object": "businessData",
+      "property": "name",
+      "line": 167,
+      "object_type": "unknown"
+    },
+    {
+      "object": "motion",
+      "property": "main",
+      "line": 180,
+      "object_type": "unknown"
+    }
+  ],
+  "constructorCalls": [
+    {
+      "class": "Date",
+      "arguments": [],
+      "line": 187
+    }
+  ],
+  "jsxElements": [
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 87,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "ParticleBackground",
+      "props": [],
+      "line": 88,
+      "selfClosing": true,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "LoadingSpinner",
+      "props": [
+        "size"
+      ],
+      "line": 89,
+      "selfClosing": true,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 96,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "ParticleBackground",
+      "props": [],
+      "line": 97,
+      "selfClosing": true,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 98,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "h2",
+      "props": [
+        "className"
+      ],
+      "line": 99,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "p",
+      "props": [
+        "className"
+      ],
+      "line": 100,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 101,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "ErrorBoundary",
+      "props": [],
+      "line": 113,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 114,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "ParticleBackground",
+      "props": [],
+      "line": 115,
+      "selfClosing": true,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "header",
+      "props": [
+        "className"
+      ],
+      "line": 118,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 119,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 120,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "LaviLogo",
+      "props": [
+        "size"
+      ],
+      "line": 121,
+      "selfClosing": true,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "span",
+      "props": [
+        "className"
+      ],
+      "line": 122,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "nav",
+      "props": [
+        "className"
+      ],
+      "line": 125,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 126,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 129,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "select",
+      "props": [
+        "onChange",
+        "value",
+        "className"
+      ],
+      "line": 134,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "option",
+      "props": [
+        "value"
+      ],
+      "line": 139,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "option",
+      "props": [
+        "value"
+      ],
+      "line": 140,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "option",
+      "props": [
+        "value"
+      ],
+      "line": 141,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "span",
+      "props": [
+        "className"
+      ],
+      "line": 145,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "motion.main",
+      "props": [
+        "variants",
+        "initial",
+        "animate",
+        "exit",
+        "transition",
+        "className"
+      ],
+      "line": 154,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 162,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "h1",
+      "props": [
+        "className"
+      ],
+      "line": 163,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "p",
+      "props": [
+        "className"
+      ],
+      "line": 166,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 171,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "DynamicForm",
+      "props": [
+        "businessData",
+        "onSubmit",
+        "className"
+      ],
+      "line": 172,
+      "selfClosing": true,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "footer",
+      "props": [
+        "className"
+      ],
+      "line": 183,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 184,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 185,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "p",
+      "props": [
+        "className"
+      ],
+      "line": 186,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "div",
+      "props": [
+        "className"
+      ],
+      "line": 189,
+      "selfClosing": false,
+      "isCustomComponent": false
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 190,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 193,
+      "selfClosing": false,
+      "isCustomComponent": true
+    },
+    {
+      "tagName": "Link",
+      "props": [
+        "to",
+        "className"
+      ],
+      "line": 196,
+      "selfClosing": false,
+      "isCustomComponent": true
+    }
+  ],
+  "typeReferences": [
+    {
+      "name": "React.FC",
+      "line": 20
+    },
+    {
+      "name": "PageParams",
+      "line": 23
+    },
+    {
+      "name": "BusinessData",
+      "line": 26
+    }
+  ],
+  "filename": "correct_page_component.tsx",
+  "language": "typescript",
+  "lineCount": 208
+}

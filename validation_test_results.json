@@ -1,0 +1,410 @@
+{
+  "correct_files": {
+    "test_validation/correct_page_component.tsx": {
+      "passed": true,
+      "hallucinations": []
+    },
+    "test_validation/correct_form_implementation.tsx": {
+      "passed": true,
+      "hallucinations": []
+    },
+    "test_validation/correct_dynamic_form.tsx": {
+      "passed": true,
+      "hallucinations": []
+    },
+    "test_validation/correct_utility_usage.ts": {
+      "passed": true,
+      "hallucinations": []
+    },
+    "test_validation/correct_service_integration.js": {
+      "passed": true,
+      "hallucinations": []
+    }
+  },
+  "hallucinated_files": {
+    "test_validation/hallucinated_patterns.tsx": {
+      "caught": true,
+      "hallucinations": [
+        {
+          "type": "method",
+          "element": "setConfig.quantum",
+          "message": "Invalid method 'quantum' on inferred Set type",
+          "confidence": 0.8,
+          "line": 71
+        },
+        {
+          "type": "method",
+          "element": "setConfig.neural",
+          "message": "Invalid method 'neural' on inferred Set type",
+          "confidence": 0.8,
+          "line": 72
+        },
+        {
+          "type": "method",
+          "element": "el.quantumFocus",
+          "message": "Method 'quantumFocus' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 86
+        },
+        {
+          "type": "method",
+          "element": "el.neuralValidate",
+          "message": "Method 'neuralValidate' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 87
+        },
+        {
+          "type": "jsx_element",
+          "element": "Component",
+          "message": "JSX element 'Component' references non-existent component",
+          "confidence": 1.0,
+          "line": 134
+        },
+        {
+          "type": "import",
+          "element": "JSX Element: Component",
+          "message": "JSX element 'Component' component not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "component",
+          "element": "Component",
+          "message": "Component 'Component' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "withQuantumEnhancement",
+          "message": "Function 'withQuantumEnhancement' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "el.quantumFocus",
+          "message": "Method 'quantumFocus' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "el.neuralValidate",
+          "message": "Method 'neuralValidate' not found in any known type",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0
+    },
+    "test_validation/hallucinated_imports.tsx": {
+      "caught": true,
+      "hallucinations": [
+        {
+          "type": "function",
+          "element": "sync",
+          "message": "Function 'sync' not found in knowledge graph",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0
+    },
+    "test_validation/hallucinated_components.tsx": {
+      "caught": true,
+      "hallucinations": [
+        {
+          "type": "function",
+          "element": "validate",
+          "message": "Function 'validate' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "animateField",
+          "message": "Function 'animateField' not found in knowledge graph",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0
+    },
+    "test_validation/hallucinated_types.ts": {
+      "caught": true,
+      "hallucinations": [
+        {
+          "type": "type",
+          "element": "Theme",
+          "message": "Type 'Theme' not found in knowledge graph",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0
+    },
+    "test_validation/hallucinated_methods.js": {
+      "caught": true,
+      "hallucinations": [
+        {
+          "type": "method",
+          "element": "response.json",
+          "message": "Method 'json' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 19
+        },
+        {
+          "type": "method",
+          "element": "data.users\n        .quantumFilter(user => user.active)              // Non-existent method\n        .neuralMap(user => this.enhanceUser(user)).timeSort",
+          "message": "Method 'timeSort' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 22
+        },
+        {
+          "type": "method",
+          "element": "data.users\n        .quantumFilter(user => user.active).neuralMap",
+          "message": "Method 'neuralMap' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 22
+        },
+        {
+          "type": "method",
+          "element": "data.users.quantumFilter",
+          "message": "Invalid method 'quantumFilter' on inferred Array type",
+          "confidence": 0.8,
+          "line": 22
+        },
+        {
+          "type": "method",
+          "element": "console.quantum",
+          "message": "Invalid method 'quantum' on built-in object 'console'",
+          "confidence": 0.95,
+          "line": 30
+        },
+        {
+          "type": "method",
+          "element": "console.neural",
+          "message": "Invalid method 'neural' on built-in object 'console'",
+          "confidence": 0.95,
+          "line": 31
+        },
+        {
+          "type": "method",
+          "element": "Object.quantumAssign",
+          "message": "Invalid method 'quantumAssign' on built-in object 'Object'",
+          "confidence": 0.95,
+          "line": 37
+        },
+        {
+          "type": "method",
+          "element": "user.firstName\n      .quantumSlice(0, 1)                                // Non-existent method\n      .neuralConcat(user.lastName.quantumSlice(0, 1)).hyperUpperCase",
+          "message": "Method 'hyperUpperCase' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 43
+        },
+        {
+          "type": "method",
+          "element": "user.firstName\n      .quantumSlice(0, 1).neuralConcat",
+          "message": "Method 'neuralConcat' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 43
+        },
+        {
+          "type": "method",
+          "element": "user.firstName.quantumSlice",
+          "message": "Invalid method 'quantumSlice' on inferred String type",
+          "confidence": 0.8,
+          "line": 43
+        },
+        {
+          "type": "method",
+          "element": "user.lastName.quantumSlice",
+          "message": "Invalid method 'quantumSlice' on inferred String type",
+          "confidence": 0.8,
+          "line": 45
+        },
+        {
+          "type": "method",
+          "element": "joinDate.quantumDiff",
+          "message": "Invalid method 'quantumDiff' on inferred Date type",
+          "confidence": 0.8,
+          "line": 50
+        },
+        {
+          "type": "method",
+          "element": "joinDate.extractTimeZone",
+          "message": "Invalid method 'extractTimeZone' on inferred Date type",
+          "confidence": 0.8,
+          "line": 51
+        },
+        {
+          "type": "method",
+          "element": "this.cache.quantumSet",
+          "message": "Method 'quantumSet' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 58
+        },
+        {
+          "type": "method",
+          "element": "this.cache.neuralExpire",
+          "message": "Method 'neuralExpire' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 59
+        },
+        {
+          "type": "method",
+          "element": "this.fetchUser(userId)\n      .quantumThen(u => this.enhanceUser(u))             // Non-existent method\n      .neuralCatch(err => console.error(err)).timeFinally",
+          "message": "Method 'timeFinally' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 68
+        },
+        {
+          "type": "method",
+          "element": "this.fetchUser(userId)\n      .quantumThen(u => this.enhanceUser(u)).neuralCatch",
+          "message": "Method 'neuralCatch' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 68
+        },
+        {
+          "type": "method",
+          "element": "this.fetchUser(userId).quantumThen",
+          "message": "Method 'quantumThen' not found in any class or interface",
+          "confidence": 0.8,
+          "line": 68
+        },
+        {
+          "type": "method",
+          "element": "Math.quantumRandom",
+          "message": "Invalid method 'quantumRandom' on built-in object 'Math'",
+          "confidence": 0.95,
+          "line": 78
+        },
+        {
+          "type": "method",
+          "element": "Math.neuralClamp",
+          "message": "Invalid method 'neuralClamp' on built-in object 'Math'",
+          "confidence": 0.95,
+          "line": 79
+        },
+        {
+          "type": "method",
+          "element": "Math.hyperAverage",
+          "message": "Invalid method 'hyperAverage' on built-in object 'Math'",
+          "confidence": 0.95,
+          "line": 80
+        },
+        {
+          "type": "method",
+          "element": "JSON.quantumStringify",
+          "message": "Invalid method 'quantumStringify' on built-in object 'JSON'",
+          "confidence": 0.95,
+          "line": 87
+        },
+        {
+          "type": "method",
+          "element": "JSON.neuralParse",
+          "message": "Invalid method 'neuralParse' on built-in object 'JSON'",
+          "confidence": 0.95,
+          "line": 91
+        },
+        {
+          "type": "function",
+          "element": "quantumHash",
+          "message": "Function 'quantumHash' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "neuralEncrypt",
+          "message": "Function 'neuralEncrypt' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "calculateQuantumTime",
+          "message": "Function 'calculateQuantumTime' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "QuantumUserManager",
+          "message": "Class 'QuantumUserManager' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "NeuralDataProcessor",
+          "message": "Class 'NeuralDataProcessor' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "TimeManipulationController",
+          "message": "Class 'TimeManipulationController' not found in knowledge graph",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "response.json",
+          "message": "Method 'json' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "data.users\n        .quantumFilter(user => user.active)              // Non-existent method\n        .neuralMap(user => this.enhanceUser(user)).timeSort",
+          "message": "Method 'timeSort' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "data.users\n        .quantumFilter(user => user.active).neuralMap",
+          "message": "Method 'neuralMap' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "user.firstName\n      .quantumSlice(0, 1)                                // Non-existent method\n      .neuralConcat(user.lastName.quantumSlice(0, 1)).hyperUpperCase",
+          "message": "Method 'hyperUpperCase' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "user.firstName\n      .quantumSlice(0, 1).neuralConcat",
+          "message": "Method 'neuralConcat' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "this.cache.quantumSet",
+          "message": "Method 'quantumSet' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "this.cache.neuralExpire",
+          "message": "Method 'neuralExpire' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "this.fetchUser(userId)\n      .quantumThen(u => this.enhanceUser(u))             // Non-existent method\n      .neuralCatch(err => console.error(err)).timeFinally",
+          "message": "Method 'timeFinally' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "this.fetchUser(userId)\n      .quantumThen(u => this.enhanceUser(u)).neuralCatch",
+          "message": "Method 'neuralCatch' not found in any known type",
+          "confidence": 1.0
+        },
+        {
+          "type": "function",
+          "element": "this.fetchUser(userId).quantumThen",
+          "message": "Method 'quantumThen' not found in any known type",
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0
+    }
+  },
+  "summary": {
+    "total_correct": 5,
+    "total_hallucinated": 5,
+    "correct_passed": 5,
+    "hallucinated_caught": 5,
+    "false_positives": 0,
+    "false_negatives": 0
+  }
+}

@@ -1,0 +1,592 @@
+Health check failed: Cannot connect to host localhost:3456 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 3456, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 3456)]
+{
+  "script_path": "../test_validation/hallucinated_methods.js",
+  "imports": {},
+  "component_uses": [],
+  "function_calls": [
+    {
+      "name": "fetch",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'/api/users'"
+        },
+        {
+          "type": "object",
+          "value": "{\n        method: 'GET',\n        quantumHeaders: {"
+        }
+      ],
+      "line": 12
+    },
+    {
+      "name": "quantumHash",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'user123'"
+        }
+      ],
+      "line": 106
+    },
+    {
+      "name": "neuralEncrypt",
+      "arguments": [
+        {
+          "type": "object",
+          "value": "{ secret: 'data' }"
+        }
+      ],
+      "line": 107
+    },
+    {
+      "name": "calculateQuantumTime",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "Date.now()"
+        }
+      ],
+      "line": 108
+    }
+  ],
+  "class_instantiations": [
+    {
+      "name": "Map",
+      "arguments": [],
+      "line": 6
+    },
+    {
+      "name": "Date",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "user.joinedAt"
+        }
+      ],
+      "line": 49
+    },
+    {
+      "name": "Date",
+      "arguments": [],
+      "line": 50
+    },
+    {
+      "name": "Date",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "value"
+        }
+      ],
+      "line": 93
+    },
+    {
+      "name": "QuantumUserManager",
+      "arguments": [],
+      "line": 101
+    },
+    {
+      "name": "NeuralDataProcessor",
+      "arguments": [],
+      "line": 102
+    },
+    {
+      "name": "TimeManipulationController",
+      "arguments": [],
+      "line": 103
+    }
+  ],
+  "method_calls": [
+    {
+      "object": "response",
+      "method": "json",
+      "arguments": [],
+      "line": 19
+    },
+    {
+      "object": "data.users.quantumFilter().neuralMap()",
+      "method": "timeSort",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "(a, b) => a.created - b.created"
+        }
+      ],
+      "line": 22
+    },
+    {
+      "object": "data.users.quantumFilter()",
+      "method": "neuralMap",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "user => this.enhanceUser(user)"
+        }
+      ],
+      "line": 22
+    },
+    {
+      "object": "data.users",
+      "method": "quantumFilter",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "user => user.active"
+        }
+      ],
+      "line": 22
+    },
+    {
+      "object": "this",
+      "method": "enhanceUser",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "user"
+        }
+      ],
+      "line": 24
+    },
+    {
+      "object": "console",
+      "method": "quantum",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "'Error fetching users:'"
+        },
+        {
+          "type": "identifier",
+          "value": "error"
+        }
+      ],
+      "line": 30
+    },
+    {
+      "object": "console",
+      "method": "neural",
+      "arguments": [
+        {
+          "type": "object",
+          "value": "{ error, timestamp: Date.now() }"
+        }
+      ],
+      "line": 31
+    },
+    {
+      "object": "Date",
+      "method": "now",
+      "arguments": [],
+      "line": 31
+    },
+    {
+      "object": "Object",
+      "method": "quantumAssign",
+      "arguments": [
+        {
+          "type": "object",
+          "value": "{}"
+        },
+        {
+          "type": "identifier",
+          "value": "user"
+        },
+        {
+          "type": "object",
+          "value": "{     // Non-existent method\n      id: user.id,\n  "
+        }
+      ],
+      "line": 37
+    },
+    {
+      "object": "user.firstName.quantumSlice().neuralConcat()",
+      "method": "hyperUpperCase",
+      "arguments": [],
+      "line": 43
+    },
+    {
+      "object": "user.firstName.quantumSlice()",
+      "method": "neuralConcat",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "user.lastName.quantumSlice(0, 1)"
+        }
+      ],
+      "line": 43
+    },
+    {
+      "object": "user.firstName",
+      "method": "quantumSlice",
+      "arguments": [
+        {
+          "type": "number",
+          "value": "0"
+        },
+        {
+          "type": "number",
+          "value": "1"
+        }
+      ],
+      "line": 43
+    },
+    {
+      "object": "user.lastName",
+      "method": "quantumSlice",
+      "arguments": [
+        {
+          "type": "number",
+          "value": "0"
+        },
+        {
+          "type": "number",
+          "value": "1"
+        }
+      ],
+      "line": 45
+    },
+    {
+      "object": "joinDate",
+      "method": "quantumDiff",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "new Date()"
+        }
+      ],
+      "line": 50
+    },
+    {
+      "object": "joinDate",
+      "method": "extractTimeZone",
+      "arguments": [],
+      "line": 51
+    },
+    {
+      "object": "this.cache",
+      "method": "quantumSet",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "user.id"
+        },
+        {
+          "type": "identifier",
+          "value": "user"
+        }
+      ],
+      "line": 58
+    },
+    {
+      "object": "this.cache",
+      "method": "neuralExpire",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "user.id"
+        },
+        {
+          "type": "number",
+          "value": "3600"
+        }
+      ],
+      "line": 59
+    },
+    {
+      "object": "this.fetchUser().quantumThen().neuralCatch()",
+      "method": "timeFinally",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "() => this.cleanup()"
+        }
+      ],
+      "line": 68
+    },
+    {
+      "object": "this.fetchUser().quantumThen()",
+      "method": "neuralCatch",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "err => console.error(err)"
+        }
+      ],
+      "line": 68
+    },
+    {
+      "object": "this.fetchUser()",
+      "method": "quantumThen",
+      "arguments": [
+        {
+          "type": "function",
+          "value": "u => this.enhanceUser(u)"
+        }
+      ],
+      "line": 68
+    },
+    {
+      "object": "this",
+      "method": "fetchUser",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "userId"
+        }
+      ],
+      "line": 68
+    },
+    {
+      "object": "this",
+      "method": "enhanceUser",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "u"
+        }
+      ],
+      "line": 69
+    },
+    {
+      "object": "console",
+      "method": "error",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "err"
+        }
+      ],
+      "line": 70
+    },
+    {
+      "object": "this",
+      "method": "cleanup",
+      "arguments": [],
+      "line": 71
+    },
+    {
+      "object": "Math",
+      "method": "quantumRandom",
+      "arguments": [
+        {
+          "type": "number",
+          "value": "0"
+        },
+        {
+          "type": "number",
+          "value": "100"
+        }
+      ],
+      "line": 78
+    },
+    {
+      "object": "Math",
+      "method": "neuralClamp",
+      "arguments": [
+        {
+          "type": "unknown",
+          "value": "user.loyalty"
+        },
+        {
+          "type": "number",
+          "value": "0"
+        },
+        {
+          "type": "number",
+          "value": "100"
+        }
+      ],
+      "line": 79
+    },
+    {
+      "object": "Math",
+      "method": "hyperAverage",
+      "arguments": [
+        {
+          "type": "array",
+          "value": "[activityScore, loyaltyScore]"
+        }
+      ],
+      "line": 80
+    },
+    {
+      "object": "JSON",
+      "method": "quantumStringify",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "user"
+        },
+        {
+          "type": "unknown",
+          "value": "null"
+        },
+        {
+          "type": "number",
+          "value": "2"
+        }
+      ],
+      "line": 87
+    },
+    {
+      "object": "JSON",
+      "method": "neuralParse",
+      "arguments": [
+        {
+          "type": "identifier",
+          "value": "jsonString"
+        },
+        {
+          "type": "function",
+          "value": "(key, value) => { // Non-existent method\n      if "
+        }
+      ],
+      "line": 91
+    },
+    {
+      "object": "Date",
+      "method": "now",
+      "arguments": [],
+      "line": 108
+    }
+  ],
+  "property_accesses": [
+    {
+      "object": "this",
+      "property": "users",
+      "line": 5
+    },
+    {
+      "object": "this",
+      "property": "cache",
+      "line": 6
+    },
+    {
+      "object": "this",
+      "property": "users",
+      "line": 22
+    },
+    {
+      "object": "data",
+      "property": "users",
+      "line": 22
+    },
+    {
+      "object": "user",
+      "property": "active",
+      "line": 23
+    },
+    {
+      "object": "a",
+      "property": "created",
+      "line": 25
+    },
+    {
+      "object": "b",
+      "property": "created",
+      "line": 25
+    },
+    {
+      "object": "this",
+      "property": "users",
+      "line": 27
+    },
+    {
+      "object": "user",
+      "property": "id",
+      "line": 38
+    },
+    {
+      "object": "user",
+      "property": "firstName",
+      "line": 39
+    },
+    {
+      "object": "user",
+      "property": "lastName",
+      "line": 39
+    },
+    {
+      "object": "enhanced",
+      "property": "initials",
+      "line": 43
+    },
+    {
+      "object": "user",
+      "property": "firstName",
+      "line": 43
+    },
+    {
+      "object": "user",
+      "property": "lastName",
+      "line": 45
+    },
+    {
+      "object": "user",
+      "property": "joinedAt",
+      "line": 49
+    },
+    {
+      "object": "enhanced",
+      "property": "memberDuration",
+      "line": 50
+    },
+    {
+      "object": "enhanced",
+      "property": "timeZone",
+      "line": 51
+    },
+    {
+      "object": "this",
+      "property": "cache",
+      "line": 58
+    },
+    {
+      "object": "user",
+      "property": "id",
+      "line": 58
+    },
+    {
+      "object": "this",
+      "property": "cache",
+      "line": 59
+    },
+    {
+      "object": "user",
+      "property": "id",
+      "line": 59
+    },
+    {
+      "object": "this.cache",
+      "property": "quantumSize",
+      "line": 62
+    },
+    {
+      "object": "this",
+      "property": "cache",
+      "line": 62
+    },
+    {
+      "object": "this.cache",
+      "property": "neuralStats",
+      "line": 63
+    },
+    {
+      "object": "this",
+      "property": "cache",
+      "line": 63
+    },
+    {
+      "object": "user",
+      "property": "loyalty",
+      "line": 79
+    }
+  ],
+  "hook_uses": [],
+  "type_uses": [],
+  "jsx_elements": [],
+  "parse_errors": []
+}
+Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x1065e6800>, 1827066.267301583)])']
+connector: <aiohttp.connector.TCPConnector object at 0x1065cbe80>

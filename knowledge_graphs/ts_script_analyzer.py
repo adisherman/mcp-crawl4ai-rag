@@ -32,6 +32,7 @@ class TypeScriptScriptAnalyzer:
         self.function_calls = []  # List of function calls
         self.class_instantiations = []  # List of class instantiations
         self.hook_uses = []  # List of React hook calls
+        self.parse_result = None  # Store the parse result for later use
         self.type_uses = []  # List of type/interface uses
         self.jsx_elements = []  # List of JSX elements used
         self.method_calls = []  # List of method calls
@@ -57,20 +58,20 @@ class TypeScriptScriptAnalyzer:
             async with self.parser_service as parser:
                 # Parse the file using TypeScript Compiler API
                 try:
-                    parse_result = await parser.parse_file(content, script_path)
+                    self.parse_result = await parser.parse_file(content, script_path)
                     
-                    if parse_result.get('error'):
-                        logger.error(f"Parse error: {parse_result['error']}")
-                        return self._create_error_result(script_path, parse_result['error'])
+                    if self.parse_result.get('error'):
+                        logger.error(f"Parse error: {self.parse_result['error']}")
+                        return self._create_error_result(script_path, self.parse_result['error'])
                     
                     # Extract information from the parsed result
-                    await self._extract_from_ast(parse_result)
+                    await self._extract_from_ast(self.parse_result)
                     
                 except Exception as e:
                     logger.error(f"Failed to parse script: {e}")
                     return self._create_error_result(script_path, str(e))
             
-            # Return the analysis result
+            # Return the analysis result with local definitions
             return {
                 'script_path': script_path,
                 'imports': self.imports,
@@ -82,7 +83,14 @@ class TypeScriptScriptAnalyzer:
                 'hook_uses': self.hook_uses,
                 'type_uses': self.type_uses,
                 'jsx_elements': self.jsx_elements,
-                'parse_errors': []
+                'parse_errors': [],
+                # Include local definitions for the validator
+                'components': self.parse_result.get('components', []) if self.parse_result else [],
+                'functions': self.parse_result.get('functions', []) if self.parse_result else [],
+                'types': self.parse_result.get('types', []) if self.parse_result else [],
+                'interfaces': self.parse_result.get('interfaces', []) if self.parse_result else [],
+                'classes': self.parse_result.get('classes', []) if self.parse_result else [],
+                'variables': self.parse_result.get('variables', []) if self.parse_result else []
             }
             
         except Exception as e:
@@ -121,9 +129,10 @@ class TypeScriptScriptAnalyzer:
         # Extract function calls (actual calls, not declarations)
         for call in parse_result.get('functionCalls', []):
             self.function_calls.append({
-                'name': call.get('name', 'Unknown'),
+                'name': call.get('function', call.get('name', 'Unknown')),  # Check both 'function' and 'name' fields
                 'arguments': call.get('arguments', []),
-                'line': call.get('line', 0)
+                'line': call.get('line', 0),
+                'isComplex': call.get('isComplex', False)
             })
         
         # Extract method calls
@@ -146,7 +155,7 @@ class TypeScriptScriptAnalyzer:
         # Extract constructor calls (class instantiations)
         for ctor in parse_result.get('constructorCalls', []):
             self.class_instantiations.append({
-                'name': ctor.get('class', 'Unknown'),
+                'name': ctor.get('className', ctor.get('class', 'Unknown')),  # Check both 'className' and 'class' fields
                 'arguments': ctor.get('arguments', []),
                 'line': ctor.get('line', 0)
             })
@@ -154,18 +163,21 @@ class TypeScriptScriptAnalyzer:
         # Extract JSX elements usage
         for jsx in parse_result.get('jsxElements', []):
             self.jsx_elements.append({
-                'name': jsx.get('name', 'Unknown'),
-                'props': jsx.get('props', {}),
-                'line': jsx.get('line', 0)
+                'name': jsx.get('tagName', 'Unknown'),  # Changed from 'name' to 'tagName'
+                'props': jsx.get('props', []),  # Props is already a list
+                'line': jsx.get('line', 0),
+                'selfClosing': jsx.get('selfClosing', False),
+                'isCustomComponent': jsx.get('isCustomComponent', False)
             })
             
-            # Also track as component use
-            self.component_uses.append({
-                'name': jsx.get('name', 'Unknown'),
-                'type': 'jsx',
-                'props': jsx.get('props', {}),
-                'line': jsx.get('line', 0)
-            })
+            # Also track as component use if it's a custom component
+            if jsx.get('isCustomComponent', False):
+                self.component_uses.append({
+                    'name': jsx.get('tagName', 'Unknown'),
+                    'type': 'jsx',
+                    'props': jsx.get('props', []),
+                    'line': jsx.get('line', 0)
+                })
         
         # Extract hook uses (already captured in functionCalls with 'use' prefix)
         for hook in parse_result.get('hooks', []):
@@ -232,6 +244,7 @@ class TypeScriptScriptAnalyzer:
         self.jsx_elements = []
         self.method_calls = []
         self.property_accesses = []
+        self.parse_result = None
     
     def _create_error_result(self, script_path: str, error: str) -> Dict[str, Any]:
         """Create an error result"""

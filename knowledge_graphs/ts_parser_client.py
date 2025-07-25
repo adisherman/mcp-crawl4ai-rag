@@ -16,8 +16,8 @@ import hashlib
 import time
 import os
 
-# Import setup utility
-from typescript_parser_setup import setup_typescript_parser, TypeScriptParserSetup
+# Import subprocess for Node.js checks
+import subprocess
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +48,12 @@ class TypeScriptParserClient:
         """Async context manager exit"""
         if self._session:
             await self._session.close()
+            
+    async def close(self):
+        """Close the client session"""
+        if self._session and not self._session.closed:
+            await self._session.close()
+            self._session = None
             
     async def ensure_session(self):
         """Ensure we have an active session"""
@@ -270,17 +276,34 @@ class TypeScriptParserService:
             logger.info("Parser service already running")
             return True
             
-        # Ensure dependencies are installed
-        setup = TypeScriptParserSetup()
-        if not setup.check_node_installed():
+        # Check if Node.js is installed
+        try:
+            result = subprocess.run(["node", "--version"], capture_output=True, text=True)
+            if result.returncode != 0:
+                logger.error("Node.js is not installed. Please install Node.js 14+ first.")
+                return False
+        except FileNotFoundError:
             logger.error("Node.js is not installed. Please install Node.js 14+ first.")
-            logger.info(setup.get_install_instructions())
             return False
             
-        if not setup.check_dependencies_installed():
+        # Check if dependencies are installed
+        package_json_path = Path(__file__).parent / "package.json"
+        node_modules_path = Path(__file__).parent / "node_modules"
+        
+        if not node_modules_path.exists() and package_json_path.exists():
             logger.info("Installing TypeScript parser dependencies...")
-            if not setup.setup():
-                logger.error("Failed to setup TypeScript parser dependencies")
+            try:
+                result = subprocess.run(
+                    ["npm", "install"],
+                    cwd=Path(__file__).parent,
+                    capture_output=True,
+                    text=True
+                )
+                if result.returncode != 0:
+                    logger.error(f"Failed to install dependencies: {result.stderr}")
+                    return False
+            except FileNotFoundError:
+                logger.error("npm is not installed. Please install Node.js and npm first.")
                 return False
                 
         try:
@@ -316,6 +339,9 @@ class TypeScriptParserService:
             
     async def stop(self):
         """Stop the parser service"""
+        # Close the client session first
+        await self.client.close()
+        
         if self.process and self.process.returncode is None:
             logger.info("Stopping parser service...")
             self.process.terminate()

@@ -1,2588 +1,3252 @@
 [
   {
-    "timestamp": "2025-07-23T01:46:23.278443Z",
+    "timestamp": "2025-07-25T02:08:45.196189Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T02:09:00.290791Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T02:15:02.104101Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T02:40:02.093446Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:31:20.743110Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:31:35.177526Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:31:48.452870Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:32:00.458851Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:46:29.676657Z",
+    "timestamp": "2025-07-25T08:32:10.880606Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:46:34.113336Z",
+    "timestamp": "2025-07-25T08:32:24.692779Z",
     "agent": "unknown_agent",
-    "tool": "LS",
+    "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:46:40.283333Z",
+    "timestamp": "2025-07-25T08:32:35.769792Z",
     "agent": "unknown_agent",
-    "tool": "Read",
+    "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:46:47.410862Z",
+    "timestamp": "2025-07-25T08:32:47.240819Z",
     "agent": "unknown_agent",
-    "tool": "Glob",
+    "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:46:54.219928Z",
+    "timestamp": "2025-07-25T08:32:58.128282Z",
     "agent": "unknown_agent",
-    "tool": "Read",
+    "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:46:59.161824Z",
+    "timestamp": "2025-07-25T08:33:09.446497Z",
     "agent": "unknown_agent",
-    "tool": "Glob",
+    "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:47:04.320188Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T01:47:09.217956Z",
+    "timestamp": "2025-07-25T08:33:21.867209Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:47:14.601815Z",
+    "timestamp": "2025-07-25T08:33:35.243323Z",
     "agent": "unknown_agent",
-    "tool": "Glob",
+    "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:47:18.935989Z",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T01:47:25.530682Z",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T01:47:31.019965Z",
+    "timestamp": "2025-07-25T08:34:20.947016Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:47:38.629087Z",
+    "timestamp": "2025-07-25T08:36:18.232967Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:36:31.619732Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:47:45.456028Z",
+    "timestamp": "2025-07-25T08:36:54.771316Z",
     "agent": "unknown_agent",
-    "tool": "Read",
+    "tool": "Bash",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:48:17.256806Z",
+    "timestamp": "2025-07-25T08:37:18.837225Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:37:45.485168Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:38:28.569400Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:38:43.812302Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:39:03.401103Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:41:24.681673Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:41:43.131839Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:42:15.467445Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:42:33.458571Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:42:48.460008Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:43:45.680477Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/HALLUCINATION_DETECTOR_TEST_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/HALLUCINATION_DETECTOR_TEST_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T08:44:00.142039Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:44:21.880509Z",
     "agent": "unknown_agent",
     "tool": "Task",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:49:18.070273Z",
+    "timestamp": "2025-07-25T08:45:25.027675Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:45:40.123624Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:50:21.231362Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:50:10.091038Z",
+    "timestamp": "2025-07-25T08:50:24.525714Z",
     "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/CLAUDE.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/CLAUDE.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T01:50:22.140400Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "LS",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T01:57:27.591619Z",
+    "timestamp": "2025-07-25T08:50:28.509227Z",
     "agent": "unknown_agent",
-    "tool": "WebFetch",
+    "tool": "LS",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:01:45.007816Z",
-    "agent": "unknown_agent",
-    "tool": "WebFetch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:02:07.749214Z",
-    "agent": "unknown_agent",
-    "tool": "WebFetch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:02:14.374056Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:02:21.065869Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:02:27.650609Z",
+    "timestamp": "2025-07-25T08:50:32.154553Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:02:32.612600Z",
+    "timestamp": "2025-07-25T08:50:36.627249Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:50:42.743641Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:50:48.062919Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:50:51.606437Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:50:56.881468Z",
     "agent": "unknown_agent",
     "tool": "Glob",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:02:37.265956Z",
+    "timestamp": "2025-07-25T08:51:01.461664Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:51:06.015645Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:51:11.241484Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:51:18.792659Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:51:24.701494Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:51:29.757476Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:51:33.972969Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:52:06.604568Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:52:27.747382Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:52:33.295575Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:52:41.646647Z",
     "agent": "unknown_agent",
     "tool": "Glob",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:02:43.332150Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:08:41.448124Z",
+    "timestamp": "2025-07-25T08:52:45.822882Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:08:54.442982Z",
+    "timestamp": "2025-07-25T08:52:51.794141Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:19:17.334727Z",
+    "timestamp": "2025-07-25T08:52:58.857842Z",
     "agent": "unknown_agent",
-    "tool": "Bash",
+    "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:19:24.006112Z",
+    "timestamp": "2025-07-25T08:53:06.580605Z",
     "agent": "unknown_agent",
-    "tool": "Bash",
+    "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:34:26.888975Z",
+    "timestamp": "2025-07-25T08:53:13.117639Z",
     "agent": "unknown_agent",
-    "tool": "LS",
+    "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:34:36.276792Z",
+    "timestamp": "2025-07-25T08:53:19.561058Z",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:36:35.458686Z",
+    "timestamp": "2025-07-25T08:53:26.264107Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:57:55.390625Z",
     "agent": "unknown_agent",
     "tool": "ExitPlanMode",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T02:36:43.930358Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:37:06.108869Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:37:12.749998Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:37:27.235087Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:38:11.264894Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:38:21.537125Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:38:44.865088Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:38:54.972366Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T02:39:07.092202Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:01:11.585268Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:01:26.845431Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_neo4j.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_neo4j.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T03:01:32.667829Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:02:15.958320Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:02:24.285796Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:04:53.209801Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:06:25.111515Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:06:30.697424Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:07:07.240316Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:07:17.613423Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:07:23.728599Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:07:32.051283Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:07:38.493027Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:07:48.500016Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/start_server.sh",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/start_server.sh",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T03:07:54.365755Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T03:19:47.405300Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T04:05:21.442845Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T04:05:47.604443Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_setup.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_setup.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T04:05:55.073992Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:28:41.473707Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:28:52.314646Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:29:00.531955Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:29:32.855497Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/parse_local_repo.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/parse_local_repo.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T05:29:40.088922Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:32:37.518673Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:32:45.877646Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T05:36:35.304353Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T06:35:58.093046Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T06:36:08.163091Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T06:36:17.275976Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T06:36:25.112949Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:06:07.218929Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:06:14.240528Z",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:10:02.422699Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:10:21.782411Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/.claude/commands/index-project.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/.claude/commands/index-project.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:10:29.440036Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:10:55.334809Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/.claude/commands/check-changes.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/.claude/commands/check-changes.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:11:03.790664Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:11:29.262394Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/.claude/commands/fix-hallucinations.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/.claude/commands/fix-hallucinations.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:11:37.538528Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:12:00.098057Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/.claude/commands/save-hallucination-report.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/.claude/commands/save-hallucination-report.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:12:12.286729Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:12:20.882368Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:12:28.671732Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:17:55.360335Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:18:04.249234Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:18:16.833621Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:18:27.595566Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:18:36.724853Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:28:24.521030Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:28:39.920601Z",
-    "agent": "unknown_agent",
-    "tool": "ListMcpResourcesTool",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:29:28.462208Z",
-    "agent": "unknown_agent",
-    "tool": "mcp__planner-mcp__generate_plan",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:29:34.819164Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:29:38.846406Z",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:29:58.329293Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:02.785276Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:09.021772Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:30.348618Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:38.379900Z",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:44.079710Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:51.113391Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:30:58.628299Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:31:33.473476Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:32:03.044209Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/query_lavi_stats.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/query_lavi_stats.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:32:08.706917Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:32:25.339197Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/check_neo4j_data.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/check_neo4j_data.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:32:30.579019Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:32:43.417910Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:33:17.589048Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/parse_lavi_improved.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/parse_lavi_improved.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:33:23.267503Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:33:41.560896Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:34:09.896851Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:34:52.969343Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/explore_graph.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/explore_graph.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T07:34:58.454472Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:39:31.518039Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T07:39:50.828258Z",
+    "timestamp": "2025-07-25T08:58:00.152342Z",
     "agent": "unknown_agent",
     "tool": "Task",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T08:44:52.177278Z",
+    "timestamp": "2025-07-25T08:58:16.282879Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T08:45:04.271500Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T08:45:19.476785Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T08:45:29.443521Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T08:45:39.105697Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T08:45:52.731015Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T08:46:02.039761Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:34:29.415751Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:35:22.417889Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:36:43.238411Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:37:20.572372Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:38:19.060754Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:39:06.494688Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:48:27.900884Z",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:49:06.486396Z",
-    "agent": "unknown_agent",
-    "tool": "Task",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:50:01.291939Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:50:53.154832Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:51:35.027006Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:52:35.692637Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:53:31.299291Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:54:14.843463Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:54:48.313616Z",
-    "agent": "unknown_agent",
-    "tool": "Task",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:55:09.889621Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:55:18.300318Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:55:25.143510Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:56:24.791954Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:57:07.434180Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:58:21.806150Z",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T11:59:27.085508Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/TYPESCRIPT_NEO4J_SCHEMA_RESEARCH.md",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/TYPESCRIPT_NEO4J_SCHEMA_RESEARCH.md",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T11:59:51.785998Z",
-    "agent": "unknown_agent",
-    "tool": "Task",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T12:02:27.022210Z",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T12:02:41.246899Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T12:03:22.486987Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/typescript_parser_service.js",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/typescript_parser_service.js",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T12:05:00.484666Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/parser_worker.js",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/parser_worker.js",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T12:05:58.599843Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_parser_client.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_parser_client.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T12:06:12.008080Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/package.json",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/package.json",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T12:06:25.174385Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T12:06:36.626908Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T12:08:23.448932Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_repo_parser_new.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_repo_parser_new.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T13:13:15.209808Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T13:13:32.469928Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T13:13:47.706161Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T13:14:01.498790Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:25:15.244363Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:25:27.763443Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:25:48.539263Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:26:04.853952Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:26:14.506136Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:26:38.587378Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:26:54.480219Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:27:17.476214Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:27:31.815039Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:27:48.704792Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:29:46.524649Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:29:55.151274Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:30:13.785320Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:30:25.209591Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:30:34.101441Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:30:41.362885Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:30:47.233007Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:30:54.767045Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:31:04.983239Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:31:13.838437Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:31:35.013083Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:31:43.444919Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:31:52.633107Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:31:59.697450Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:32:07.928099Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:32:14.236837Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:32:30.914445Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:32:46.426492Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:33:01.191307Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:38:34.880449Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:38:42.458307Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:38:48.001992Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:38:53.797439Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:39:00.576388Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:39:07.368912Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:42:47.958372Z",
+    "timestamp": "2025-07-25T08:58:21.531590Z",
     "agent": "unknown_agent",
     "tool": "LS",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:42:57.399480Z",
+    "timestamp": "2025-07-25T08:58:26.068139Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:43:04.120193Z",
+    "timestamp": "2025-07-25T08:58:30.824032Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:43:20.359471Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:43:29.369294Z",
+    "timestamp": "2025-07-25T08:58:35.232888Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:43:40.329850Z",
+    "timestamp": "2025-07-25T08:58:40.941640Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:58:45.723248Z",
+    "agent": "unknown_agent",
+    "tool": "Glob",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:58:55.263905Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:45:47.102929Z",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:46:12.181179Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_component.tsx",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_component.tsx",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T14:46:20.302128Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:46:37.786059Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:46:45.298792Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:46:53.367642Z",
+    "timestamp": "2025-07-25T08:59:02.622586Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:47:14.299029Z",
+    "timestamp": "2025-07-25T08:59:07.341461Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:59:13.000986Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T08:59:21.755515Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:47:24.295549Z",
+    "timestamp": "2025-07-25T08:59:57.820480Z",
     "agent": "unknown_agent",
-    "tool": "Edit",
+    "tool": "Task",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:47:31.496076Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:47:44.062335Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:47:57.675750Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:48:27.716005Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_component.tsx",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_component.tsx",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T14:48:39.344554Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:48:57.865333Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:49:13.969014Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_simple.tsx",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_simple.tsx",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T14:49:23.016596Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:49:32.234953Z",
+    "timestamp": "2025-07-25T09:00:13.067322Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:49:44.238827Z",
+    "timestamp": "2025-07-25T09:00:20.232382Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:49:51.437583Z",
+    "timestamp": "2025-07-25T09:00:25.861810Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T14:50:08.991510Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:53:44.988029Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:54:14.042044Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_typescript_hallucinations.ts",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_typescript_hallucinations.ts",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T14:56:26.694863Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:56:39.044570Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T14:56:52.504329Z",
+    "timestamp": "2025-07-25T09:00:33.245600Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T15:00:04.780819Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:00:51.893490Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_script_analyzer.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_script_analyzer.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T15:02:36.989733Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/parser_worker_enhanced.js",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "file_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/parser_worker_enhanced.js",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T15:05:15.614301Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:05:30.651547Z",
+    "timestamp": "2025-07-25T09:00:37.776591Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T15:05:37.084868Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:05:45.461888Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:06:00.694331Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:06:12.406390Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:06:29.496817Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:06:36.220603Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:06:43.949605Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:06:55.447014Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:07:02.881969Z",
+    "timestamp": "2025-07-25T09:00:45.908688Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-23T15:07:11.554735Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:07:22.743494Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:07:31.666609Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:07:49.920278Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:08:04.415662Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:08:13.982411Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:08:22.628217Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:08:36.731784Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:08:48.256417Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:09:03.526163Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:09:13.854178Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:09:25.995944Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:09:39.178485Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:09:53.306939Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:10:12.164114Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:10:22.239394Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:11:10.944083Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:11:25.882795Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:11:40.497310Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:17:30.453188Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:17:51.219873Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:18:05.567413Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:18:24.191759Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:18:37.048681Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:18:46.364080Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:18:56.958841Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:19:09.879945Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:19:19.309272Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:19:29.792615Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:19:53.749940Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:20:06.310152Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:20:36.307501Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:20:44.774319Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:20:52.119743Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:21:00.833968Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:21:10.837084Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:21:42.040205Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_mcp_integration.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_mcp_integration.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-23T15:21:54.108140Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:22:06.777606Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:22:16.633107Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:22:27.973005Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:22:39.497942Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:22:53.941269Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:23:05.870214Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:23:19.388749Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:23:27.774905Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:23:37.180977Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:23:45.449452Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:23:53.632101Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:24:05.657588Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:24:14.626891Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:24:23.615260Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:24:33.163645Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:24:50.541520Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:25:01.469957Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:25:10.695078Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:25:18.916015Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:25:26.605683Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:25:39.812899Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:25:50.852666Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:26:03.399490Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:26:13.130631Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:26:22.348316Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:26:37.989665Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:26:47.853091Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:26:57.697535Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:27:07.681324Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:27:32.861255Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:29:12.892563Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:29:29.282915Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:29:55.709282Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:30:20.477002Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:30:34.356020Z",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-23T15:32:35.138267Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:27:30.739611Z",
+    "timestamp": "2025-07-25T09:00:52.796522Z",
     "agent": "unknown_agent",
     "tool": "LS",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T10:27:38.403191Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:27:45.909041Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:27:53.447962Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:28:01.114515Z",
+    "timestamp": "2025-07-25T09:01:28.494646Z",
     "agent": "unknown_agent",
     "tool": "Bash",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T10:28:11.544624Z",
+    "timestamp": "2025-07-25T09:01:35.436919Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:01:46.154675Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:01:53.511868Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:02:00.708880Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T10:28:21.499355Z",
+    "timestamp": "2025-07-25T09:02:07.541357Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T10:29:24.841789Z",
+    "timestamp": "2025-07-25T09:02:16.076093Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:02:37.636689Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:02:44.481309Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:02:51.384946Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:03:09.862515Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:04:12.489191Z",
     "agent": "unknown_agent",
     "tool": "ExitPlanMode",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T10:29:35.621075Z",
+    "timestamp": "2025-07-25T09:04:29.134424Z",
     "agent": "unknown_agent",
     "tool": "TodoWrite",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T10:29:44.878177Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:35:29.065390Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:35:38.383345Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:36:06.910824Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/lavi_specs/lavi_specs/src/test_hallucinations/test_valid_code.tsx",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/lavi_specs/lavi_specs/src/test_hallucinations/test_valid_code.tsx",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-24T10:36:19.556575Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:36:59.725471Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/lavi_specs/lavi_specs/src/test_hallucinations/test_hallucinated_code.tsx",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/lavi_specs/lavi_specs/src/test_hallucinations/test_hallucinated_code.tsx",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-24T10:37:10.274246Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:37:44.977688Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/lavi_specs/lavi_specs/src/test_hallucinations/test_mixed_code.tsx",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/lavi_specs/lavi_specs/src/test_hallucinations/test_mixed_code.tsx",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-24T10:37:55.940878Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:38:29.865270Z",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "significant": true,
-    "events": [
-      {
-        "event": "agent_busy",
-        "details": {
-          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_specs_hallucinations.py",
-          "tool": "Write"
-        }
-      },
-      {
-        "event": "test_created",
-        "details": {
-          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_lavi_specs_hallucinations.py",
-          "tool": "Write"
-        }
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-07-24T10:38:41.710344Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:38:54.269109Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:39:09.317270Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T10:39:38.667653Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:04:47.900631Z",
+    "timestamp": "2025-07-25T09:04:38.466947Z",
     "agent": "unknown_agent",
     "tool": "Read",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T11:04:55.865494Z",
+    "timestamp": "2025-07-25T09:04:48.734043Z",
     "agent": "unknown_agent",
     "tool": "Grep",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T11:05:09.364045Z",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:05:28.388008Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:05:43.772614Z",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:10:57.257193Z",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:11:08.159355Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:11:17.664809Z",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:11:27.887759Z",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "significant": false
-  },
-  {
-    "timestamp": "2025-07-24T11:11:51.230900Z",
+    "timestamp": "2025-07-25T09:04:59.501252Z",
     "agent": "unknown_agent",
     "tool": "Edit",
     "significant": false
   },
   {
-    "timestamp": "2025-07-24T11:12:02.421927Z",
+    "timestamp": "2025-07-25T09:05:18.497664Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:05:29.257047Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:05:41.562409Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:05:51.290397Z",
     "agent": "unknown_agent",
     "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:06:10.161546Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:06:21.070506Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:06:31.554446Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:06:41.358313Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:06:50.438854Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:06:59.491709Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:07:12.595851Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:07:27.015590Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:07:48.161336Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:08:01.320332Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:08:19.682036Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:08:42.694666Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:08:56.833519Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:09:05.684569Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:09:17.056273Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:09:32.010764Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:09:59.314466Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:10:13.082505Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:10:24.452251Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:10:42.991089Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:10:58.323827Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:11:07.792463Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:11:19.654408Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:11:59.707406Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:12:11.032655Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:12:21.827739Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:12:31.000151Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:14:54.818815Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:15:10.663804Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:15:45.647360Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:16:14.201707Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:17:09.459267Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/FINAL_REPORT_TS_JS_SUPPORT.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/FINAL_REPORT_TS_JS_SUPPORT.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:17:28.565534Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:23:43.418034Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:24:07.474725Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:24:17.495655Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:24:25.606506Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:24:31.170328Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:24:37.772543Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:24:55.355286Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:25:15.095136Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:25:29.327230Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:25:37.820955Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:25:45.632862Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:26:04.849523Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_builtin_constructors.ts",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_builtin_constructors.ts",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:26:26.747393Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:26:41.482672Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:27:05.232258Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_builtin_validation.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_builtin_validation.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:27:12.042726Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:27:20.073712Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:31:45.479708Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:32:12.242696Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/JAVASCRIPT_BUILTIN_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/JAVASCRIPT_BUILTIN_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:32:19.290675Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:32:33.108786Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:32:56.336690Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:33:04.417131Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:33:12.612597Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:33:19.917306Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:33:46.175341Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_parser_directly.js",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_parser_directly.js",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:34:14.824727Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_parser_worker.js",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_parser_worker.js",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:35:32.375025Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:35:40.227484Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:38:32.984170Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:38:39.341602Z",
+    "agent": "unknown_agent",
+    "tool": "Glob",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:38:46.242208Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:38:54.465416Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:41:49.544488Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:42:13.539721Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:42:32.087576Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:43:09.545246Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/PARSER_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/PARSER_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:43:20.844938Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:43:46.755406Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:43:55.325223Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:44:03.381685Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:44:14.494628Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:44:23.309292Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:45:37.899629Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/validator_config.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/validator_config.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T09:47:14.823262Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:47:23.754300Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:47:37.278462Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:47:57.299253Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:48:11.244880Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:48:24.874721Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:48:37.567177Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:48:50.401950Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:49:00.968891Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:49:12.627015Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:49:25.318563Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:49:41.566966Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:49:55.017493Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:50:06.246143Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:50:15.877249Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:50:27.262525Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:50:37.929428Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:50:47.108487Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:51:02.294897Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:51:12.769654Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:51:25.293029Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:51:35.439449Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:51:53.728398Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:52:23.731944Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:52:33.963852Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:52:44.824970Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:53:01.324077Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:53:12.421315Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:53:30.978146Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:53:46.951629Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:53:59.140709Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:54:19.087578Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:54:35.825043Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:54:51.181902Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:55:21.468598Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:55:39.382506Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:55:53.830087Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:56:11.842108Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:56:49.599987Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:57:01.805026Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:57:20.482408Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:57:33.862447Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:57:55.011567Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:58:07.298600Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:58:20.234864Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:58:41.190129Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:58:58.944461Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:59:13.546197Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:59:31.941106Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T09:59:59.400767Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:00:36.453504Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:00:49.118176Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:01:00.862420Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:01:14.008978Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:01:37.819139Z",
+    "agent": "unknown_agent",
+    "tool": "LS",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:01:48.604285Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:02:01.410881Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:02:13.610550Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:02:26.713730Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:02:45.719894Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:02:58.969564Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:03:13.441663Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:03:38.866573Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:04:14.678829Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:04:52.505609Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:05:16.136432Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:05:29.845227Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:05:52.877918Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:06:06.355119Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:06:19.710645Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:06:36.349828Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:06:51.646410Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:07:06.438228Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:07:19.775451Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:07:40.132386Z",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:07:56.357536Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:08:10.414077Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:08:26.718869Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:08:40.725306Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:08:54.340374Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:11:06.797999Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:18:42.552122Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:19:03.508562Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:20:02.641637Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/FALSE_POSITIVE_FIXES_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/FALSE_POSITIVE_FIXES_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:20:23.127901Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:21:01.717283Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:21:50.699336Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:23:18.673248Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:23:32.320565Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:23:45.581430Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:24:01.791899Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:24:15.531294Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:24:29.296593Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:24:45.622522Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:25:00.193834Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:25:13.546047Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:25:28.610231Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:25:42.903607Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:25:59.557459Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:26:13.698023Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:26:27.005748Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:26:43.134906Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:27:02.241878Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:27:17.959658Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:27:32.437376Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:27:48.001278Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:28:05.206764Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:28:19.687108Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:28:36.131384Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:30:14.656209Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:30:30.223077Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:31:01.465754Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:31:21.376703Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:31:37.651750Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:31:53.803534Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:32:08.234528Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:32:25.581838Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:32:40.331360Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:32:57.793127Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:33:34.357646Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:33:49.889405Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:34:06.478290Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:34:22.581110Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:34:37.670559Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:34:59.207593Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:35:16.076823Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:35:33.630408Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:35:49.995144Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:36:08.384350Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:36:23.769338Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:36:49.536897Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:37:07.391736Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:37:27.836202Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:37:44.059533Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:38:01.463061Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:38:18.773916Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:38:34.046022Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:38:56.979642Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:39:17.592939Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:39:38.730078Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:39:58.363353Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:40:22.397209Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:40:40.256744Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:41:12.989902Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:41:31.439818Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:41:47.751588Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:42:19.478050Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:42:41.942182Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:43:08.311653Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/debug_namespace_tracking.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/debug_namespace_tracking.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:43:51.006414Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/debug_parser_output.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/debug_parser_output.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:44:07.108221Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:44:30.918874Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:44:51.027700Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:45:09.601163Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:45:39.761908Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:46:03.023371Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:46:52.956819Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/TYPESCRIPT_VALIDATOR_FIXES_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/TYPESCRIPT_VALIDATOR_FIXES_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:47:15.223831Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:48:15.238855Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:49:24.443781Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:50:19.547599Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:51:36.150966Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/COMPREHENSIVE_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/COMPREHENSIVE_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T10:57:19.955643Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:58:47.243964Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:59:04.006933Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:59:22.626491Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T10:59:43.500394Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:00:01.755989Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:00:19.148263Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:00:40.043971Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:00:58.415431Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:02:38.409116Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/method_chaining_support.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/method_chaining_support.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T11:02:55.867004Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:03:13.769117Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:03:30.990786Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:03:51.184491Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:04:10.140933Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:04:29.589224Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:04:51.081204Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:05:16.264854Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T11:05:35.155508Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:05:56.626350Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T11:06:25.727610Z",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      },
+      {
+        "event": "file_modified",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/ts_knowledge_graph_validator.py",
+          "tool": "MultiEdit"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T11:07:19.247711Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_method_chaining.py",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/test_method_chaining.py",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:01:06.414535Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:05:43.139996Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:06:03.027981Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:06:21.074541Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:06:41.159546Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:07:01.727987Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:07:34.323420Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/SERVICE_METHOD_VALIDATION_FIX.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/SERVICE_METHOD_VALIDATION_FIX.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:07:56.617281Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:08:42.023647Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:09:35.630104Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:10:42.657571Z",
+    "agent": "unknown_agent",
+    "tool": "Glob",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:10:56.675214Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:11:15.068109Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:11:31.772562Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:12:07.536529Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:12:24.315058Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:12:42.299632Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:13:02.159484Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:13:20.173389Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:13:37.929759Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:13:54.317000Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:14:09.953408Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:14:29.299370Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:14:46.721502Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:15:05.227213Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:15:21.289781Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:15:40.927785Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:16:01.740431Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:16:21.454567Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:16:38.484508Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:17:37.167979Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:24:59.816117Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:25:37.236981Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:25:56.551611Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:26:16.850028Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:26:44.375891Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/FUNCTION_PARAMETER_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/FUNCTION_PARAMETER_FIX_SUMMARY.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:27:02.636908Z",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:27:49.424635Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:28:45.759079Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:29:34.627987Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:30:25.368754Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:31:40.399826Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/FINAL_100_PERCENT_REPORT.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/FINAL_100_PERCENT_REPORT.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:32:46.545220Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:38:57.493376Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:47:59.940656Z",
+    "agent": "unknown_agent",
+    "tool": "ExitPlanMode",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:48:41.240776Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:49:36.975645Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_dynamic_access.js",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_dynamic_access.js",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:50:29.305092Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_uncommon_libraries.tsx",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_uncommon_libraries.tsx",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:51:23.791318Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_subtle_hallucinations.ts",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_subtle_hallucinations.ts",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:52:16.376361Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_new_apis.js",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "test_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/test_validation/edge_case_new_apis.js",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T12:52:56.160924Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:57:02.767136Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T12:59:43.744854Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:00:54.719953Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:01:37.873064Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:02:17.795381Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:03:38.433958Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/REALISTIC_ACCURACY_ASSESSMENT.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/REALISTIC_ACCURACY_ASSESSMENT.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T13:04:20.479883Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:05:38.022419Z",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "significant": true,
+    "events": [
+      {
+        "event": "agent_busy",
+        "details": {
+          "activity": "Writing to /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/PRODUCTION_CONFIGURATION_GUIDE.md",
+          "tool": "Write"
+        }
+      },
+      {
+        "event": "file_created",
+        "details": {
+          "file": "/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/PRODUCTION_CONFIGURATION_GUIDE.md",
+          "tool": "Write"
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-07-25T13:06:18.714614Z",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:08:51.936311Z",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:26:51.034192Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:27:10.271846Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:27:28.007718Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:27:47.293303Z",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:28:03.010143Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:28:40.194694Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:28:57.691109Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:29:13.860010Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "significant": false
+  },
+  {
+    "timestamp": "2025-07-25T13:29:31.951309Z",
+    "agent": "unknown_agent",
+    "tool": "Read",
     "significant": false
   }
 ]

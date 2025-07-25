@@ -122,6 +122,7 @@ class UniversalRepositoryParser:
         )
         
         await self.python_extractor.initialize()
+        await self.typescript_extractor.__aenter__()
         await self.typescript_extractor.connect()  # TypeScript extractor uses connect()
         
         logger.info("Universal repository parser initialized")
@@ -131,7 +132,7 @@ class UniversalRepositoryParser:
         if self.python_extractor:
             await self.python_extractor.close()
         if self.typescript_extractor:
-            await self.typescript_extractor.close()
+            await self.typescript_extractor.__aexit__(None, None, None)
     
     def clone_repository(self, repo_url: str, target_dir: str) -> str:
         """Clone a repository"""
@@ -160,7 +161,7 @@ class UniversalRepositoryParser:
         Parse a repository and store in Neo4j
         
         Args:
-            repo_url: Git repository URL
+            repo_url: Git repository URL or local directory path
             repo_name: Optional repository name (extracted from URL if not provided)
             
         Returns:
@@ -170,9 +171,15 @@ class UniversalRepositoryParser:
         if not repo_name:
             repo_name = repo_url.rstrip('/').split('/')[-1].replace('.git', '')
         
-        # Clone repository
-        target_dir = f"/tmp/{repo_name}"
-        repo_path = self.clone_repository(repo_url, target_dir)
+        # Check if it's a local directory or git URL
+        if os.path.isdir(repo_url):
+            # Use local directory directly
+            repo_path = repo_url
+            target_dir = repo_url
+        else:
+            # Clone repository
+            target_dir = f"/tmp/{repo_name}"
+            repo_path = self.clone_repository(repo_url, target_dir)
         
         try:
             # Detect language
@@ -184,7 +191,6 @@ class UniversalRepositoryParser:
             # Clear existing data for this repository
             if primary_language == RepositoryLanguage.PYTHON:
                 await self.python_extractor.clear_repository_data(repo_name)
-            # Note: TypeScript extractor doesn't have clear_repository_data method yet
             elif primary_language == RepositoryLanguage.MIXED:
                 # For mixed repos, we need to handle both
                 await self._parse_mixed_repository(repo_path, repo_name, file_counts)
@@ -194,7 +200,7 @@ class UniversalRepositoryParser:
                     'file_counts': file_counts,
                     'status': 'success'
                 }
-            else:
+            elif primary_language == RepositoryLanguage.UNKNOWN:
                 return {
                     'repository': repo_name,
                     'language': 'unknown',
@@ -204,7 +210,8 @@ class UniversalRepositoryParser:
             
             # Parse based on language
             if primary_language == RepositoryLanguage.PYTHON:
-                await self.python_extractor.process_repository(repo_path, repo_name)
+                # Python extractor expects a git URL, not a local path
+                await self.python_extractor.analyze_repository(repo_url, temp_dir=target_dir)
             elif primary_language in [RepositoryLanguage.TYPESCRIPT, RepositoryLanguage.JAVASCRIPT]:
                 await self.typescript_extractor.parse_directory(repo_path, repo_name)
             
@@ -216,8 +223,8 @@ class UniversalRepositoryParser:
             }
             
         finally:
-            # Clean up cloned repository
-            if os.path.exists(target_dir):
+            # Clean up cloned repository (only if it was cloned, not a local directory)
+            if not os.path.isdir(repo_url) and os.path.exists(target_dir):
                 shutil.rmtree(target_dir, ignore_errors=True)
     
     async def _parse_mixed_repository(self, repo_path: str, repo_name: str, file_counts: Dict[str, int]):
@@ -228,7 +235,9 @@ class UniversalRepositoryParser:
         if file_counts.get('python', 0) > 0:
             logger.info("Processing Python files...")
             await self.python_extractor.clear_repository_data(f"{repo_name}_python")
-            await self.python_extractor.process_repository(repo_path, f"{repo_name}_python")
+            # Need to use the original repo URL for Python extractor
+            # This is a limitation - mixed repos need better handling
+            logger.warning("Mixed repository Python parsing not fully supported yet")
         
         # Process TypeScript/JavaScript files
         if file_counts.get('typescript', 0) > 0 or file_counts.get('javascript', 0) > 0:
@@ -295,6 +304,7 @@ class UniversalRepositoryParser:
 async def main():
     """Example usage"""
     import os
+    import sys
     from dotenv import load_dotenv
     
     load_dotenv()
@@ -308,12 +318,24 @@ async def main():
         logger.error("NEO4J_PASSWORD not set in environment")
         return
     
-    # Example repositories
-    test_repos = [
-        ("https://github.com/pallets/flask.git", "flask"),  # Python
-        ("https://github.com/facebook/react.git", "react"),  # JavaScript/TypeScript
-        ("https://github.com/microsoft/vscode.git", "vscode"),  # TypeScript
-    ]
+    # Check if repository path provided as command-line argument
+    if len(sys.argv) > 1:
+        repo_path = sys.argv[1]
+        if os.path.isdir(repo_path):
+            # Parse local directory
+            repo_name = os.path.basename(repo_path.rstrip('/'))
+            test_repos = [(repo_path, repo_name)]
+        else:
+            # Assume it's a git URL
+            repo_name = os.path.basename(repo_path.rstrip('/').replace('.git', ''))
+            test_repos = [(repo_path, repo_name)]
+    else:
+        # Example repositories
+        test_repos = [
+            ("https://github.com/pallets/flask.git", "flask"),  # Python
+            ("https://github.com/facebook/react.git", "react"),  # JavaScript/TypeScript
+            ("https://github.com/microsoft/vscode.git", "vscode"),  # TypeScript
+        ]
     
     parser = UniversalRepositoryParser(neo4j_uri, neo4j_user, neo4j_password)
     

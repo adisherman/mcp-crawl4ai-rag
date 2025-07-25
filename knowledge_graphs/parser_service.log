@@ -1,26 +1,21 @@
-node:events:496
-      throw er; // Unhandled 'error' event
-      ^
-
-Error: listen EADDRINUSE: address already in use :::3456
-    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
-    at listenInCluster (node:net:1997:12)
-    at Server.listen (node:net:2102:7)
-    at Function.listen (/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/node_modules/express/lib/application.js:635:24)
-    at Object.<anonymous> (/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/typescript_parser_service.js:242:5)
-    at Module._compile (node:internal/modules/cjs/loader:1730:14)
-    at Object..js (node:internal/modules/cjs/loader:1895:10)
-    at Module.load (node:internal/modules/cjs/loader:1465:32)
-    at Function._load (node:internal/modules/cjs/loader:1282:12)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-Emitted 'error' event on Server instance at:
-    at emitErrorNT (node:net:1976:8)
+TypeScript Parser Service running on port 3456
+Worker threads: 12
+TypeScript version: 5.8.3
+Unhandled error: SyntaxError: Unexpected non-whitespace character after JSON at position 100 (line 1 column 101)
+    at JSON.parse (<anonymous>)
+    at parse (/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/node_modules/body-parser/lib/types/json.js:92:19)
+    at /Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/node_modules/raw-body/index.js:238:16)
+    at done (/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/Users/adisherman/Desktop/projects/claudeMcps/mcp-crawl4ai-rag/knowledge_graphs/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
-  code: 'EADDRINUSE',
-  errno: -48,
-  syscall: 'listen',
-  address: '::',
-  port: 3456
+  expose: true,
+  statusCode: 400,
+  status: 400,
+  body: '{  "content": "const emailSchema = z.string();\\nconst numbers = [1, 2, 3];",  "filename": "test.ts"}EOF < /dev/null',
+  type: 'entity.parse.failed'
 }
-
-Node.js v22.17.0
+SIGTERM received, shutting down gracefully...

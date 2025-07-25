@@ -2,372 +2,6 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Task",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebFetch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebFetch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebFetch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Glob",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
     "tool": "Read",
     "validated": true
   },
@@ -386,24 +20,6 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
     "tool": "Bash",
     "validated": true
   },
@@ -422,42 +38,6 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
     "tool": "Bash",
     "validated": true
   },
@@ -465,354 +45,6 @@
     "timestamp": "",
     "agent": "unknown_agent",
     "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Task",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ListMcpResourcesTool",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "mcp__planner-mcp__generate_plan",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "LS",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
     "validated": true
   },
   {
@@ -848,7 +80,7 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Grep",
     "validated": true
   },
   {
@@ -860,7 +92,109 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
     "validated": true
   },
   {
@@ -878,37 +212,7 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
+    "tool": "Bash",
     "validated": true
   },
   {
@@ -920,37 +224,97 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
+    "tool": "LS",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
+    "tool": "LS",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "WebSearch",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Glob",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
     "validated": true
   },
   {
@@ -974,223 +338,7 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "WebSearch",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
+    "tool": "Glob",
     "validated": true
   },
   {
@@ -1208,7 +356,7 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Grep",
+    "tool": "Read",
     "validated": true
   },
   {
@@ -1220,85 +368,13 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
     "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
+    "tool": "Read",
     "validated": true
   },
   {
@@ -1316,733 +392,13 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "LS",
+    "tool": "Task",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
     "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Grep",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Read",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Edit",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Bash",
     "validated": true
   },
   {
@@ -2072,7 +428,13 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Bash",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Glob",
     "validated": true
   },
   {
@@ -2090,79 +452,67 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "ExitPlanMode",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Grep",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Bash",
+    "tool": "Task",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Write",
+    "tool": "Grep",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Write",
+    "tool": "Grep",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Read",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "Write",
+    "tool": "Grep",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "Write",
-    "validated": true
-  },
-  {
-    "timestamp": "",
-    "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "LS",
     "validated": true
   },
   {
@@ -2174,13 +524,13 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Bash",
     "validated": true
   },
   {
     "timestamp": "",
     "agent": "unknown_agent",
-    "tool": "TodoWrite",
+    "tool": "Read",
     "validated": true
   },
   {
@@ -2216,6 +566,18 @@
   {
     "timestamp": "",
     "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
     "tool": "ExitPlanMode",
     "validated": true
   },
@@ -2223,6 +585,24 @@
     "timestamp": "",
     "agent": "unknown_agent",
     "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
     "validated": true
   },
   {
@@ -2247,6 +627,2064 @@
     "timestamp": "",
     "agent": "unknown_agent",
     "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Glob",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "LS",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Edit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "MultiEdit",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Glob",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "ExitPlanMode",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Write",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "TodoWrite",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Task",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Grep",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "Read",
+    "validated": true
+  },
+  {
+    "timestamp": "",
+    "agent": "unknown_agent",
+    "tool": "ExitPlanMode",
     "validated": true
   }
 ]

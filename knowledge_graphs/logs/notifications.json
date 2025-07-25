@@ -5,7 +5,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T12:11:25.142193Z",
+    "timestamp": "2025-07-25T01:27:05.534443Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -15,7 +15,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T12:11:59.685975Z",
+    "timestamp": "2025-07-25T01:47:10.583378Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -25,55 +25,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T12:12:25.446234Z",
-    "from": "notification_hook",
-    "requires_response": true
-  },
-  {
-    "event": "notification",
-    "agent": "unknown_agent",
-    "type": "info",
-    "message": "Claude is waiting for your input",
-    "details": {},
-    "timestamp": "2025-07-23T12:21:44.253138Z",
-    "from": "notification_hook"
-  },
-  {
-    "event": "notification",
-    "agent": "unknown_agent",
-    "type": "info",
-    "message": "Claude is waiting for your input",
-    "details": {},
-    "timestamp": "2025-07-23T13:02:37.024739Z",
-    "from": "notification_hook"
-  },
-  {
-    "event": "approval_requested",
-    "agent": "unknown_agent",
-    "tool": "unknown",
-    "message": "Claude needs your permission to use ",
-    "details": {},
-    "timestamp": "2025-07-23T13:17:05.798283Z",
-    "from": "notification_hook",
-    "requires_response": true
-  },
-  {
-    "event": "approval_requested",
-    "agent": "unknown_agent",
-    "tool": "unknown",
-    "message": "Claude needs your permission to use ",
-    "details": {},
-    "timestamp": "2025-07-23T13:20:53.207533Z",
-    "from": "notification_hook",
-    "requires_response": true
-  },
-  {
-    "event": "approval_requested",
-    "agent": "unknown_agent",
-    "tool": "unknown",
-    "message": "Claude needs your permission to use ",
-    "details": {},
-    "timestamp": "2025-07-23T13:25:15.977978Z",
+    "timestamp": "2025-07-25T01:49:32.216772Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -83,7 +35,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T13:32:32.620576Z",
+    "timestamp": "2025-07-25T02:09:20.226405Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -93,7 +45,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T14:15:02.776284Z",
+    "timestamp": "2025-07-25T02:12:34.830074Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -103,7 +55,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T14:22:53.734674Z",
+    "timestamp": "2025-07-25T02:13:12.460828Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -113,7 +65,7 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T15:14:35.447334Z",
+    "timestamp": "2025-07-25T02:17:04.156676Z",
     "from": "notification_hook",
     "requires_response": true
   },
@@ -123,7 +75,127 @@
     "tool": "Bash",
     "message": "Claude needs your permission to use Bash",
     "details": {},
-    "timestamp": "2025-07-23T15:16:52.969495Z",
+    "timestamp": "2025-07-25T09:38:02.747987Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T09:39:29.534525Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T10:10:42.281344Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T10:11:39.825384Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T10:16:45.241807Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T10:17:18.827202Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T11:29:28.423254Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T11:32:39.642075Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T11:35:49.440080Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T11:38:55.508523Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T11:41:49.697406Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T11:48:53.104441Z",
+    "from": "notification_hook",
+    "requires_response": true
+  },
+  {
+    "event": "approval_requested",
+    "agent": "unknown_agent",
+    "tool": "Bash",
+    "message": "Claude needs your permission to use Bash",
+    "details": {},
+    "timestamp": "2025-07-25T12:19:06.405502Z",
     "from": "notification_hook",
     "requires_response": true
   }
